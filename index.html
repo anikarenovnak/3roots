@@ -267,6 +267,9 @@
   .rf-check input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
   .pcard-icon { display: block; width: 84px; height: 52px; color: var(--gold); margin: 0 0 6px -4px; }
   .pcard-body .tag { white-space: normal; max-width: 100%; box-sizing: border-box; }
+  .pro-list { display: flex; flex-direction: column; gap: 14px; margin-top: 26px; }
+  .pro-cat { width: 100%; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); padding-bottom: 2px; }
+  .pro-item { font-size: 13px; color: var(--ink); border: 1px solid var(--gold-soft); padding: 6px 10px; line-height: 1.2; }
   .site-only { display: block !important; }
   .claude-only { display: none !important; }
 </style>
@@ -438,7 +441,16 @@
   <dialog class="types offer" id="dlg-constellation" aria-label="The Constellation">
     <button type="button" class="x" aria-label="Close">&times;</button>
     <section class="constellation" id="constellation">
-      <ul class="chips claude-only"><li>Lending</li><li>Home equity &amp; reverse mortgages</li><li>Financial planning &amp; wealth management</li><li>Investing</li><li>Moving</li><li>Repairs &amp; maintenance</li><li>Home care</li><li>Renovations</li><li>Insurance</li><li>Tax &amp; legal</li><li>Estate planning</li><li class="wide">Relocating? Agent referrals: Bay Area, Los Angeles, Orange County, Virginia, D.C. &amp; Maryland</li></ul>
+      <div class="pro-list claude-only">
+        <div class="rf-group"><div class="pro-cat">Lending &amp; Home Equity</div><span class="pro-item">Mortgage Broker / Lender</span><span class="pro-item">Reverse Mortgage Specialist</span><span class="pro-item">Home Equity Specialist</span></div>
+        <div class="rf-group"><div class="pro-cat">Financial Planning &amp; Tax</div><span class="pro-item">Certified Financial Planner (CFP)</span><span class="pro-item">Wealth Management Advisor</span><span class="pro-item">CPA</span><span class="pro-item">Tax Strategist</span></div>
+        <div class="rf-group"><div class="pro-cat">Legal</div><span class="pro-item">Estate Planning Attorney</span><span class="pro-item">Real Estate Attorney</span><span class="pro-item">Probate Attorney</span></div>
+        <div class="rf-group"><div class="pro-cat">Investing</div><span class="pro-item">Investment Partners &amp; Syndications</span><span class="pro-item">Property Manager</span></div>
+        <div class="rf-group"><div class="pro-cat">Buying, Selling &amp; Insurance</div><span class="pro-item">Home Inspector</span><span class="pro-item">Appraiser</span><span class="pro-item">Homeowners Insurance Agent</span></div>
+        <div class="rf-group"><div class="pro-cat">Building &amp; Renovation</div><span class="pro-item">General Contractor</span><span class="pro-item">Architect</span><span class="pro-item">Interior Designer</span><span class="pro-item">Roofer</span><span class="pro-item">Solar Installer</span></div>
+        <div class="rf-group"><div class="pro-cat">Moving &amp; Relocation</div><span class="pro-item">Movers &amp; Shippers</span><span class="pro-item">Real Estate Agent Outside San Diego</span></div>
+        <div class="rf-group"><div class="pro-cat">Home Care</div><span class="pro-item">Gardener</span><span class="pro-item">Landscaper</span><span class="pro-item">Pet Sitter</span></div>
+      </div>
       <p class="const-cta claude-only">Need someone? Reach out, and I&rsquo;ll connect you.</p>
       <p class="reach claude-only"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Connect with me</a></p>
       <form class="rform site-only" data-kind="constellation" novalidate>
