@@ -176,6 +176,25 @@
   section.hood article.home:last-child, .subhood article.home:last-child { border-bottom: 0; }
   .group section.hood:first-of-type, .type .subhood:first-of-type { margin-top: 22px; }
   @media (max-width: 560px) { section.hood, .subhood { padding: 16px 14px 4px; margin-top: 22px; } }
+  /* Landing preview cards; listings open per neighborhood (her 2026-11-02 request). */
+  .browse { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; margin-top: 34px; }
+  a.pcard { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); background: var(--tint); border: 1px solid var(--gold-soft); transition: border-color .15s, transform .15s; }
+  a.pcard:hover, a.pcard:focus-visible { border-color: var(--gold); transform: translateY(-2px); outline: none; }
+  .pcard-img { aspect-ratio: 16 / 10; overflow: hidden; background: var(--gold-soft); }
+  .pcard-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .pcard-img.mosaic { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; }
+  .pcard-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; }
+  .pcard-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .pcard-top h3 { font-size: 24px; }
+  .pcard-count { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .pcard-body .tag { align-self: flex-start; font-size: 10.5px; }
+  .pcard-body p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
+  .pcard-go { margin-top: auto; padding-top: 4px; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .pcard-all { border-color: var(--gold); }
+  .lbar { margin-top: 30px; scroll-margin-top: 64px; }
+  a.lback { display: inline-block; font-size: 12.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--gold); padding: 9px 14px; }
+  a.lback:hover, a.lback:focus-visible { background: var(--gold); color: var(--paper); outline: none; }
+  #listings section.hood:first-of-type { margin-top: 18px; }
 </style>
 
 </head>
@@ -196,6 +215,36 @@
     </div>
   </header>
 
+  <div id="browse" class="browse">
+    <a class="pcard pcard-all" href="#all">
+      <div class="pcard-img mosaic" data-from="all"></div>
+      <div class="pcard-body">
+        <div class="pcard-top"><h3>All homes</h3><span class="pcard-count">6 homes</span></div>
+        <p>Every single-family home for sale in 3 Roots right now, by neighborhood.</p>
+        <span class="pcard-go">View all homes &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pcard" href="#brio">
+      <div class="pcard-img"><img alt="" data-from="brio"></div>
+      <div class="pcard-body">
+        <div class="pcard-top"><h3>Brio</h3><span class="pcard-count">1 home</span></div>
+        <span class="tag">Traditional single-family</span>
+        <p>Traditional single-family homes by California West, each on its own lot. If owning the land under your home matters to you, this is the 3 Roots neighborhood to watch.</p>
+        <span class="pcard-go">View homes &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pcard" href="#aero">
+      <div class="pcard-img"><img alt="" data-from="aero"></div>
+      <div class="pcard-body">
+        <div class="pcard-top"><h3>Aero</h3><span class="pcard-count">5 homes</span></div>
+        <span class="tag">Detached condo</span>
+        <p>Three-story detached homes by California West: no shared walls, while the land is owned in common through the HOA. Single-family living without a private lot.</p>
+        <span class="pcard-go">View homes &rsaquo;</span>
+      </div>
+    </a>
+  </div>
+  <div id="listings" hidden>
+    <div class="lbar"><a class="lback" href="#">&larr; All neighborhoods</a></div>
   <section class="hood" id="brio">
     <div class="hood-head">
       <h2>Brio<button type="button" class="qh" data-hood="brio" aria-label="About Brio">?</button></h2>
@@ -283,6 +332,7 @@
       </div>
     </article>
   </section>
+  </div>
 
   <dialog class="types" id="hood-info" aria-label="About this neighborhood">
     <button type="button" class="x" aria-label="Close">&times;</button>
@@ -392,6 +442,35 @@
   fit();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize', fit);
+})();
+</script>
+<script>
+// Landing cards: the preview grid shows first; #all opens every neighborhood, #<id> opens one. Back/forward work through the URL hash.
+(function () {
+  var browse = document.getElementById('browse'), list = document.getElementById('listings');
+  if (!browse || !list) return;
+  var secs = [].slice.call(list.querySelectorAll('section.hood'));
+  browse.querySelectorAll('[data-from]').forEach(function (el) {
+    var id = el.getAttribute('data-from');
+    if (id === 'all') {
+      [].slice.call(list.querySelectorAll('img.shot')).slice(0, 4).forEach(function (src) {
+        var i = document.createElement('img'); i.alt = ''; i.src = src.src; el.appendChild(i);
+      });
+    } else {
+      var first = document.querySelector('#' + id + ' img.shot');
+      if (first) el.src = first.src;
+    }
+  });
+  function route(scroll) {
+    var h = decodeURIComponent(location.hash.slice(1));
+    var one = secs.some(function (s) { return s.id === h; });
+    if (h !== 'all' && !one) { browse.hidden = false; list.hidden = true; return; }
+    browse.hidden = true; list.hidden = false;
+    secs.forEach(function (s) { s.hidden = h !== 'all' && s.id !== h; });
+    if (scroll) list.querySelector('.lbar').scrollIntoView({ block: 'start' });
+  }
+  window.addEventListener('hashchange', function () { route(true); });
+  route(false);
 })();
 </script>
 
