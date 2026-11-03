@@ -322,6 +322,9 @@
   .rf-done p { margin: 10px auto 0; max-width: 340px; font-size: 15px; line-height: 1.55; color: var(--muted); }
   .rf-close { margin-top: 24px; font: 500 12.5px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper); background: var(--gold); border: 0; padding: 13px 26px; cursor: pointer; }
   .rf-sign { display: block; margin-top: 8px; font-family: var(--display); font-style: italic; font-size: 19px; color: var(--ink); }
+  /* The thank-you message sits in a small centered box, not a full-width panel. */
+  dialog.types.is-done { width: calc(100% - 72px); max-width: 340px; padding: 18px 18px 22px; }
+  dialog.types.is-done .rf-done { padding: 14px 4px 4px; }
   .extras-head, .offers { display: none !important; }
   .site-only { display: block !important; }
   .claude-only { display: none !important; }
@@ -757,7 +760,7 @@
           f.innerHTML = '<div class="rf-done"><div class="rf-check-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'
             + '<h4>Thank you!</h4><p>' + body + '</p>'
             + '<button type="button" class="rf-close">Close</button></div>';
-          var d = f.closest('dialog'); if (d) d.scrollTop = 0;
+          var d = f.closest('dialog'); if (d) { d.scrollTop = 0; d.classList.add('is-done'); }
           f.querySelector('.rf-close').addEventListener('click', function () { if (d) d.close(); });
         })
         .catch(function () { btn.disabled = false; st.className = 'rf-status err'; st.innerHTML = 'Sorry, that didn&rsquo;t go through. Please <a href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">reach me here</a>.'; });
