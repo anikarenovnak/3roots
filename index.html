@@ -170,6 +170,12 @@
   .brand { justify-content: space-between; gap: 12px; }
   .brand-cta { flex: none; font: 500 11px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--paper); background: var(--gold); text-decoration: none; padding: 9px 14px; }
   .brand-cta:hover, .brand-cta:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+  /* Each neighborhood is its own card (her 2026-11-02 request). */
+  section.hood, .subhood { background: var(--tint); border: 1px solid var(--gold-soft); padding: 22px 24px 8px; margin-top: 28px; }
+  section.hood .hood-head, .subhood .subhood-head { border-bottom-color: var(--gold-soft); }
+  section.hood article.home:last-child, .subhood article.home:last-child { border-bottom: 0; }
+  .group section.hood:first-of-type, .type .subhood:first-of-type { margin-top: 22px; }
+  @media (max-width: 560px) { section.hood, .subhood { padding: 16px 14px 4px; margin-top: 22px; } }
 </style>
 
 </head>
