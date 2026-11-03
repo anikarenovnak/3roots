@@ -197,6 +197,18 @@
   a.lback { display: inline-block; font-size: 12.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--gold); padding: 9px 14px; }
   a.lback:hover, a.lback:focus-visible { background: var(--gold); color: var(--paper); outline: none; }
   #listings section.hood:first-of-type { margin-top: 18px; }
+  /* Card pop-up (her 2026-11-02 request): full screen on phones, a large centered panel on bigger screens. */
+  dialog.lview { box-sizing: border-box; width: 100%; max-width: 100%; height: 100%; max-height: 100%; margin: 0; padding: 0 16px 28px; border: 0; background: var(--paper); color: var(--ink); overflow-y: auto; }
+  @media (min-width: 820px) { dialog.lview { width: min(820px, 94vw); height: 92vh; margin: auto; padding: 0 28px 32px; border: 1px solid var(--gold); } }
+  dialog.lview::backdrop { background: rgba(20, 18, 15, .55); }
+  .lbar { position: sticky; top: 0; z-index: 7; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 -16px; padding: 12px 16px; padding-top: max(12px, env(safe-area-inset-top)); background: var(--paper); border-bottom: 1px solid var(--gold-soft); }
+  @media (min-width: 820px) { .lbar { margin: 0 -28px; padding: 14px 28px; } }
+  .lview-title { font-size: 20px; font-weight: 400; color: var(--head); }
+  .lclose { flex: none; width: 36px; height: 36px; border: 1px solid var(--gold); background: none; color: var(--ink); font: 300 24px/1 var(--body); cursor: pointer; }
+  .lclose:hover, .lclose:focus-visible { background: var(--gold); color: var(--paper); outline: none; }
+  dialog.lview section.hood:first-of-type, dialog.lview .group:first-of-type section.hood:first-of-type { margin-top: 18px; }
+  dialog.lview .filter { top: 61px; margin-top: 0; }
+  dialog.lview section.hood, dialog.lview .subhood { scroll-margin-top: 140px; }
 </style>
 
 </head>
@@ -239,8 +251,8 @@
       </div>
     </a>
   </div>
-  <div id="listings" hidden>
-    <div class="lbar"><a class="lback" href="#">&larr; All neighborhoods</a></div>
+  <dialog id="listings" class="lview" aria-label="Homes">
+    <div class="lbar"><span class="lview-title"></span><button type="button" class="lclose" aria-label="Close">&times;</button></div>
   <section class="hood" id="brio">
     <div class="hood-head">
       <h2>Brio<button type="button" class="qh" data-hood="brio" aria-label="About Brio">?</button></h2>
@@ -328,7 +340,7 @@
       </div>
     </article>
   </section>
-  </div>
+  </dialog>
 
   <dialog class="types" id="hood-info" aria-label="About this neighborhood">
     <button type="button" class="x" aria-label="Close">&times;</button>
@@ -441,32 +453,38 @@
 })();
 </script>
 <script>
-// Landing cards: the preview grid shows first; #all opens every neighborhood, #<id> opens one. Back/forward work through the URL hash.
+// Landing cards: each card opens its homes in a full-screen pop-up with an × (#all = every neighborhood, #<id> = one).
 (function () {
-  var browse = document.getElementById('browse'), list = document.getElementById('listings');
-  if (!browse || !list) return;
+  var list = document.getElementById('listings');
+  if (!list) return;
   var secs = [].slice.call(list.querySelectorAll('section.hood'));
-  browse.querySelectorAll('[data-from]').forEach(function (el) {
-    var id = el.getAttribute('data-from');
-    if (id === 'all') {
-      [].slice.call(list.querySelectorAll('img.shot')).slice(0, 4).forEach(function (src) {
-        var i = document.createElement('img'); i.alt = ''; i.src = src.src; el.appendChild(i);
-      });
-    } else {
-      var first = document.querySelector('#' + id + ' img.shot');
-      if (first) el.src = first.src;
-    }
-  });
-  function route(scroll) {
+  function route() {
     var h = decodeURIComponent(location.hash.slice(1));
-    var one = secs.some(function (s) { return s.id === h; });
-    if (h !== 'all' && !one) { browse.hidden = false; list.hidden = true; return; }
-    browse.hidden = true; list.hidden = false;
-    secs.forEach(function (s) { s.hidden = h !== 'all' && s.id !== h; });
-    if (scroll) list.querySelector('.lbar').scrollIntoView({ block: 'start' });
+    var sec = secs.filter(function (s) { return s.id === h; })[0];
+    if (h !== 'all' && !sec) { closeView(); return; }
+    secs.forEach(function (s) { s.hidden = h !== 'all' && s !== sec; });
+    openView(h === 'all' ? 'All homes' : sec.querySelector('h2').firstChild.textContent);
   }
-  window.addEventListener('hashchange', function () { route(true); });
-  route(false);
+  // Opening: the URL hash names what to show (so the phone's Back button closes the pop-up too).
+  var opened = false;
+  function openView(title) {
+    list.querySelector('.lview-title').textContent = title;
+    if (!list.open) { list.showModal ? list.showModal() : list.setAttribute('open', ''); document.body.style.overflow = 'hidden'; }
+    list.scrollTop = 0;
+  }
+  function closeView() {
+    if (list.open) { list.close ? list.close() : list.removeAttribute('open'); }
+    document.body.style.overflow = '';
+  }
+  function leave() {
+    if (opened) history.back(); else { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} route(); }
+  }
+  list.querySelector('.lclose').addEventListener('click', leave);
+  list.addEventListener('cancel', function (e) { e.preventDefault(); leave(); });
+  list.addEventListener('click', function (e) { if (e.target === list) leave(); });
+  document.querySelectorAll('a.pcard, a.hoodlink').forEach(function (a) { a.addEventListener('click', function () { opened = true; }); });
+  window.addEventListener('hashchange', function () { route(); });
+  route();
 })();
 </script>
 
