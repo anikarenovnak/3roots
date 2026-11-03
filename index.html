@@ -83,8 +83,8 @@
   .remark { margin: 8px 0 0; font-size: 14.5px; font-style: italic; font-family: var(--display); font-size: 17px; color: var(--ink); }
 
   .tagwrap { display: inline-flex; align-items: center; gap: 8px; }
-  button.q { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 21px; height: 21px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); background: none; color: var(--gold); font: 500 12px/1 var(--body); cursor: pointer; vertical-align: middle; }
-  h2 button.q { margin-left: 10px; position: relative; top: -3px; }
+  button.q { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 15px; height: 15px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); background: none; color: var(--gold); font: 500 9.5px/1 var(--body); cursor: pointer; vertical-align: middle; }
+  h2 button.q { margin-left: 8px; position: relative; top: -4px; }
   button.q:hover, button.q:focus-visible { background: var(--gold); color: var(--paper); outline: none; }
   button.qlink { background: none; border: 0; padding: 0; font: inherit; color: var(--gold); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
   dialog.types { box-sizing: border-box; width: calc(100% - 32px); max-width: 560px; max-height: 82vh; overflow: auto; padding: 22px 20px 16px; border: 1px solid var(--gold); background: var(--paper); color: var(--ink); }
@@ -117,7 +117,9 @@
   .cma h2 { font-size: 26px; margin-top: 6px; }
   .cma p { margin: 8px 0 0; font-size: 14.5px; }
   .portrait { margin: 0; flex: none; width: 170px; padding: 0; border: 1px solid var(--gold); }
-  .portrait img { display: block; width: 100%; aspect-ratio: 420 / 524; object-fit: cover; }
+  .portrait img { display: block; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center top; }
+  .contact { align-items: stretch !important; }
+  .portrait { display: flex; }
   .contact .cta { max-width: 520px; margin: 10px 0 14px; font-family: var(--display); font-style: italic; font-size: 19px; line-height: 1.45; color: var(--ink); }
   .legal p { margin: 0 0 6px; }
   .contact .cred { margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
@@ -142,7 +144,7 @@
   .cma h2, dialog.types h2 { font-size: 23px; }
   .contact .name { font-size: 28px; }
   @media (max-width: 480px) { .hood-head h2, .type-head h2, .extras-head { font-size: 24px; } .group-head h2 { font-size: 27px; } .home-top h3, .price { font-size: 19px; } }
-  button.qh { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 21px; height: 21px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); background: none; color: var(--gold); font: 500 12px/1 var(--body); cursor: pointer; vertical-align: middle; margin-left: 10px; position: relative; top: -3px; }
+  button.qh { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 15px; height: 15px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); background: none; color: var(--gold); font: 500 9.5px/1 var(--body); cursor: pointer; vertical-align: middle; margin-left: 8px; position: relative; top: -4px; }
   .subhood-head button.qh { top: 0; margin-left: 2px; }
   button.qh:hover, button.qh:focus-visible { background: var(--gold); color: var(--paper); outline: none; }
   .moved { margin: 0 0 18px; padding: 10px 14px; background: var(--tint); border-left: 2px solid var(--gold); font-size: 14px; }
@@ -188,7 +190,7 @@
       <ul class="news"><li>Recently listed</li><li>Extra room beyond the 3 listed bedrooms</li><li>May come off the market soon: seller is considering renting it out</li></ul>
       <p class="facts">3 bed &middot; 2.5 bath &middot; 2,574 sq ft &middot; built 2022 &middot; 3,694 sq ft lot &middot; HOA $256/mo</p>
       <div class="foot">
-        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz" target="_blank" rel="noopener">View listing details</a>
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz">View listing details</a>
       </div>
       </div>
     </article>
@@ -208,7 +210,7 @@
       <ul class="news"><li>5.375% interest rate offered</li></ul>
       <p class="facts">4 bed &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2024 &middot; HOA $303/mo</p>
       <div class="foot">
-        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs" target="_blank" rel="noopener">View listing details</a>
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs">View listing details</a>
       </div>
       </div>
     </article>
@@ -220,7 +222,7 @@
       <ul class="news"><li>Price cut $50,000 on Oct 15</li><li>$86,900 below original list price</li></ul>
       <p class="facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2025 &middot; HOA $303/mo</p>
       <div class="foot">
-        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU" target="_blank" rel="noopener">View listing details</a>
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">View listing details</a>
       </div>
       </div>
     </article>
@@ -232,7 +234,7 @@
       <ul class="news"><li>Price cut $50,000 on Oct 29 (was $1,249,000)</li></ul>
       <p class="facts">4 bed &middot; 3.5 bath &middot; 2,041 sq ft &middot; built 2022 &middot; HOA $303/mo</p>
       <div class="foot">
-        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M" target="_blank" rel="noopener">View listing details</a>
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M">View listing details</a>
       </div>
       </div>
     </article>
@@ -244,7 +246,7 @@
       <ul class="news"><li>Builder&rsquo;s furnished model home</li></ul>
       <p class="facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; new construction &middot; HOA $248/mo</p>
       <div class="foot">
-        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6" target="_blank" rel="noopener">View listing details</a>
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">View listing details</a>
       </div>
       </div>
     </article>
@@ -256,7 +258,7 @@
       <ul class="news"><li>Back on the market</li><li>Price up $50,000 on Oct 31</li></ul>
       <p class="facts">4 bed &middot; 3.5 bath &middot; 2,121 sq ft &middot; new construction (2026) &middot; HOA $248/mo</p>
       <div class="foot">
-        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3" target="_blank" rel="noopener">View listing details</a>
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">View listing details</a>
       </div>
       </div>
     </article>
