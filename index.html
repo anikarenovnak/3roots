@@ -281,6 +281,40 @@
   .rf-prefer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; font-size: 13px; color: var(--muted); }
   .rf-sec .rf-full { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; font-size: 13px; color: var(--muted); }
   .rf-sec textarea { font: 400 15px/1.4 var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); border-radius: 0; padding: 9px 10px; width: 100%; box-sizing: border-box; }
+  /* Constellation wizard (her 2026-11-02 spec): numbered steps one at a time, progress bar, no divider lines. */
+  .rf-wizard .rf-title { margin: 0 40px 0 0; }
+  .rf-wizard .rf-title h3 { font-size: 24px; }
+  .rf-progress { margin: 18px 0 30px; }
+  .rf-bar { height: 4px; background: var(--gold-soft); }
+  .rf-bar span { display: block; height: 100%; width: 33%; background: var(--gold); transition: width .25s; }
+  .rf-steps { display: flex; justify-content: space-between; margin: 8px 0 0; padding: 0; list-style: none; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .rf-steps li.on { color: var(--gold); font-weight: 500; }
+  .rf-steps li.done { color: var(--ink); }
+  .rf-step h4 { display: flex; align-items: center; gap: 10px; margin: 0; font-family: var(--body); font-size: 18px; font-weight: 400; color: var(--head); }
+  .rf-num { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold); font-size: 13px; }
+  .rf-step .rf-hint { margin: 6px 0 18px 36px; }
+  .rf-step .rf-pros { gap: 20px; }
+  .rf-step .rf-grid { margin-top: 20px; gap: 16px 14px; }
+  .rf-lab { display: inline; }
+  .rf-lab .rf-req { margin-left: 2px; }
+  .rf-step .rf-prefer { margin-top: 20px; }
+  .rf-step .rf-full { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .rf-step textarea { font: 400 15px/1.45 var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); border-radius: 0; padding: 10px 12px; width: 100%; box-sizing: border-box; resize: vertical; }
+  .rf-step textarea:focus { outline: none; border-color: var(--gold); }
+  dialog .x:focus { outline: none; }
+  dialog .x:focus-visible { outline: 1px solid var(--gold); }
+  .rf-nav .rf-back { flex: none; }
+  .rf-nav .rf-send, .rf-nav .rf-next { flex: 0 1 auto; }
+  .rf-nav { display: flex; justify-content: flex-end; gap: 10px; margin-top: 32px; }
+  .rf-nav button { font: 500 12.5px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; padding: 13px 20px; cursor: pointer; border: 1px solid var(--gold); }
+  .rf-next, .rf-wizard .rf-send { color: var(--paper); background: var(--gold); margin-top: 0; }
+  .rf-back { color: var(--ink); background: none; margin-right: auto; }
+  @media (max-width: 560px) {
+    .rf-step h4 { font-size: 17px; }
+    .rf-step .rf-hint { margin-left: 0; }
+    .rf-nav button { padding: 12px 14px; letter-spacing: 0.1em; }
+    .rf-steps { font-size: 10.5px; }
+  }
   .site-only { display: block !important; }
   .claude-only { display: none !important; }
 </style>
@@ -464,40 +498,46 @@
       </div>
       <p class="const-cta claude-only">Need someone? Reach out, and I&rsquo;ll connect you.</p>
       <p class="reach claude-only"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Connect with me</a></p>
-      <form class="rform site-only" data-kind="constellation" novalidate>
-        <div class="rf-title"><h3>The Constellation</h3><p>Request an introduction</p></div>
-        <section class="rf-sec">
-          <h4>Who Can I Connect You With?</h4>
+      <form class="rform rf-wizard site-only" data-kind="constellation" novalidate>
+        <div class="rf-title"><h3>The Constellation</h3></div>
+        <div class="rf-progress" aria-hidden="true">
+          <div class="rf-bar"><span></span></div>
+          <ol class="rf-steps"><li>Who</li><li>Contact info</li><li>Your need</li></ol>
+        </div>
+        <section class="rf-step" data-step="1">
+          <h4><span class="rf-num">1</span>Who Can I Connect You With?</h4>
           <p class="rf-hint">Select all that apply.</p>
           <div class="rf-pros">
-          <fieldset class="rf-group"><legend>Lending &amp; Home Equity</legend><label class="rf-check"><input type="checkbox" name="pro" value="Mortgage Broker / Lender"><span>Mortgage Broker / Lender</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Reverse Mortgage Specialist"><span>Reverse Mortgage Specialist</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Home Equity Specialist"><span>Home Equity Specialist</span></label></fieldset>
-          <fieldset class="rf-group"><legend>Financial Planning &amp; Tax</legend><label class="rf-check"><input type="checkbox" name="pro" value="Certified Financial Planner (CFP)"><span>Certified Financial Planner (CFP)</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Wealth Management Advisor"><span>Wealth Management Advisor</span></label><label class="rf-check"><input type="checkbox" name="pro" value="CPA"><span>CPA</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Tax Strategist"><span>Tax Strategist</span></label></fieldset>
-          <fieldset class="rf-group"><legend>Legal</legend><label class="rf-check"><input type="checkbox" name="pro" value="Estate Planning Attorney"><span>Estate Planning Attorney</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real Estate Attorney"><span>Real Estate Attorney</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Probate Attorney"><span>Probate Attorney</span></label></fieldset>
-          <fieldset class="rf-group"><legend>Investing</legend><label class="rf-check"><input type="checkbox" name="pro" value="Investment Partners &amp; Syndications"><span>Investment Partners &amp; Syndications</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Property Manager"><span>Property Manager</span></label></fieldset>
-          <fieldset class="rf-group"><legend>Buying, Selling &amp; Insurance</legend><label class="rf-check"><input type="checkbox" name="pro" value="Home Inspector"><span>Home Inspector</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Appraiser"><span>Appraiser</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Homeowners Insurance Agent"><span>Homeowners Insurance Agent</span></label></fieldset>
-          <fieldset class="rf-group"><legend>Building &amp; Renovation</legend><label class="rf-check"><input type="checkbox" name="pro" value="General Contractor"><span>General Contractor</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Architect"><span>Architect</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Interior Designer"><span>Interior Designer</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Roofer"><span>Roofer</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Solar Installer"><span>Solar Installer</span></label></fieldset>
-          <fieldset class="rf-group"><legend>Moving &amp; Relocation</legend><label class="rf-check"><input type="checkbox" name="pro" value="Movers &amp; Shippers"><span>Movers &amp; Shippers</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real Estate Agent Outside San Diego"><span>Real Estate Agent Outside San Diego</span></label></fieldset>
-          <fieldset class="rf-group"><legend>Home Care</legend><label class="rf-check"><input type="checkbox" name="pro" value="Gardener"><span>Gardener</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Landscaper"><span>Landscaper</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Pet Sitter"><span>Pet Sitter</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Lending &amp; Home Equity</legend><label class="rf-check"><input type="checkbox" name="pro" value="Mortgage Broker / Lender"><span>Mortgage Broker / Lender</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Reverse Mortgage Specialist"><span>Reverse Mortgage Specialist</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Home Equity Specialist"><span>Home Equity Specialist</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Financial Planning &amp; Tax</legend><label class="rf-check"><input type="checkbox" name="pro" value="Certified Financial Planner (CFP)"><span>Certified Financial Planner (CFP)</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Wealth Management Advisor"><span>Wealth Management Advisor</span></label><label class="rf-check"><input type="checkbox" name="pro" value="CPA"><span>CPA</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Tax Strategist"><span>Tax Strategist</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Legal</legend><label class="rf-check"><input type="checkbox" name="pro" value="Estate Planning Attorney"><span>Estate Planning Attorney</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real Estate Attorney"><span>Real Estate Attorney</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Probate Attorney"><span>Probate Attorney</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Investing</legend><label class="rf-check"><input type="checkbox" name="pro" value="Investment Partners &amp; Syndications"><span>Investment Partners &amp; Syndications</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Property Manager"><span>Property Manager</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Buying, Selling &amp; Insurance</legend><label class="rf-check"><input type="checkbox" name="pro" value="Home Inspector"><span>Home Inspector</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Appraiser"><span>Appraiser</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Homeowners Insurance Agent"><span>Homeowners Insurance Agent</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Building &amp; Renovation</legend><label class="rf-check"><input type="checkbox" name="pro" value="General Contractor"><span>General Contractor</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Architect"><span>Architect</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Interior Designer"><span>Interior Designer</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Roofer"><span>Roofer</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Solar Installer"><span>Solar Installer</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Moving &amp; Relocation</legend><label class="rf-check"><input type="checkbox" name="pro" value="Movers &amp; Shippers"><span>Movers &amp; Shippers</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real Estate Agent Outside San Diego"><span>Real Estate Agent Outside San Diego</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Home Care</legend><label class="rf-check"><input type="checkbox" name="pro" value="Gardener"><span>Gardener</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Landscaper"><span>Landscaper</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Pet Sitter"><span>Pet Sitter</span></label></fieldset>
           </div>
+          <div class="rf-nav"><button type="button" class="rf-next">Next</button></div>
         </section>
-        <section class="rf-sec">
-          <h4>Your Contact Info</h4>
+        <section class="rf-step" data-step="2" hidden>
+          <h4><span class="rf-num">2</span>Your Contact Info</h4>
           <div class="rf-grid">
-            <label>First name <span class="rf-req" aria-hidden="true">*</span><input name="firstname" autocomplete="given-name" required></label>
-            <label>Last name <span class="rf-req" aria-hidden="true">*</span><input name="lastname" autocomplete="family-name" required></label>
-            <label>Phone <span class="rf-req" aria-hidden="true">*</span><input name="phone" type="tel" autocomplete="tel" required></label>
-            <label>Email <span class="rf-req" aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" required></label>
+            <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
+            <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
+            <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" autocomplete="tel" required></label>
+            <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" required></label>
           </div>
           <div class="rf-prefer"><span>I prefer:</span>
             <label class="rf-check"><input type="checkbox" name="prefer" value="Text"><span>Text</span></label>
             <label class="rf-check"><input type="checkbox" name="prefer" value="Email"><span>Email</span></label>
           </div>
+          <div class="rf-nav"><button type="button" class="rf-back">Back</button><button type="button" class="rf-next">Next</button></div>
         </section>
-        <section class="rf-sec">
-          <h4>Tell Me About Your Need</h4>
-          <label class="rf-full">A few details help me introduce you to the right person.<textarea name="message" rows="4"></textarea></label>
+        <section class="rf-step" data-step="3" hidden>
+          <h4><span class="rf-num">3</span>Tell Me About Your Need</h4>
+          <label class="rf-full"><span class="rf-lab">A few details help me introduce you to the right person.</span><textarea name="message" rows="5"></textarea></label>
+          <div class="rf-nav"><button type="button" class="rf-back">Back</button><button type="submit" class="rf-send">Request an Introduction</button></div>
         </section>
-        <button type="submit" class="rf-send">Submit</button>
         <p class="rf-status" role="status"></p>
       </form>
     </section>
@@ -509,11 +549,11 @@
       <p class="reach claude-only"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Ask about a spot this month</a></p>
       <form class="rform site-only" data-kind="cma" novalidate>
         <div class="rf-grid">
-          <label>First name <span class="rf-req" aria-hidden="true">*</span><input name="firstname" autocomplete="given-name" required></label>
-          <label>Last name <span class="rf-req" aria-hidden="true">*</span><input name="lastname" autocomplete="family-name" required></label>
-          <label>Email <span class="rf-req" aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" required></label>
-          <label>Phone <span class="rf-req" aria-hidden="true">*</span><input name="phone" type="tel" autocomplete="tel" required></label>
-          <label class="rf-full">Home address <span class="rf-req" aria-hidden="true">*</span><input name="address" autocomplete="street-address" required></label>
+          <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
+          <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
+          <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" required></label>
+          <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" autocomplete="tel" required></label>
+          <label class="rf-full"><span class="rf-lab">Home address<span class="rf-req" aria-hidden="true">*</span></span><input name="address" autocomplete="street-address" required></label>
           <label class="rf-full">Any upgrades you&rsquo;ve made? Please describe them.<textarea name="upgrades" rows="3" placeholder="e.g. remodeled kitchen (2023), owned solar, new flooring"></textarea></label>
           <label class="rf-full">Anything else I should know? (optional)<textarea name="message" rows="3"></textarea></label>
         </div>
@@ -638,6 +678,35 @@
     b.addEventListener('click', function () { d.showModal ? d.showModal() : d.setAttribute('open', ''); });
     d.querySelector('.x').addEventListener('click', function () { d.close ? d.close() : d.removeAttribute('open'); });
     d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  });
+})();
+</script>
+<script>
+// Constellation form as 3 steps with a progress bar; Next/Back move between steps, Enter advances until the last step.
+(function () {
+  document.querySelectorAll('form.rf-wizard').forEach(function (f) {
+    var steps = [].slice.call(f.querySelectorAll('.rf-step')), bar = f.querySelector('.rf-bar span'), labels = f.querySelectorAll('.rf-steps li');
+    var st = f.querySelector('.rf-status'), cur = 0;
+    function go(i) {
+      cur = i;
+      steps.forEach(function (s, k) { s.hidden = k !== i; });
+      bar.style.width = ((i + 1) / steps.length * 100) + '%';
+      labels.forEach(function (l, k) { l.className = k < i ? 'done' : (k === i ? 'on' : ''); });
+      st.textContent = ''; st.className = 'rf-status';
+      var d = f.closest('dialog'); if (d) d.scrollTop = 0;
+    }
+    function ok(i) {
+      if (i !== 1) return true;
+      var v = function (n) { return f.elements[n].value.trim(); };
+      if (v('firstname') && v('lastname') && v('phone') && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) return true;
+      st.className = 'rf-status err'; st.textContent = 'Please fill in your first and last name, phone and a valid email.'; return false;
+    }
+    f.querySelectorAll('.rf-next').forEach(function (b) { b.addEventListener('click', function () { if (ok(cur)) go(cur + 1); }); });
+    f.querySelectorAll('.rf-back').forEach(function (b) { b.addEventListener('click', function () { go(cur - 1); }); });
+    f.addEventListener('submit', function (e) {
+      if (cur < steps.length - 1) { e.preventDefault(); e.stopImmediatePropagation(); if (ok(cur)) go(cur + 1); }
+    }, true);
+    go(0);
   });
 })();
 </script>
