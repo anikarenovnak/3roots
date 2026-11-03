@@ -746,24 +746,10 @@ window.rfValidate = (function () {
   function check(name, raw) {
     var s = (raw || '').trim();
     if (!s) return 'Please enter your ' + LABEL[name] + '.';
-    if (name === 'firstname' || name === 'lastname') {
-      if (!/[A-Za-zÀ-ÿ]/.test(s)) return 'Your ' + LABEL[name] + ' should contain letters.';
-      if (/[0-9@]/.test(s)) return 'Your ' + LABEL[name] + ' shouldn’t include numbers or symbols like @.';
-    }
-    if (name === 'phone') {
-      var d = digits(s);
-      if (/[A-Za-z]/.test(s)) return 'Phone number should only have numbers, e.g. (858) 555-0123.';
-      if (d.length < 10) return 'Phone number is too short: it needs 10 digits including area code, e.g. (858) 555-0123.';
-      if (d.length > 10) return 'Phone number has too many digits: enter 10 digits including area code, e.g. (858) 555-0123.';
-    }
-    if (name === 'email') {
-      if (/\s/.test(s)) return 'Email can’t contain spaces.';
-      if (s.indexOf('@') < 0) return 'Email is missing the “@”, e.g. name@example.com.';
-      if (!/^[^@]+@[^@]+\.[A-Za-z]{2,}$/.test(s)) return 'Email looks incomplete: it should end like name@example.com.';
-    }
-    if (name === 'address') {
-      if (!/\d/.test(s) || !/[A-Za-z]{2,}/.test(s)) return 'Please include the house number and street, e.g. 10656 Melogold Way.';
-    }
+    if ((name === 'firstname' || name === 'lastname') && (!/[A-Za-zÀ-ÿ]/.test(s) || /[0-9@]/.test(s))) return 'Please enter a valid ' + LABEL[name] + '.';
+    if (name === 'phone' && (/[A-Za-z]/.test(s) || digits(s).length !== 10)) return 'Please enter a valid phone number.';
+    if (name === 'email' && !/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(s)) return 'Please enter a valid email address.';
+    if (name === 'address' && (!/\d/.test(s) || !/[A-Za-z]{2,}/.test(s))) return 'Please enter a valid home address.';
     return '';
   }
   function setErr(el, msg) {
