@@ -337,6 +337,9 @@
   #dlg-tour .rf-nav { justify-content: flex-start; margin-top: 22px; }
   .tour-notyou { margin: 16px 0 0 !important; font-size: 12.5px !important; }
   .tour-change { background: none; border: 0; padding: 0; font: inherit; color: var(--gold); text-decoration: underline; cursor: pointer; }
+  .rf-err { display: block; margin-top: 4px; font-size: 12.5px; line-height: 1.35; letter-spacing: 0; text-transform: none; color: #a23b2a; }
+  .rf-err:empty { display: none; }
+  input.rf-bad, textarea.rf-bad { border-color: #a23b2a !important; }
   .site-only { display: revert !important; }
   .claude-only { display: none !important; }
 </style>
@@ -524,8 +527,8 @@
       <div class="rf-grid">
         <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
         <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
-        <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" autocomplete="tel" required></label>
-        <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" required></label>
+        <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(858) 555-0123" required></label>
+        <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" inputmode="email" autocapitalize="off" autocomplete="email" placeholder="name@example.com" required></label>
         <label class="rf-full"><span class="rf-lab">Days or times that work for you (optional)</span><input name="when" placeholder="e.g. Saturday morning, weekday evenings"></label>
       </div>
       <label class="tour-remember"><input type="checkbox" name="remember" checked> Remember me on this device for future tour requests</label>
@@ -575,8 +578,8 @@
           <div class="rf-grid">
             <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
             <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
-            <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" autocomplete="tel" required></label>
-            <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" required></label>
+            <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(858) 555-0123" required></label>
+            <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" inputmode="email" autocapitalize="off" autocomplete="email" placeholder="name@example.com" required></label>
           </div>
           <div class="rf-prefer"><span>I prefer:</span>
             <label class="rf-check"><input type="checkbox" name="prefer" value="Text"><span>Text</span></label>
@@ -602,8 +605,8 @@
         <div class="rf-grid">
           <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
           <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
-          <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" required></label>
-          <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" autocomplete="tel" required></label>
+          <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" inputmode="email" autocapitalize="off" autocomplete="email" placeholder="name@example.com" required></label>
+          <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(858) 555-0123" required></label>
           <label class="rf-full"><span class="rf-lab">Home address<span class="rf-req" aria-hidden="true">*</span></span><input name="address" autocomplete="street-address" required></label>
           <label class="rf-full">Any upgrades you&rsquo;ve made? Please describe them.<textarea name="upgrades" rows="3" placeholder="e.g. remodeled kitchen (2023), owned solar, new flooring"></textarea></label>
           <label class="rf-full">Anything else I should know? (optional)<textarea name="message" rows="3"></textarea></label>
@@ -733,6 +736,69 @@
 })();
 </script>
 <script>
+// Shared checks for every form: specific message under each field, and standard formats
+// (phone "(858) 555-0123", email lowercase, names capitalized, trimmed).
+window.rfValidate = (function () {
+  var LABEL = { firstname: 'first name', lastname: 'last name', phone: 'phone number', email: 'email', address: 'home address' };
+  function digits(s) { var d = s.replace(/\D/g, ''); return d.length === 11 && d[0] === '1' ? d.slice(1) : d; }
+  function fmtPhone(s) { var d = digits(s); return d.length === 10 ? '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6) : s.trim(); }
+  function fmtName(s) { s = s.trim().replace(/\s+/g, ' '); return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+  function check(name, raw) {
+    var s = (raw || '').trim();
+    if (!s) return 'Please enter your ' + LABEL[name] + '.';
+    if (name === 'firstname' || name === 'lastname') {
+      if (!/[A-Za-zÀ-ÿ]/.test(s)) return 'Your ' + LABEL[name] + ' should contain letters.';
+      if (/[0-9@]/.test(s)) return 'Your ' + LABEL[name] + ' shouldn’t include numbers or symbols like @.';
+    }
+    if (name === 'phone') {
+      var d = digits(s);
+      if (/[A-Za-z]/.test(s)) return 'Phone number should only have numbers, e.g. (858) 555-0123.';
+      if (d.length < 10) return 'Phone number is too short: it needs 10 digits including area code, e.g. (858) 555-0123.';
+      if (d.length > 10) return 'Phone number has too many digits: enter 10 digits including area code, e.g. (858) 555-0123.';
+    }
+    if (name === 'email') {
+      if (/\s/.test(s)) return 'Email can’t contain spaces.';
+      if (s.indexOf('@') < 0) return 'Email is missing the “@”, e.g. name@example.com.';
+      if (!/^[^@]+@[^@]+\.[A-Za-z]{2,}$/.test(s)) return 'Email looks incomplete: it should end like name@example.com.';
+    }
+    if (name === 'address') {
+      if (!/\d/.test(s) || !/[A-Za-z]{2,}/.test(s)) return 'Please include the house number and street, e.g. 10656 Melogold Way.';
+    }
+    return '';
+  }
+  function setErr(el, msg) {
+    var lab = el.closest('label'), e = lab && lab.querySelector('.rf-err');
+    if (!e && lab) { e = document.createElement('span'); e.className = 'rf-err'; lab.appendChild(e); }
+    if (e) e.textContent = msg;
+    el.classList.toggle('rf-bad', !!msg);
+    el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+  }
+  document.addEventListener('input', function (e) { if (e.target.classList && e.target.classList.contains('rf-bad')) setErr(e.target, ''); });
+  document.addEventListener('blur', function (e) {
+    var el = e.target; if (!el.closest || !el.closest('form') || !el.name) return;
+    if (el.name === 'phone') el.value = fmtPhone(el.value);
+    if (el.name === 'email') el.value = el.value.trim().toLowerCase();
+    if (el.name === 'firstname' || el.name === 'lastname') el.value = fmtName(el.value);
+  }, true);
+  return function (form, names) {
+    var first = null, n = 0;
+    names.forEach(function (name) {
+      var el = form.elements[name]; if (!el) return;
+      if (name === 'phone') el.value = fmtPhone(el.value);
+      if (name === 'email') el.value = el.value.trim().toLowerCase();
+      if (name === 'firstname' || name === 'lastname') el.value = fmtName(el.value);
+      var msg = check(name, el.value);
+      setErr(el, msg);
+      if (msg) { n++; if (!first) first = el; }
+    });
+    var st = form.querySelector('.rf-status');
+    if (st) { st.className = n ? 'rf-status err' : 'rf-status'; st.textContent = n ? (n === 1 ? 'Please fix the highlighted field.' : 'Please fix the ' + n + ' highlighted fields.') : ''; }
+    if (first) first.focus();
+    return !n;
+  };
+})();
+</script>
+<script>
 // Constellation form as 3 steps with a progress bar; Next/Back move between steps, Enter advances until the last step.
 (function () {
   document.querySelectorAll('form.rf-wizard').forEach(function (f) {
@@ -748,9 +814,7 @@
     }
     function ok(i) {
       if (i !== 1) return true;
-      var v = function (n) { return f.elements[n].value.trim(); };
-      if (v('firstname') && v('lastname') && v('phone') && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) return true;
-      st.className = 'rf-status err'; st.textContent = 'Please fill in your first and last name, phone and a valid email.'; return false;
+      return window.rfValidate(f, ['firstname', 'lastname', 'phone', 'email']);
     }
     f.querySelectorAll('.rf-next').forEach(function (b) { b.addEventListener('click', function () { if (ok(cur)) go(cur + 1); }); });
     f.querySelectorAll('.rf-back').forEach(function (b) { b.addEventListener('click', function () { go(cur - 1); }); });
@@ -770,13 +834,7 @@
       e.preventDefault();
       var st = f.querySelector('.rf-status'), btn = f.querySelector('.rf-send');
       var v = function (n) { var el = f.elements[n]; return el && el.value !== undefined ? el.value.trim() : ''; };
-      var missing = ['firstname', 'lastname', 'phone'].filter(function (n) { return !v(n); });
-      if (f.dataset.kind === 'cma' && !v('address')) missing.push('address');
-      if (missing.length || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) {
-        st.className = 'rf-status err';
-        st.textContent = 'Please fill in your first and last name, email, phone' + (f.dataset.kind === 'cma' ? ' and home address.' : '.');
-        return;
-      }
+      if (!window.rfValidate(f, f.dataset.kind === 'cma' ? ['firstname', 'lastname', 'email', 'phone', 'address'] : ['firstname', 'lastname', 'phone', 'email'])) return;
       var lines;
       if (f.dataset.kind === 'constellation') {
         var pros = [].slice.call(f.querySelectorAll('input[name="pro"]:checked')).map(function (c) { return c.value; });
@@ -860,9 +918,7 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var v = function (n) { return form.elements[n].value.trim(); }, st = form.querySelector('.rf-status');
-    if (!v('firstname') || !v('lastname') || !v('phone') || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) {
-      st.className = 'rf-status err'; st.textContent = 'Please fill in your first and last name, phone and a valid email.'; return;
-    }
+    if (!window.rfValidate(form, ['firstname', 'lastname', 'phone', 'email'])) return;
     var c = { firstname: v('firstname'), lastname: v('lastname'), phone: v('phone'), email: v('email') };
     if (form.elements.remember.checked) save(c); else forget();
     var btn = form.querySelector('.rf-send'); btn.disabled = true; st.className = 'rf-status'; st.textContent = 'Sending…';
