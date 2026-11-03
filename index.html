@@ -203,7 +203,8 @@
   dialog.lview::backdrop { background: rgba(20, 18, 15, .55); }
   .lbar { position: sticky; top: 0; z-index: 7; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 -14px; padding: 10px 14px; background: var(--paper); border-bottom: 1px solid var(--gold-soft); }
   @media (min-width: 820px) { .lbar { margin: 0 -28px; padding: 14px 28px; } }
-  .lview-title { font-size: 20px; font-weight: 400; color: var(--head); }
+  .lview-title { display: none; }  /* the pop-up's own headings name what's shown; no repeat in the bar */
+  .lbar { justify-content: flex-end; }
   .lclose { flex: none; width: 36px; height: 36px; border: 1px solid var(--gold); background: none; color: var(--ink); font: 300 24px/1 var(--body); cursor: pointer; }
   .lclose:hover, .lclose:focus-visible { background: var(--gold); color: var(--paper); outline: none; }
   dialog.lview section.hood:first-of-type, dialog.lview .group:first-of-type section.hood:first-of-type { margin-top: 18px; }
@@ -221,7 +222,8 @@
   .ocard .label { font-size: 11px; }
   dialog.offer { max-width: 620px; }
   dialog.offer section { background: none; padding: 0; margin: 0; }
-  dialog.offer .const-head { margin-right: 34px; }
+  dialog.offer ul.chips { margin-top: 26px; }
+  dialog.offer .cma p:first-child { margin: 26px 34px 0 0; }
   dialog.offer .cma h2 { margin-right: 34px; }
   dialog.offer .reach { margin: 18px 0 2px !important; justify-content: flex-start; }
 </style>
@@ -396,18 +398,6 @@
   <dialog class="types offer" id="dlg-constellation" aria-label="The Constellation">
     <button type="button" class="x" aria-label="Close">&times;</button>
     <section class="constellation" id="constellation">
-      <div class="const-head">
-        <svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
-        <circle cx="60" cy="60" r="52" fill="#0c1720" stroke="#28475c" stroke-width="1.5"/>
-        <g fill="#fdfdfb" opacity=".7"><circle cx="30" cy="34" r="1"/><circle cx="78" cy="30" r="1"/><circle cx="82" cy="72" r="1"/><circle cx="24" cy="78" r="1"/><circle cx="66" cy="20" r="1"/><circle cx="40" cy="84" r="1"/><circle cx="86" cy="50" r="1"/></g>
-        <polyline points="38,66 45,42 58,52 68,32 80,46" fill="none" stroke="#f7f5ee" stroke-width=".8" opacity=".55"/>
-        <g fill="#e9e3d6"><path d="M38 61l1 4 4 1-4 1-1 4-1-4-4-1 4-1z"/><path d="M45 37.5l.9 3.6 3.6.9-3.6.9-.9 3.6-.9-3.6-3.6-.9 3.6-.9z"/><path d="M58 46.5l1.3 4.2 4.2 1.3-4.2 1.3-1.3 4.2-1.3-4.2-4.2-1.3 4.2-1.3z"/><path d="M68 27.5l.9 3.6 3.6.9-3.6.9-.9 3.6-.9-3.6-3.6-.9 3.6-.9z"/><path d="M80 41.5l.9 3.6 3.6.9-3.6.9-.9 3.6-.9-3.6-3.6-.9 3.6-.9z"/></g>
-      </svg>
-        <div>
-          <div class="label">The Constellation</div>
-          <p class="const-intro">My personal network of trusted partners, here for you whenever you need the connection.</p>
-        </div>
-      </div>
       <ul class="chips"><li>Lending</li><li>Home equity &amp; reverse mortgages</li><li>Financial planning &amp; wealth management</li><li>Investing</li><li>Moving</li><li>Repairs &amp; maintenance</li><li>Home care</li><li>Renovations</li><li>Insurance</li><li>Tax &amp; legal</li><li>Estate planning</li><li class="wide">Relocating? Agent referrals: Bay Area, Los Angeles, Orange County, Virginia, D.C. &amp; Maryland</li></ul>
       <p class="const-cta">Need someone? Reach out, and I&rsquo;ll connect you.</p>
       <p class="reach"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Connect with me</a></p>
@@ -416,8 +406,6 @@
   <dialog class="types offer" id="dlg-valuation" aria-label="Curious what your home is worth?">
     <button type="button" class="x" aria-label="Close">&times;</button>
     <section class="cma" id="valuation">
-      <div class="label">For homeowners &middot; Complimentary</div>
-      <h2>Curious what your home is worth?</h2>
       <p>I prepare a free CMA, a detailed valuation based on recent sales near you. I take on just three a month, so reach out to see if I have a spot for you this month.</p>
       <p class="reach"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Ask about a spot this month</a></p>
     </section>
@@ -505,7 +493,7 @@
     var sec = secs.filter(function (s) { return s.id === h; })[0];
     if (h !== 'all' && !sec) { closeView(); return; }
     secs.forEach(function (s) { s.hidden = h !== 'all' && s !== sec; });
-    openView(h === 'all' ? 'All homes' : sec.querySelector('h2').firstChild.textContent);
+    openView(h === 'all' ? 'All homes' : '');
   }
   // Opening: the URL hash names what to show (so the phone's Back button closes the pop-up too).
   var opened = false;
