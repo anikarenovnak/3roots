@@ -315,6 +315,12 @@
     .rf-nav button { padding: 12px 14px; letter-spacing: 0.1em; }
     .rf-steps { font-size: 10.5px; }
   }
+  .rf-done { text-align: center; padding: 28px 8px 12px; }
+  .rf-check-icon { width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold); display: flex; align-items: center; justify-content: center; }
+  .rf-check-icon svg { width: 28px; height: 28px; }
+  .rf-done h4 { margin: 0; font-family: var(--body); font-size: 20px; font-weight: 400; color: var(--head); }
+  .rf-done p { margin: 10px auto 0; max-width: 340px; font-size: 15px; line-height: 1.55; color: var(--muted); }
+  .rf-close { margin-top: 24px; font: 500 12.5px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper); background: var(--gold); border: 0; padding: 13px 26px; cursor: pointer; }
   .extras-head, .offers { display: none !important; }
   .site-only { display: block !important; }
   .claude-only { display: none !important; }
@@ -745,7 +751,17 @@
       fetch(URL, { method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fields: fields, context: { pageUri: location.href.split('#')[0], pageName: document.title } }) })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function () { f.innerHTML = '<p class="rf-status">Thank you! I&rsquo;ll be in touch soon. &ndash; Ani</p>'; })
+        .then(function () {
+          var how = (typeof pref !== 'undefined' && pref && pref.length === 1) ? (pref[0] === 'Text' ? 'by text' : 'by email') : '';
+          var body = f.dataset.kind === 'constellation'
+            ? 'I&rsquo;ll review who you&rsquo;re looking for and reach out ' + (how ? how + ' ' : '') + 'with an introduction.'
+            : 'I&rsquo;ll start on your home&rsquo;s valuation and reach out to confirm the details.';
+          f.innerHTML = '<div class="rf-done"><div class="rf-check-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'
+            + '<h4>Request received</h4><p>' + body + '</p>'
+            + '<button type="button" class="rf-close">Close</button></div>';
+          var d = f.closest('dialog'); if (d) d.scrollTop = 0;
+          f.querySelector('.rf-close').addEventListener('click', function () { if (d) d.close(); });
+        })
         .catch(function () { btn.disabled = false; st.className = 'rf-status err'; st.innerHTML = 'Sorry, that didn&rsquo;t go through. Please <a href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">reach me here</a>.'; });
     });
   });
