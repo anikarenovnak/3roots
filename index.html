@@ -254,6 +254,16 @@
   .rf-status { margin: 10px 0 0; font-size: 14px; }
   .rf-status.err { color: #a23b2a; }
   @media (max-width: 560px) { .rf-grid { grid-template-columns: 1fr; } }
+  .rf-pros { display: flex; flex-direction: column; gap: 14px; }
+  .rf-q { margin: 4px 0 0; font-size: 14px; color: var(--ink); }
+  .rf-q span { color: var(--muted); font-size: 12.5px; }
+  .rf-group { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .rf-group legend { padding: 0 0 6px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .rf-check { display: inline-flex !important; flex-direction: row !important; align-items: center; gap: 0 !important; cursor: pointer; }
+  .rf-check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .rf-check span { font-size: 13px; letter-spacing: 0; color: var(--ink); border: 1px solid var(--gold-soft); padding: 7px 11px; line-height: 1.2; }
+  .rf-check input:checked + span { background: var(--gold); border-color: var(--gold); color: var(--paper); }
+  .rf-check input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
   .site-only { display: block !important; }
   .claude-only { display: none !important; }
 </style>
@@ -428,11 +438,20 @@
       <form class="rform site-only" data-kind="constellation" novalidate>
         <div class="rf-grid">
           <label>First name<input name="firstname" autocomplete="given-name" required></label>
-          <label>Last name<input name="lastname" autocomplete="family-name"></label>
+          <label>Last name<input name="lastname" autocomplete="family-name" required></label>
           <label>Email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
-          <label class="rf-full">What kind of pro?<select name="pro"><option>Lending</option><option>Home equity &amp; reverse mortgages</option><option>Financial planning &amp; wealth management</option><option>Investing</option><option>Moving</option><option>Repairs &amp; maintenance</option><option>Home care</option><option>Renovations</option><option>Insurance</option><option>Tax &amp; legal</option><option>Estate planning</option><option>Agent referral (relocating)</option><option>Something else</option></select></label>
-          <label class="rf-full">Message (optional)<textarea name="message" rows="3"></textarea></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+          <div class="rf-full rf-pros"><p class="rf-q">Who can I connect you with? <span>Choose any that apply.</span></p>
+          <fieldset class="rf-group"><legend>Lending &amp; home equity</legend><label class="rf-check"><input type="checkbox" name="pro" value="Mortgage broker / lender"><span>Mortgage broker / lender</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Reverse mortgage specialist"><span>Reverse mortgage specialist</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Home equity specialist"><span>Home equity specialist</span></label></fieldset>
+          <fieldset class="rf-group"><legend>Financial planning &amp; tax</legend><label class="rf-check"><input type="checkbox" name="pro" value="Certified Financial Planner (CFP)"><span>Certified Financial Planner (CFP)</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Wealth management advisor"><span>Wealth management advisor</span></label><label class="rf-check"><input type="checkbox" name="pro" value="CPA"><span>CPA</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Tax strategist"><span>Tax strategist</span></label></fieldset>
+          <fieldset class="rf-group"><legend>Legal</legend><label class="rf-check"><input type="checkbox" name="pro" value="Estate planning attorney"><span>Estate planning attorney</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real estate attorney"><span>Real estate attorney</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Probate attorney"><span>Probate attorney</span></label></fieldset>
+          <fieldset class="rf-group"><legend>Investing</legend><label class="rf-check"><input type="checkbox" name="pro" value="Investment partners / syndications"><span>Investment partners / syndications</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Property manager"><span>Property manager</span></label></fieldset>
+          <fieldset class="rf-group"><legend>Buying, selling &amp; insurance</legend><label class="rf-check"><input type="checkbox" name="pro" value="Home inspector"><span>Home inspector</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Appraiser"><span>Appraiser</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Homeowners insurance agent"><span>Homeowners insurance agent</span></label></fieldset>
+          <fieldset class="rf-group"><legend>Building &amp; renovation</legend><label class="rf-check"><input type="checkbox" name="pro" value="General contractor"><span>General contractor</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Architect"><span>Architect</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Interior designer"><span>Interior designer</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Roofer"><span>Roofer</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Solar roof installer"><span>Solar roof installer</span></label></fieldset>
+          <fieldset class="rf-group"><legend>Moving &amp; relocating</legend><label class="rf-check"><input type="checkbox" name="pro" value="Movers / shippers"><span>Movers / shippers</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real estate agent outside San Diego"><span>Real estate agent outside San Diego</span></label></fieldset>
+          <fieldset class="rf-group"><legend>Home care</legend><label class="rf-check"><input type="checkbox" name="pro" value="Gardener"><span>Gardener</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Landscaper"><span>Landscaper</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Pet sitter"><span>Pet sitter</span></label></fieldset>
+          </div>
+          <label class="rf-full">Is there anything else I can help with? (optional)<textarea name="message" rows="3"></textarea></label>
         </div>
         <button type="submit" class="rf-send">Send my request</button>
         <p class="rf-status" role="status"></p>
@@ -447,11 +466,12 @@
       <form class="rform site-only" data-kind="cma" novalidate>
         <div class="rf-grid">
           <label>First name<input name="firstname" autocomplete="given-name" required></label>
-          <label>Last name<input name="lastname" autocomplete="family-name"></label>
+          <label>Last name<input name="lastname" autocomplete="family-name" required></label>
           <label>Email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
-          <label class="rf-full">Home address<input name="address" autocomplete="street-address"></label>
-          <label class="rf-full">Message (optional)<textarea name="message" rows="3"></textarea></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+          <label class="rf-full">Home address<input name="address" autocomplete="street-address" required></label>
+          <label class="rf-full">Any upgrades you&rsquo;ve made? Please describe them.<textarea name="upgrades" rows="3" placeholder="e.g. remodeled kitchen (2023), owned solar, new flooring"></textarea></label>
+          <label class="rf-full">Anything else I should know? (optional)<textarea name="message" rows="3"></textarea></label>
         </div>
         <button type="submit" class="rf-send">Request my free CMA</button>
         <p class="rf-status" role="status"></p>
@@ -584,12 +604,27 @@
   document.querySelectorAll('form.rform').forEach(function (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
-      var st = f.querySelector('.rf-status'), btn = f.querySelector('.rf-send'), v = function (n) { var el = f.elements[n]; return el ? el.value.trim() : ''; };
-      if (!v('firstname') || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) { st.className = 'rf-status err'; st.textContent = 'Please add your first name and a valid email.'; return; }
-      var kind = f.dataset.kind, head = kind === 'constellation' ? 'Constellation request (' + v('pro') + ')' : 'CMA request' + (v('address') ? ' for ' + v('address') : '');
-      var msg = '[3 Roots report] ' + head + (v('message') ? ': ' + v('message') : '');
-      var fields = [['firstname', v('firstname')], ['lastname', v('lastname')], ['email', v('email')], ['phone', v('phone')], ['message', msg]]
-        .filter(function (p) { return p[1]; }).map(function (p) { return { objectTypeId: '0-1', name: p[0], value: p[1] }; });
+      var st = f.querySelector('.rf-status'), btn = f.querySelector('.rf-send');
+      var v = function (n) { var el = f.elements[n]; return el && el.value !== undefined ? el.value.trim() : ''; };
+      var missing = ['firstname', 'lastname', 'phone'].filter(function (n) { return !v(n); });
+      if (f.dataset.kind === 'cma' && !v('address')) missing.push('address');
+      if (missing.length || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) {
+        st.className = 'rf-status err';
+        st.textContent = 'Please fill in your first and last name, email, phone' + (f.dataset.kind === 'cma' ? ' and home address.' : '.');
+        return;
+      }
+      var lines;
+      if (f.dataset.kind === 'constellation') {
+        var pros = [].slice.call(f.querySelectorAll('input[name="pro"]:checked')).map(function (c) { return c.value; });
+        lines = ['[3 Roots report] Constellation request: ' + (pros.length ? pros.join(', ') : 'no specific pro chosen')];
+        if (v('message')) lines.push('Anything else: ' + v('message'));
+      } else {
+        lines = ['[3 Roots report] CMA request for ' + v('address')];
+        if (v('upgrades')) lines.push('Upgrades: ' + v('upgrades'));
+        if (v('message')) lines.push('Notes: ' + v('message'));
+      }
+      var fields = [['firstname', v('firstname')], ['lastname', v('lastname')], ['email', v('email')], ['phone', v('phone')], ['message', lines.join('\n')]]
+        .map(function (p) { return { objectTypeId: '0-1', name: p[0], value: p[1] }; });
       btn.disabled = true; st.className = 'rf-status'; st.textContent = 'Sending…';
       fetch(URL, { method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fields: fields, context: { pageUri: location.href.split('#')[0], pageName: document.title } }) })
