@@ -325,8 +325,19 @@
   /* The thank-you message sits in a small centered box, not a full-width panel. */
   dialog.types.is-done { width: calc(100% - 72px); max-width: 340px; padding: 18px 18px 22px; }
   dialog.types.is-done .rf-done { padding: 14px 4px 4px; }
+  /* Private tour button + pop-up (GitHub page; on Claude pages the button opens her Blinq card). */
+  .tour { font: 500 12.5px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--paper); background: var(--gold); border: 1px solid var(--gold); padding: 10px 16px; cursor: pointer; text-decoration: none; display: inline-block; }
+  .tour[disabled] { opacity: .7; cursor: default; }
+  #dlg-tour .rf-title p { margin: 4px 0 0; font-size: 14px; letter-spacing: 0; text-transform: none; color: var(--muted); }
+  #dlg-tour .rf-grid { margin-top: 20px; }
+  #dlg-tour .rf-full { display: flex; flex-direction: column; gap: 5px; }
+  .tour-remember { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .tour-remember input { width: 16px; height: 16px; accent-color: var(--gold); }
+  #dlg-tour .rf-nav { justify-content: flex-start; margin-top: 22px; }
+  .tour-notyou { margin: 16px 0 0 !important; font-size: 12.5px !important; }
+  .tour-change { background: none; border: 0; padding: 0; font: inherit; color: var(--gold); text-decoration: underline; cursor: pointer; }
   .extras-head, .offers { display: none !important; }
-  .site-only { display: block !important; }
+  .site-only { display: revert !important; }
   .claude-only { display: none !important; }
 </style>
 
@@ -390,6 +401,8 @@
       <p class="facts">3 bed &middot; 2.5 bath &middot; 2,574 sq ft &middot; built 2022 &middot; 3,694 sq ft lot &middot; HOA $256/mo</p>
       <div class="foot">
         <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="10656 Melogold Way" data-price="$1,895,000" data-link="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz">Request a private tour</button>
+        <a class="tour claude-only" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Request a private tour</a>
       </div>
       </div>
     </article>
@@ -410,6 +423,8 @@
       <p class="facts">4 bed &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2024 &middot; HOA $303/mo</p>
       <div class="foot">
         <a class="view" href="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14807 Temescal Way" data-price="$1,349,900" data-link="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs">Request a private tour</button>
+        <a class="tour claude-only" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Request a private tour</a>
       </div>
       </div>
     </article>
@@ -422,6 +437,8 @@
       <p class="facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2025 &middot; HOA $303/mo</p>
       <div class="foot">
         <a class="view" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14661 Dunleer Way" data-price="$1,349,000" data-link="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">Request a private tour</button>
+        <a class="tour claude-only" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Request a private tour</a>
       </div>
       </div>
     </article>
@@ -434,6 +451,8 @@
       <p class="facts">4 bed &middot; 3.5 bath &middot; 2,041 sq ft &middot; built 2022 &middot; HOA $303/mo</p>
       <div class="foot">
         <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="11014 Solstice Way" data-price="$1,199,000" data-link="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M">Request a private tour</button>
+        <a class="tour claude-only" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Request a private tour</a>
       </div>
       </div>
     </article>
@@ -446,6 +465,8 @@
       <p class="facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; new construction &middot; HOA $248/mo</p>
       <div class="foot">
         <a class="view" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14709 Sierra Way" data-price="$1,549,900" data-link="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">Request a private tour</button>
+        <a class="tour claude-only" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Request a private tour</a>
       </div>
       </div>
     </article>
@@ -458,6 +479,8 @@
       <p class="facts">4 bed &middot; 3.5 bath &middot; 2,121 sq ft &middot; new construction (2026) &middot; HOA $248/mo</p>
       <div class="foot">
         <a class="view" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14703 Sierra Way" data-price="$1,459,900" data-link="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">Request a private tour</button>
+        <a class="tour claude-only" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Request a private tour</a>
       </div>
       </div>
     </article>
@@ -494,6 +517,23 @@
       </div>
     </button>
   </div>
+  <dialog class="types offer" id="dlg-tour" aria-label="Request a private tour">
+    <button type="button" class="x" aria-label="Close">&times;</button>
+    <form class="rform tour-form" novalidate>
+      <div class="rf-title"><h3>Request a Private Tour</h3><p class="tour-addr"></p></div>
+      <div class="rf-grid">
+        <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
+        <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
+        <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" autocomplete="tel" required></label>
+        <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="rf-full"><span class="rf-lab">Days or times that work for you (optional)</span><input name="when" placeholder="e.g. Saturday morning, weekday evenings"></label>
+      </div>
+      <label class="tour-remember"><input type="checkbox" name="remember" checked> Remember me on this device for future tour requests</label>
+      <div class="rf-nav"><button type="submit" class="rf-send">Request Tour</button></div>
+      <p class="rf-status" role="status"></p>
+    </form>
+    <div class="tour-box" hidden></div>
+  </dialog>
   <dialog class="types offer" id="dlg-constellation" aria-label="The Constellation">
     <button type="button" class="x" aria-label="Close">&times;</button>
     <section class="constellation" id="constellation">
@@ -725,7 +765,7 @@
 // Request forms post to Ani's HubSpot form "3 Roots Report Requests" (portal 246846723); HubSpot emails her each one.
 (function () {
   var URL = 'https://api.hsforms.com/submissions/v3/integration/submit/246846723/d37abf08-524f-4ec0-8346-db3583aa3645';
-  document.querySelectorAll('form.rform').forEach(function (f) {
+  document.querySelectorAll('form.rform[data-kind]').forEach(function (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var st = f.querySelector('.rf-status'), btn = f.querySelector('.rf-send');
@@ -766,6 +806,71 @@
         .catch(function () { btn.disabled = false; st.className = 'rf-status err'; st.innerHTML = 'Sorry, that didn&rsquo;t go through. Please <a href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">reach me here</a>.'; });
     });
   });
+})();
+</script>
+<script>
+// "Request a private tour": first time asks for contact info (remembered on this device only); after that one tap sends it.
+// Posts to Ani's HubSpot form; her 15-minute check emails her and adds a HubSpot task.
+(function () {
+  var URL = 'https://api.hsforms.com/submissions/v3/integration/submit/246846723/d37abf08-524f-4ec0-8346-db3583aa3645';
+  var KEY = 'valenne_contact', d = document.getElementById('dlg-tour');
+  if (!d) return;
+  var form = d.querySelector('form'), box = d.querySelector('.tour-box'), home = null;
+  function load() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
+  function save(c) { try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {} }
+  function forget() { try { localStorage.removeItem(KEY); } catch (e) {} }
+  function open() { if (d.showModal) { if (!d.open) d.showModal(); } else d.setAttribute('open', ''); d.scrollTop = 0; }
+  function showForm(c) {
+    box.hidden = true; form.hidden = false; d.classList.remove('is-done');
+    d.querySelector('.tour-addr').textContent = home.addr;
+    ['firstname', 'lastname', 'phone', 'email'].forEach(function (n) { form.elements[n].value = c ? c[n] || '' : ''; });
+    form.querySelector('.rf-status').textContent = '';
+    open();
+  }
+  function done(c) {
+    form.hidden = true; box.hidden = false; d.classList.add('is-done');
+    box.innerHTML = '<div class="rf-done"><div class="rf-check-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'
+      + '<h4>Thank you!</h4><p>I got your tour request for ' + home.addr.replace(/</g, '&lt;') + ' and will be in touch with you shortly to set a time.<span class="rf-sign">&ndash; Ani</span></p>'
+      + '<button type="button" class="rf-close">Close</button>'
+      + '<p class="tour-notyou">Not ' + (c.firstname || 'you').replace(/</g, '&lt;') + '? <button type="button" class="tour-change">Change my info</button></p></div>';
+    box.querySelector('.rf-close').addEventListener('click', function () { d.close(); });
+    box.querySelector('.tour-change').addEventListener('click', function () { forget(); showForm(null); d.classList.remove('is-done'); });
+    open();
+  }
+  function send(c, when, onFail) {
+    var lines = ['[3 Roots report] Tour request: ' + home.addr + ' (' + home.price + ')', 'Listing: ' + home.link];
+    if (when) lines.push('Preferred times: ' + when);
+    var fields = [['firstname', c.firstname], ['lastname', c.lastname], ['email', c.email], ['phone', c.phone], ['message', lines.join('\n')]]
+      .map(function (p) { return { objectTypeId: '0-1', name: p[0], value: p[1] }; });
+    return fetch(URL, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields: fields, context: { pageUri: location.href.split('#')[0], pageName: document.title } }) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); done(c); })
+      .catch(onFail);
+  }
+  document.querySelectorAll('button.tour').forEach(function (b) {
+    b.addEventListener('click', function () {
+      home = { addr: b.dataset.addr, price: b.dataset.price, link: b.dataset.link };
+      var c = load();
+      if (!c) { showForm(null); return; }
+      var label = b.textContent; b.disabled = true; b.textContent = 'Sending…';
+      send(c, '', function () { showForm(c); form.querySelector('.rf-status').className = 'rf-status err'; form.querySelector('.rf-status').textContent = 'That didn’t go through. Please try again.'; })
+        .then(function () { b.disabled = false; b.textContent = label; });
+    });
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (n) { return form.elements[n].value.trim(); }, st = form.querySelector('.rf-status');
+    if (!v('firstname') || !v('lastname') || !v('phone') || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) {
+      st.className = 'rf-status err'; st.textContent = 'Please fill in your first and last name, phone and a valid email.'; return;
+    }
+    var c = { firstname: v('firstname'), lastname: v('lastname'), phone: v('phone'), email: v('email') };
+    if (form.elements.remember.checked) save(c); else forget();
+    var btn = form.querySelector('.rf-send'); btn.disabled = true; st.className = 'rf-status'; st.textContent = 'Sending…';
+    send(c, v('when'), function () { st.className = 'rf-status err'; st.textContent = 'That didn’t go through. Please try again.'; })
+      .then(function () { btn.disabled = false; });
+  });
+  d.querySelector('.x').addEventListener('click', function () { d.close(); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
 })();
 </script>
 
