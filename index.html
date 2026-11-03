@@ -157,6 +157,16 @@
   h1 { line-height: 1.15; }
   /* Titles and headers: very dark grey, not black (her 2026-11-02 call). */
   h1, h2, h3, .price, .contact .name, .brand-name { color: var(--head); }
+  /* Phone: bigger photo, tighter text, photo and text the same height. */
+  @media (max-width: 560px) {
+    .contact { gap: 16px; }
+    .contact .portrait { width: 42%; }
+    .contact .name { font-size: 21px; line-height: 1.2; }
+    .contact .motto { font-size: 14px; line-height: 1.35; }
+    .contact .cred { margin-top: 6px; font-size: 12.5px; line-height: 1.5; }
+    .contact .reach { margin: 10px 0 0 !important; }
+    .contact .reach a { padding: 8px 12px; font-size: 11px; letter-spacing: 0.12em; }
+  }
 </style>
 
 </head>
