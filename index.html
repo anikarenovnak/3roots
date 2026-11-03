@@ -457,7 +457,7 @@
           <fieldset class="rf-group"><legend>Moving &amp; Relocation</legend><label class="rf-check"><input type="checkbox" name="pro" value="Movers &amp; Shippers"><span>Movers &amp; Shippers</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real Estate Agent Outside San Diego"><span>Real Estate Agent Outside San Diego</span></label></fieldset>
           <fieldset class="rf-group"><legend>Home Care</legend><label class="rf-check"><input type="checkbox" name="pro" value="Gardener"><span>Gardener</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Landscaper"><span>Landscaper</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Pet Sitter"><span>Pet Sitter</span></label></fieldset>
           </div>
-          <label class="rf-full">Is there anything else I can help with? (optional)<textarea name="message" rows="3"></textarea></label>
+          <label class="rf-full">Tell me a bit about what you need, so I can make the right introduction. (optional)<textarea name="message" rows="3"></textarea></label>
         </div>
         <button type="submit" class="rf-send">Send my request</button>
         <p class="rf-status" role="status"></p>
@@ -623,7 +623,7 @@
       if (f.dataset.kind === 'constellation') {
         var pros = [].slice.call(f.querySelectorAll('input[name="pro"]:checked')).map(function (c) { return c.value; });
         lines = ['[3 Roots report] Constellation request: ' + (pros.length ? pros.join(', ') : 'no specific pro chosen')];
-        if (v('message')) lines.push('Anything else: ' + v('message'));
+        if (v('message')) lines.push('What they need: ' + v('message'));
       } else {
         lines = ['[3 Roots report] CMA request for ' + v('address')];
         if (v('upgrades')) lines.push('Upgrades: ' + v('upgrades'));
