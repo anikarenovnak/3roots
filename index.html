@@ -241,6 +241,21 @@
     .pcard-top h3, .ocard h3 { font-size: 18px; }
     .extras-head { margin-top: 64px; font-size: 24px; }
   }
+  /* Request forms (GitHub page only; the Claude version keeps the Blinq buttons). */
+  .site-only { display: none !important; }
+  .rform { margin-top: 20px; }
+  .rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+  .rf-grid label { display: flex; flex-direction: column; gap: 5px; font-size: 12px; letter-spacing: 0.06em; color: var(--muted); }
+  .rf-grid .rf-full { grid-column: 1 / -1; }
+  .rf-grid input, .rf-grid select, .rf-grid textarea { font: 400 15px/1.4 var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); border-radius: 0; padding: 9px 10px; width: 100%; box-sizing: border-box; -webkit-appearance: none; appearance: none; }
+  .rf-grid input:focus, .rf-grid select:focus, .rf-grid textarea:focus { outline: none; border-color: var(--gold); }
+  .rf-send { margin-top: 16px; font: 500 12.5px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--paper); background: var(--gold); border: 0; padding: 12px 18px; cursor: pointer; }
+  .rf-send[disabled] { opacity: .6; cursor: default; }
+  .rf-status { margin: 10px 0 0; font-size: 14px; }
+  .rf-status.err { color: #a23b2a; }
+  @media (max-width: 560px) { .rf-grid { grid-template-columns: 1fr; } }
+  .site-only { display: block !important; }
+  .claude-only { display: none !important; }
 </style>
 
 </head>
@@ -409,14 +424,38 @@
     <section class="constellation" id="constellation">
       <ul class="chips"><li>Lending</li><li>Home equity &amp; reverse mortgages</li><li>Financial planning &amp; wealth management</li><li>Investing</li><li>Moving</li><li>Repairs &amp; maintenance</li><li>Home care</li><li>Renovations</li><li>Insurance</li><li>Tax &amp; legal</li><li>Estate planning</li><li class="wide">Relocating? Agent referrals: Bay Area, Los Angeles, Orange County, Virginia, D.C. &amp; Maryland</li></ul>
       <p class="const-cta">Need someone? Reach out, and I&rsquo;ll connect you.</p>
-      <p class="reach"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Connect with me</a></p>
+      <p class="reach claude-only"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Connect with me</a></p>
+      <form class="rform site-only" data-kind="constellation" novalidate>
+        <div class="rf-grid">
+          <label>First name<input name="firstname" autocomplete="given-name" required></label>
+          <label>Last name<input name="lastname" autocomplete="family-name"></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="rf-full">What kind of pro?<select name="pro"><option>Lending</option><option>Home equity &amp; reverse mortgages</option><option>Financial planning &amp; wealth management</option><option>Investing</option><option>Moving</option><option>Repairs &amp; maintenance</option><option>Home care</option><option>Renovations</option><option>Insurance</option><option>Tax &amp; legal</option><option>Estate planning</option><option>Agent referral (relocating)</option><option>Something else</option></select></label>
+          <label class="rf-full">Message (optional)<textarea name="message" rows="3"></textarea></label>
+        </div>
+        <button type="submit" class="rf-send">Send my request</button>
+        <p class="rf-status" role="status"></p>
+      </form>
     </section>
   </dialog>
   <dialog class="types offer" id="dlg-valuation" aria-label="Curious what your home is worth?">
     <button type="button" class="x" aria-label="Close">&times;</button>
     <section class="cma" id="valuation">
       <p>I prepare a free CMA, a detailed valuation based on recent sales near you. I take on just three a month, so reach out to see if I have a spot for you this month.</p>
-      <p class="reach"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Ask about a spot this month</a></p>
+      <p class="reach claude-only"><a class="primary" href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">Ask about a spot this month</a></p>
+      <form class="rform site-only" data-kind="cma" novalidate>
+        <div class="rf-grid">
+          <label>First name<input name="firstname" autocomplete="given-name" required></label>
+          <label>Last name<input name="lastname" autocomplete="family-name"></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="rf-full">Home address<input name="address" autocomplete="street-address"></label>
+          <label class="rf-full">Message (optional)<textarea name="message" rows="3"></textarea></label>
+        </div>
+        <button type="submit" class="rf-send">Request my free CMA</button>
+        <p class="rf-status" role="status"></p>
+      </form>
     </section>
   </dialog>
 
@@ -535,6 +574,29 @@
     b.addEventListener('click', function () { d.showModal ? d.showModal() : d.setAttribute('open', ''); });
     d.querySelector('.x').addEventListener('click', function () { d.close ? d.close() : d.removeAttribute('open'); });
     d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  });
+})();
+</script>
+<script>
+// Request forms post to Ani's HubSpot form "3 Roots Report Requests" (portal 246846723); HubSpot emails her each one.
+(function () {
+  var URL = 'https://api.hsforms.com/submissions/v3/integration/submit/246846723/d37abf08-524f-4ec0-8346-db3583aa3645';
+  document.querySelectorAll('form.rform').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var st = f.querySelector('.rf-status'), btn = f.querySelector('.rf-send'), v = function (n) { var el = f.elements[n]; return el ? el.value.trim() : ''; };
+      if (!v('firstname') || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) { st.className = 'rf-status err'; st.textContent = 'Please add your first name and a valid email.'; return; }
+      var kind = f.dataset.kind, head = kind === 'constellation' ? 'Constellation request (' + v('pro') + ')' : 'CMA request' + (v('address') ? ' for ' + v('address') : '');
+      var msg = '[3 Roots report] ' + head + (v('message') ? ': ' + v('message') : '');
+      var fields = [['firstname', v('firstname')], ['lastname', v('lastname')], ['email', v('email')], ['phone', v('phone')], ['message', msg]]
+        .filter(function (p) { return p[1]; }).map(function (p) { return { objectTypeId: '0-1', name: p[0], value: p[1] }; });
+      btn.disabled = true; st.className = 'rf-status'; st.textContent = 'Sending…';
+      fetch(URL, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields: fields, context: { pageUri: location.href.split('#')[0], pageName: document.title } }) })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function () { f.innerHTML = '<p class="rf-status">Thank you! I&rsquo;ll be in touch soon. &ndash; Ani</p>'; })
+        .catch(function () { btn.disabled = false; st.className = 'rf-status err'; st.innerHTML = 'Sorry, that didn&rsquo;t go through. Please <a href="https://s1.blinq.me/QjTdJ6Z28iQT?bs=icl" target="_blank" rel="noopener">reach me here</a>.'; });
+    });
   });
 })();
 </script>
