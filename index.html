@@ -226,6 +226,21 @@
   dialog.offer .cma p:first-child { margin: 26px 34px 0 0; }
   dialog.offer .cma h2 { margin-right: 34px; }
   dialog.offer .reach { margin: 18px 0 2px !important; justify-content: flex-start; }
+  /* Spacious, minimalist spacing (her 2026-11-02 request). */
+  .browse { gap: 28px; margin-top: 44px; }
+  .offers { gap: 28px; margin-top: 28px; }
+  .pcard-body { gap: 10px; padding: 24px 26px 26px; }
+  .pcard-top h3, .ocard h3 { font-size: 20px; }
+  .pcard-body p { line-height: 1.6; }
+  .extras-head { margin-top: 88px; }
+  .contact { margin-top: 72px; }
+  .legal { margin-top: 48px; }
+  @media (max-width: 560px) {
+    .browse, .offers { gap: 22px; }
+    .pcard-body { padding: 20px 20px 22px; }
+    .pcard-top h3, .ocard h3 { font-size: 18px; }
+    .extras-head { margin-top: 64px; font-size: 24px; }
+  }
 </style>
 
 </head>
@@ -467,7 +482,7 @@
 (function () {
   var h = document.querySelector('h1');
   if (!h) return;
-  var MAX = 44, MIN = 20;
+  var MAX = 44, MIN = 27;  // never smaller than 27px, so it always outranks the card titles
   function fit() {
     h.style.whiteSpace = 'nowrap';
     h.style.fontSize = MAX + 'px';
