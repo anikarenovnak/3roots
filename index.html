@@ -321,6 +321,7 @@
   .rf-done h4 { margin: 0; font-family: var(--body); font-size: 20px; font-weight: 400; color: var(--head); }
   .rf-done p { margin: 10px auto 0; max-width: 340px; font-size: 15px; line-height: 1.55; color: var(--muted); }
   .rf-close { margin-top: 24px; font: 500 12.5px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper); background: var(--gold); border: 0; padding: 13px 26px; cursor: pointer; }
+  .rf-sign { display: block; margin-top: 8px; font-family: var(--display); font-style: italic; font-size: 19px; color: var(--ink); }
   .extras-head, .offers { display: none !important; }
   .site-only { display: block !important; }
   .claude-only { display: none !important; }
@@ -752,12 +753,9 @@
         body: JSON.stringify({ fields: fields, context: { pageUri: location.href.split('#')[0], pageName: document.title } }) })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function () {
-          var how = (typeof pref !== 'undefined' && pref && pref.length === 1) ? (pref[0] === 'Text' ? 'by text' : 'by email') : '';
-          var body = f.dataset.kind === 'constellation'
-            ? 'I&rsquo;ll review who you&rsquo;re looking for and reach out ' + (how ? how + ' ' : '') + 'with an introduction.'
-            : 'I&rsquo;ll start on your home&rsquo;s valuation and reach out to confirm the details.';
+          var body = 'I got your request and will be in touch with you shortly.<span class="rf-sign">&ndash; Ani</span>';
           f.innerHTML = '<div class="rf-done"><div class="rf-check-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'
-            + '<h4>Request received</h4><p>' + body + '</p>'
+            + '<h4>Thank you!</h4><p>' + body + '</p>'
             + '<button type="button" class="rf-close">Close</button></div>';
           var d = f.closest('dialog'); if (d) d.scrollTop = 0;
           f.querySelector('.rf-close').addEventListener('click', function () { if (d) d.close(); });
