@@ -415,6 +415,10 @@
   .weekly li { display: flex; align-items: baseline; gap: 10px; font-size: 14.5px; line-height: 1.45; color: var(--ink); }
   .wtag { flex: none; min-width: 96px; font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
   @media (max-width: 560px) { .weekly { padding: 16px 16px 14px; } .weekly li { flex-direction: column; gap: 1px; font-size: 14px; } .wtag { min-width: 0; } }
+  .weekly-sum { margin: 10px 0 0; font-size: 15px; color: var(--ink); }
+  .weekly-sum b { font-weight: 500; }
+  .weekly-break { margin: 4px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+  .weekly ul { border-top: 1px solid var(--gold-soft); padding-top: 12px !important; }
   body .tour { display: none !important; }
   .site-only { display: revert !important; }
   .claude-only { display: none !important; }
@@ -435,13 +439,15 @@
     <h1>3 Roots Market <span class="when">Update<span class="sep" role="presentation"></span></span> <span class="when">November 5</span></h1>
     <section class="weekly" aria-label="This week in 3 Roots">
       <div class="weekly-head"><h2>This week in 3 Roots</h2><span class="weekly-when">Oct 29 – Nov 5</span></div>
+      <p class="weekly-sum"><b>12 homes for sale</b> &middot; $834K&ndash;$1.90M &middot; median $1.12M</p>
+      <p class="weekly-break">By type: 1 single-family &middot; 5 detached condos &middot; 4 condos &middot; 2 townhomes<br>By neighborhood: Brio 1 &middot; Aero 5 &middot; Atwood 1 &middot; Dorsey 3 &middot; Hudson 1 &middot; Ardha Way 1</p>
       <ul>
       <li><span class="wtag">Open houses</span><span class="wtext">14703 &amp; 14709 Sierra Way (Aero, detached condos): Sat Nov 7 &amp; Sun Nov 8, 11am–3pm</span></li>
       <li><span class="wtag">Open house</span><span class="wtext">14661 Dunleer Way (Aero, detached condo): Sun Nov 8, 12–3pm</span></li>
       <li><span class="wtag">Open houses</span><span class="wtext">14517, 14531 &amp; 14535 Dunleer Way (Dorsey, condos): Sat Nov 7 &amp; Sun Nov 8, 11am–3pm</span></li>
       <li><span class="wtag">Price cut</span><span class="wtext">11014 Solstice Way: down $50,000 to $1,199,000 (Oct 29)</span></li>
       <li><span class="wtag">Price up</span><span class="wtext">14703 Sierra Way: up $50,000 to $1,459,900 (Oct 31)</span></li>
-      <li><span class="wtag">Otherwise</span><span class="wtext">No new listings, and no homes went pending or sold. Still 12 homes, $834K–$1.90M.</span></li>
+      <li><span class="wtag">Otherwise</span><span class="wtext">No new listings, and no homes went pending or sold.</span></li>
       </ul>
     </section>
   </header>
