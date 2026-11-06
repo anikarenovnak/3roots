@@ -380,6 +380,11 @@
   .oh-table tbody tr:first-child td { border-top: 0; }
   .oh-table td { border-bottom: 0; }
   a.ohlink { white-space: nowrap; }
+  .oh-table td { padding-top: 6px; padding-bottom: 6px; }
+  .oh-table tr.oh-first td, .oh-table tr.oh-hood td { padding-top: 10px; }
+  .oh-table tr.oh-hood td { border-top: 1px dashed var(--gold-soft); }
+  .oh-table td:last-child { font-size: 12.5px; color: var(--muted); }
+  @media (max-width: 560px) { .oh-table { font-size: 12.5px; } .oh-table th, .oh-table td { padding-right: 7px; } .oh-table td:last-child { font-size: 11.5px; } }
   .oh-table td span { display: block; font-size: 12.5px; color: var(--muted); }
   .oh-table td:last-child { padding-right: 0; }
   a.ohlink { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
@@ -412,10 +417,11 @@
       <div class="oh">
         <div class="oh-title">Open houses</div>
         <table class="oh-table">
-          <thead><tr><th>When</th><th>Neighborhood</th><th>Homes</th></tr></thead>
+          <thead><tr><th>When</th><th>Neighborhood</th><th>Home</th><th>Sale</th></tr></thead>
           <tbody>
-          <tr class="oh-first"><td rowspan="1">Sat Nov 7 &amp; Sun Nov 8<span>11am–3pm</span></td><td>Aero<span>Detached condos</span></td><td><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">14703 Sierra Way</a><br><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">14709 Sierra Way</a></td></tr>
-          <tr class="oh-first"><td rowspan="1">Sun Nov 8<span>12–3pm</span></td><td>Aero<span>Detached condo</span></td><td><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">14661 Dunleer Way</a></td></tr>
+          <tr class="oh-first"><td rowspan="2">Sat Nov 7 &amp; Sun Nov 8<span>11am–3pm</span></td><td rowspan="2">Aero<span>Detached condos</span></td><td><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">14703 Sierra Way</a></td><td>New construction</td></tr>
+          <tr><td><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">14709 Sierra Way</a></td><td>Model home</td></tr>
+          <tr class="oh-first"><td rowspan="1">Sun Nov 8<span>12–3pm</span></td><td rowspan="1">Aero<span>Detached condo</span></td><td><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">14661 Dunleer Way</a></td><td>Resale</td></tr>
           </tbody>
         </table>
       </div>
