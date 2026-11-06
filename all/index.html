@@ -21,17 +21,17 @@
     --paper: #ffffff;
     --ink: #1c1a17;
     --muted: #5d5850;
-    --gold: #a9853d;
-    --gold-soft: #e9dfc8;
+    --gold: #b39b6e;
+    --gold-soft: #ece3d2;
     --tint: #faf7f1;
     --head: #555555;
     --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
     --body: "Jost", "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --paper: #161411; --ink: #eee8dc; --muted: #b3aa99; --gold: #d2ad62; --gold-soft: #3d3426; --tint: #1f1c17; --head: #e6e0d4; color-scheme: dark; }
+    :root:not([data-theme="light"]) { --paper: #161411; --ink: #eee8dc; --muted: #b3aa99; --gold: #cfb98f; --gold-soft: #3d3426; --tint: #1f1c17; --head: #e6e0d4; color-scheme: dark; }
   }
-  :root[data-theme="dark"] { --paper: #161411; --ink: #eee8dc; --muted: #b3aa99; --gold: #d2ad62; --gold-soft: #3d3426; --tint: #1f1c17; --head: #e6e0d4; color-scheme: dark; }
+  :root[data-theme="dark"] { --paper: #161411; --ink: #eee8dc; --muted: #b3aa99; --gold: #cfb98f; --gold-soft: #3d3426; --tint: #1f1c17; --head: #e6e0d4; color-scheme: dark; }
 
   body { background: var(--paper); color: var(--ink); font-family: var(--body); font-weight: 300; font-size: 16px; line-height: 1.6; }
   .wrap { max-width: 760px; margin: 0 auto; padding-block: 48px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -365,7 +365,7 @@
   /* "Choose home types" on the All homes card is a solid gold button so it's noticed (her 2026-11-05 request). */
   a.pcard-all { border: 2px solid var(--gold); }
   a.pcard-all .pcard-go { align-self: flex-start; margin-top: 10px; padding: 13px 20px; background: var(--gold); color: var(--paper); font-size: 12.5px; letter-spacing: 0.16em; transition: background-color .15s; }
-  a.pcard-all:hover .pcard-go, a.pcard-all:focus-visible .pcard-go { background: #8f6f30; }
+  a.pcard-all:hover .pcard-go, a.pcard-all:focus-visible .pcard-go { background: #9a835a; }
   @media (max-width: 560px) { a.pcard-all .pcard-go { align-self: stretch; text-align: center; padding: 15px 16px; } }
   .chooser { padding: 26px 0 8px; }
   .chooser h2 { font-size: 26px; line-height: 1.25; margin: 0; }
