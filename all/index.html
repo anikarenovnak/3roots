@@ -441,6 +441,23 @@
   @media (max-width: 560px) { .oh-table { font-size: 13px; } .oh-table td span { font-size: 11.5px; } }
   .weekly-tour { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--gold-soft); font-size: 14.5px; line-height: 1.5; color: var(--ink); }
   .weekly-tour a { color: var(--ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; white-space: nowrap; }
+  /* "Under contract & pending" (her 2026-11-06 request). */
+  .pending-sec { margin-top: 56px; scroll-margin-top: 64px; }
+  .pending-sec h2 { margin: 0; padding-bottom: 10px; border-bottom: 1px solid var(--gold); font-size: 28px; }
+  .pending-intro { margin: 12px 0 0; font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+  .pend-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+  @media (max-width: 640px) { .pend-grid { grid-template-columns: 1fr; gap: 12px; } .pending-sec h2 { font-size: 24px; } }
+  a.pend { display: flex; gap: 14px; align-items: stretch; text-decoration: none; color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); transition: border-color .15s; }
+  a.pend:hover, a.pend:focus-visible { border-color: var(--gold); outline: none; }
+  a.pend img { flex: none; width: 128px; object-fit: cover; display: block; min-height: 100%; }
+  .pend-body { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px 12px 0; min-width: 0; }
+  .pend-st { font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  .pend-addr { font-size: 16px; color: var(--head, var(--ink)); margin-top: 2px; }
+  .pend-where { font-size: 13px; color: var(--muted); }
+  .pend-price { font-size: 13.5px; margin-top: 4px; }
+  .pend-facts { font-size: 12.5px; color: var(--muted); }
+  @media (max-width: 400px) { a.pend img { width: 104px; } .pend-addr { font-size: 15px; } }
+  .weekly-sum a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
   body .tour { display: none !important; }
   .site-only { display: revert !important; }
   .claude-only { display: none !important; }
@@ -461,7 +478,7 @@
     <h1>3 Roots Market <span class="when">Update<span class="sep" role="presentation"></span></span> <span class="when">November 5</span></h1>
     <section class="weekly" aria-label="This week in 3 Roots">
       <div class="weekly-head"><h2>This week in 3 Roots</h2><span class="weekly-when">Oct 29 – Nov 5</span></div>
-      <p class="weekly-sum"><b>12 homes for sale</b> &middot; $834K&ndash;$1.90M &middot; median $1.12M</p>
+      <p class="weekly-sum"><b>12 homes for sale</b> &middot; $834K&ndash;$1.90M &middot; median $1.12M &middot; <a href="#under-contract">9 under contract or pending</a></p>
       <p class="weekly-break">1 single-family &middot; 5 detached condos &middot; 4 condos &middot; 2 townhomes<br>Brio 1 &middot; Aero 5 &middot; Atwood 1 &middot; Dorsey 3 &middot; Hudson 1 &middot; Ardha Way 1</p>
       <div class="oh">
         <div class="oh-title">Open houses</div>
@@ -478,9 +495,11 @@
         </table>
       </div>
       <ul>
+      <li><span class="wtag">Went pending</span><span class="wtext">14705 Sierra Way (Aero, detached condo), listed at $1,599,900 (Oct 31)</span></li>
+      <li><span class="wtag">Under contract</span><span class="wtext">10951 Lotta Court (townhome), listed at $939,000 (Nov 1)</span></li>
       <li><span class="wtag">Price cut</span><span class="wtext">11014 Solstice Way: down $50,000 to $1,199,000 (Oct 29)</span></li>
       <li><span class="wtag">Price up</span><span class="wtext">14703 Sierra Way: up $50,000 to $1,459,900 (Oct 31)</span></li>
-      <li><span class="wtag">Otherwise</span><span class="wtext">No new listings, and no homes went pending or sold.</span></li>
+      <li><span class="wtag">Otherwise</span><span class="wtext">No new listings, and none of the homes listed here went pending or sold.</span></li>
       </ul>
       <p class="weekly-tour">Want a private tour? Text me at <a href="sms:+18587234529">(858) 723-4529</a> and let me know which home.</p>
     </section>
@@ -550,6 +569,102 @@
       </div>
     </a>
   </div>
+  <section class="pending-sec" id="under-contract">
+    <h2>Under contract &amp; pending</h2>
+    <p class="pending-intro">9 homes in 3 Roots found a buyer and are waiting to close. Prices shown are the last list prices; final sale prices aren&rsquo;t public until closing.</p>
+    <div class="pend-grid">
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/Gyjxu_ZPrJc">
+      <img src="photos/pending-14705sierra.jpg" alt="14705 Sierra Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 31</span>
+        <span class="pend-addr">14705 Sierra Way</span>
+        <span class="pend-where">Aero &middot; Detached condo</span>
+        <span class="pend-price">Listed at $1,599,900 &middot; 41 days on market</span>
+        <span class="pend-facts">4 bed &middot; 4 bath &middot; 2,121 sq ft &middot; built 2024</span>
+      </div>
+    </a>
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/IyGiWq7mZ0X">
+      <img src="photos/pending-10601senua.jpg" alt="10601 Senua Court" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 26</span>
+        <span class="pend-addr">10601 Senua Court</span>
+        <span class="pend-where">Palmer &middot; Detached condo</span>
+        <span class="pend-price">Listed at $1,399,000 &middot; 36 days on market</span>
+        <span class="pend-facts">3 bed &middot; 4 bath &middot; 2,187 sq ft &middot; built 2022</span>
+      </div>
+    </a>
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/Ftt1RP8_isL">
+      <img src="photos/pending-14706sierra.jpg" alt="14706 Sierra Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Sep 17</span>
+        <span class="pend-addr">14706 Sierra Way</span>
+        <span class="pend-where">Aero &middot; Detached condo</span>
+        <span class="pend-price">Listed at $1,385,900 &middot; 16 days on market</span>
+        <span class="pend-facts">4 bed &middot; 4 bath &middot; 2,121 sq ft &middot; new construction (2026)</span>
+      </div>
+    </a>
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/Fn0tkR_dtOk">
+      <img src="photos/pending-14704sierra.jpg" alt="14704 Sierra Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 10</span>
+        <span class="pend-addr">14704 Sierra Way</span>
+        <span class="pend-where">Aero &middot; Detached condo</span>
+        <span class="pend-price">Listed at $1,348,900 &middot; 133 days on market</span>
+        <span class="pend-facts">3 bed &middot; 4 bath &middot; 2,029 sq ft &middot; new construction (2026)</span>
+      </div>
+    </a>
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/ZaWYCHO3m90">
+      <img src="photos/pending-13912boyden.jpg" alt="13912 Boyden Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since May 10</span>
+        <span class="pend-addr">13912 Boyden Way</span>
+        <span class="pend-where">Hudson &middot; Condo</span>
+        <span class="pend-price">Listed at $1,038,567 &middot; 103 days on market</span>
+        <span class="pend-facts">2 bed &middot; 3 bath &middot; 1,686 sq ft &middot; built 2025</span>
+      </div>
+    </a>
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/LiTR_jIxtWo">
+      <img src="photos/pending-10507coupland.jpg" alt="10507 Coupland Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Aug 27</span>
+        <span class="pend-addr">10507 Coupland Way</span>
+        <span class="pend-where">Atwood &middot; Townhome</span>
+        <span class="pend-price">Listed at $979,000 &middot; 146 days on market</span>
+        <span class="pend-facts">2 bed &middot; 3 bath &middot; 1,669 sq ft &middot; built 2021</span>
+      </div>
+    </a>
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/TyPApfD_UaN">
+      <img src="photos/pending-10951lotta.jpg" alt="10951 Lotta Court" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Under contract since Nov 1</span>
+        <span class="pend-addr">10951 Lotta Court</span>
+        <span class="pend-where">3 Roots &middot; Townhome</span>
+        <span class="pend-price">Listed at $939,000 &middot; 44 days on market</span>
+        <span class="pend-facts">3 bed &middot; 3 bath &middot; 1,455 sq ft &middot; built 2021</span>
+      </div>
+    </a>
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/G-dqxxSK6EE">
+      <img src="photos/pending-14509dunleer.jpg" alt="14509 Dunleer Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 4</span>
+        <span class="pend-addr">14509 Dunleer Way</span>
+        <span class="pend-where">Dorsey &middot; Condo</span>
+        <span class="pend-price">Listed at $922,900 &middot; 117 days on market</span>
+        <span class="pend-facts">3 bed &middot; 2 bath &middot; 1,609 sq ft &middot; new construction (2026)</span>
+      </div>
+    </a>
+    <a class="pend" href="https://zsvc.paragon.ice.com/s/goto/TIqQ1v_oHeZ">
+      <img src="photos/pending-14521dunleer.jpg" alt="14521 Dunleer Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 10</span>
+        <span class="pend-addr">14521 Dunleer Way</span>
+        <span class="pend-where">Dorsey &middot; Condo</span>
+        <span class="pend-price">Listed at $822,900 &middot; 60 days on market</span>
+        <span class="pend-facts">2 bed &middot; 2 bath &middot; 1,312 sq ft &middot; new construction (2026)</span>
+      </div>
+    </a>
+    </div>
+  </section>
   <dialog id="listings" class="lview" aria-label="Homes">
     <div class="lbar"><span class="lview-title"></span><button type="button" class="lclose" aria-label="Close">&times;</button></div>
   <nav class="filter" aria-label="Show homes">
