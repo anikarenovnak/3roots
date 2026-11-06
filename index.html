@@ -357,6 +357,15 @@
   .contact-links a:hover span, .contact-links a:focus-visible span { border-bottom-color: var(--gold); }
   .contact-links svg { flex: none; width: 17px; height: 17px; color: var(--gold-ink); }
   @media (max-width: 560px) { .contact-links a { font-size: 13.5px; gap: 8px; } .contact-links svg { width: 15px; height: 15px; } }
+  /* "This week in 3 Roots" highlights under the title (her 2026-11-05 request). */
+  .weekly { margin: 22px 0 4px; padding: 18px 20px 16px; background: var(--tint); border: 1px solid var(--gold-soft); border-left: 3px solid var(--gold); text-align: left; }
+  .weekly-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; }
+  .weekly-head h2 { margin: 0; font-size: 19px; }
+  .weekly-when { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-ink); }
+  .weekly ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 9px; }
+  .weekly li { display: flex; align-items: baseline; gap: 10px; font-size: 14.5px; line-height: 1.45; color: var(--ink); }
+  .wtag { flex: none; min-width: 96px; font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  @media (max-width: 560px) { .weekly { padding: 16px 16px 14px; } .weekly li { flex-direction: column; gap: 1px; font-size: 14px; } .wtag { min-width: 0; } }
   body .tour { display: none !important; }
   .site-only { display: revert !important; }
   .claude-only { display: none !important; }
@@ -375,6 +384,16 @@
   <header>
     <div class="eyebrow">Sorrento Mesa &middot; San Diego</div>
     <h1>3 Roots Single Family Homes for <span class="when">Sale<span class="sep" role="presentation"></span></span> <span class="when">November 5</span></h1>
+    <section class="weekly" aria-label="This week in 3 Roots">
+      <div class="weekly-head"><h2>This week in 3 Roots</h2><span class="weekly-when">Oct 29 – Nov 5</span></div>
+      <ul>
+      <li><span class="wtag">Open houses</span><span class="wtext">14703 &amp; 14709 Sierra Way: Sat Nov 7 &amp; Sun Nov 8, 11am–3pm</span></li>
+      <li><span class="wtag">Open house</span><span class="wtext">14661 Dunleer Way: Sun Nov 8, 12–3pm</span></li>
+      <li><span class="wtag">Price cut</span><span class="wtext">11014 Solstice Way: down $50,000 to $1,199,000 (Oct 29)</span></li>
+      <li><span class="wtag">Price up</span><span class="wtext">14703 Sierra Way: up $50,000 to $1,459,900 (Oct 31)</span></li>
+      <li><span class="wtag">Otherwise</span><span class="wtext">No new listings, and no homes went pending or sold. Still 6 homes, $1.20M–$1.90M.</span></li>
+      </ul>
+    </section>
   </header>
 
   <div id="browse" class="browse">
