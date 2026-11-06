@@ -369,7 +369,22 @@
   .weekly-sum { margin: 10px 0 0; font-size: 15px; color: var(--ink); }
   .weekly-sum b { font-weight: 500; }
   .weekly-break { margin: 4px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
-  .weekly ul { border-top: 1px solid var(--gold-soft); padding-top: 12px !important; }
+  .weekly ul { border-top: 1px solid var(--gold-soft); padding-top: 12px !important; margin-top: 14px; }
+  .oh { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--gold-soft); }
+  .oh-title { font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  .oh-table { width: 100%; margin-top: 8px; border-collapse: collapse; font-size: 14px; line-height: 1.4; }
+  .oh-table th { text-align: left; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 0 10px 6px 0; border-bottom: 1px solid var(--gold-soft); }
+  .oh-table td { vertical-align: top; padding: 9px 10px 9px 0; border-bottom: 1px solid var(--gold-soft); color: var(--ink); }
+  .oh-table tr:last-child td, .oh-table td[rowspan] { border-bottom: 0; }
+  .oh-table tr.oh-first td { border-top: 1px solid var(--gold-soft); }
+  .oh-table tbody tr:first-child td { border-top: 0; }
+  .oh-table td { border-bottom: 0; }
+  a.ohlink { white-space: nowrap; }
+  .oh-table td span { display: block; font-size: 12.5px; color: var(--muted); }
+  .oh-table td:last-child { padding-right: 0; }
+  a.ohlink { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  a.ohlink:hover, a.ohlink:focus-visible { color: var(--gold-ink); }
+  @media (max-width: 560px) { .oh-table { font-size: 13px; } .oh-table td span { font-size: 11.5px; } }
   body .tour { display: none !important; }
   .site-only { display: revert !important; }
   .claude-only { display: none !important; }
@@ -391,10 +406,18 @@
     <section class="weekly" aria-label="This week in 3 Roots">
       <div class="weekly-head"><h2>This week in 3 Roots</h2><span class="weekly-when">Oct 29 – Nov 5</span></div>
       <p class="weekly-sum"><b>6 homes for sale</b> &middot; $1.20M&ndash;$1.90M &middot; median $1.40M</p>
-      <p class="weekly-break">By type: 1 single-family &middot; 5 detached condos<br>By neighborhood: Brio 1 &middot; Aero 5</p>
+      <p class="weekly-break">1 single-family &middot; 5 detached condos<br>Brio 1 &middot; Aero 5</p>
+      <div class="oh">
+        <div class="oh-title">Open houses</div>
+        <table class="oh-table">
+          <thead><tr><th>When</th><th>Neighborhood</th><th>Homes</th></tr></thead>
+          <tbody>
+          <tr class="oh-first"><td rowspan="1">Sat Nov 7 &amp; Sun Nov 8<span>11am–3pm</span></td><td>Aero<span>Detached condos</span></td><td><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">14703 Sierra Way</a><br><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">14709 Sierra Way</a></td></tr>
+          <tr class="oh-first"><td rowspan="1">Sun Nov 8<span>12–3pm</span></td><td>Aero<span>Detached condo</span></td><td><a class="ohlink" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">14661 Dunleer Way</a></td></tr>
+          </tbody>
+        </table>
+      </div>
       <ul>
-      <li><span class="wtag">Open houses</span><span class="wtext">14703 &amp; 14709 Sierra Way (Aero, detached condos): Sat Nov 7 &amp; Sun Nov 8, 11am–3pm</span></li>
-      <li><span class="wtag">Open house</span><span class="wtext">14661 Dunleer Way (Aero, detached condo): Sun Nov 8, 12–3pm</span></li>
       <li><span class="wtag">Price cut</span><span class="wtext">11014 Solstice Way: down $50,000 to $1,199,000 (Oct 29)</span></li>
       <li><span class="wtag">Price up</span><span class="wtext">14703 Sierra Way: up $50,000 to $1,459,900 (Oct 31)</span></li>
       <li><span class="wtag">Otherwise</span><span class="wtext">No new listings, and no homes went pending or sold.</span></li>
