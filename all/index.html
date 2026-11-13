@@ -1,0 +1,1985 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="3 Roots Market Update: every home for sale in 3 Roots, San Diego: single-family homes, detached condos, condos and townhomes. Updated weekly by Ani Sophia Valenne, Keller Williams La Jolla.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="3 Roots Market Update">
+<meta property="og:description" content="Every home for sale in 3 Roots: single-family homes, detached condos, condos and townhomes. Updated weekly by Ani Sophia Valenne, Keller Williams La Jolla.">
+<meta property="og:image" content="https://anikarenovnak.github.io/3roots/all/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://anikarenovnak.github.io/3roots/all/">
+<meta name="twitter:card" content="summary_large_image">
+<!-- HubSpot tracking (her 2026-11-10 request): page views show on known contacts' timelines in her HubSpot. -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246846723.js"></script>
+<title>3 Roots Market Update</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+  body { margin: 0; background: var(--paper); }
+  /* Layout: one editorial column, neighborhood sections, a home per row with price beside the address. Ani Valenne brand: Cormorant + Jost, gold rules. */
+  :root {
+    --paper: #ffffff;
+    --ink: #1c1a17;
+    --muted: #5d5850;
+    --gold: #d1bf99;
+    --gold-soft: #ece3d2;
+    --gold-ink: #8f7850;
+    --on-gold: #2f2a22;
+    --tint: #faf7f1;
+    --head: #555555;
+    --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+    --body: "Jost", "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --paper: #161411; --ink: #eee8dc; --muted: #b3aa99; --gold: #cfb98f; --gold-soft: #3d3426; --gold-ink: #d6c39c; --on-gold: #1c1a17; --tint: #1f1c17; --head: #e6e0d4; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --paper: #161411; --ink: #eee8dc; --muted: #b3aa99; --gold: #cfb98f; --gold-soft: #3d3426; --gold-ink: #d6c39c; --on-gold: #1c1a17; --tint: #1f1c17; --head: #e6e0d4; color-scheme: dark; }
+
+  body { background: var(--paper); color: var(--ink); font-family: var(--body); font-weight: 300; font-size: 16px; line-height: 1.6; }
+  .wrap { max-width: 760px; margin: 0 auto; padding-block: 48px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .brand { position: sticky; top: 0; z-index: 6; height: 48px; box-sizing: border-box; display: flex; align-items: center; margin: -24px -16px 24px; padding: 0 16px; background: var(--paper); border-bottom: 1px solid var(--gold-soft); color: var(--ink); }
+  .brand-mark { text-align: center; }
+  .brand-name { font-family: var(--body); font-weight: 400; font-size: 16px; line-height: 1; letter-spacing: 0.22em; padding-left: 0.22em; }
+  .brand-name .big { font-size: 1em; }
+  .brand-sub { margin-top: 2px; font-family: var(--body); font-weight: 400; font-size: 6.5px; letter-spacing: 0.42em; padding-left: 0.42em; }
+  .eyebrow, .label { font-family: var(--body); font-weight: 400; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-ink); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(38px, 7vw, 54px); line-height: 1.05; margin-top: 10px; }
+  .rule { height: 1px; margin: 22px 0 26px; background: var(--gold); opacity: .7; }
+  .lede { font-family: var(--display); font-style: italic; font-size: 21px; line-height: 1.45; color: var(--muted); margin: 0; }
+  .glance { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 22px; font-size: 14px; color: var(--muted); }
+  .brokers { margin: 12px 0 0; font-size: 13px; color: var(--muted); font-style: italic; }
+  h1 .sep { display: inline-block; width: 0.07em; min-width: 1.5px; height: 0.71em; margin: 0 0.12em 0 0.38em; background: var(--head); vertical-align: baseline; }
+  h1 .when { white-space: nowrap; }
+  .glance .sep { color: var(--gold-ink); padding: 0 6px; }
+  .glance b { font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  .how { margin-top: 34px; padding: 18px 20px; background: var(--tint); border-left: 2px solid var(--gold); }
+  .how p { margin: 6px 0 0; font-size: 15px; }
+
+  section.hood { margin-top: 52px; }
+  .filter { position: sticky; top: 48px; z-index: 5; margin: 30px -16px 0; padding: 10px 16px; background: var(--paper); border-bottom: 1px solid var(--gold-soft); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .filter button { font: 500 12px/1.25 var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); background: none; border: 1px solid var(--gold); padding: 10px 8px; cursor: pointer; text-align: center; min-width: 0; }
+  .filter button small { display: block; margin-top: 4px; font-size: 11.5px; font-weight: 400; letter-spacing: 0.04em; text-transform: none; color: var(--muted); }
+  .filter button[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); }
+  .filter button[aria-pressed="true"] small { color: var(--on-gold); opacity: .85; }
+  .filter button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  section.type { margin-top: 56px; }
+  .type-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding-bottom: 10px; border-bottom: 1px solid var(--gold); }
+  .type-head h2 { font-size: 34px; letter-spacing: 0.02em; }
+  .subhood { margin-top: 26px; }
+  .subhood-head { display: flex; align-items: baseline; gap: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--gold-soft); }
+  .subhood-head h3 { font-family: var(--body); font-size: 12.5px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-ink); }
+  .subhood-head span { font-size: 13px; color: var(--muted); }
+  .group-head { margin-top: 56px; }
+  .group-head h2 { font-size: 40px; line-height: 1.1; }
+  .group-head p { margin: 6px 0 0; font-size: 14.5px; color: var(--muted); }
+  .group-head p a { color: var(--gold-ink); text-underline-offset: 3px; }
+  .group section.hood:first-of-type { margin-top: 30px; }
+  [hidden] { display: none !important; }
+  @media (max-width: 520px) { .filter .rng { display: none; } .filter { padding-top: 8px; padding-bottom: 8px; } .filter button { font-size: 10.5px; letter-spacing: 0.08em; padding: 9px 4px; } .filter button small { font-size: 10.5px; } .group-head h2 { font-size: 32px; } }
+
+  .hood-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding-bottom: 10px; border-bottom: 1px solid var(--gold); }
+  .hood-head h2 { font-size: 34px; letter-spacing: 0.02em; }
+  .tag { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; color: var(--ink); background: var(--gold-soft); padding: 4px 10px; white-space: nowrap; }
+  .hood-note { margin: 10px 0 0; font-size: 14px; color: var(--muted); }
+
+  article.home { padding: 26px 0; border-bottom: 1px solid var(--gold-soft); display: grid; grid-template-columns: 220px 1fr; gap: 22px; align-items: start; }
+  article.home .info { min-width: 0; }
+  img.shot { width: 100%; max-width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; border: 1px solid var(--gold-soft); }
+  @media (max-width: 600px) { article.home { grid-template-columns: 1fr; gap: 14px; } }
+  .home-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 20px; }
+  .home-top h3 { font-size: 25px; min-width: 0; }
+  .price { font-family: var(--display); font-size: 25px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .news { list-style: none; padding: 0; margin: 10px 0 0; }
+  .news li { position: relative; padding-left: 15px; margin-top: 4px; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; color: var(--gold-ink); }
+  .news li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+  .facts { margin: 6px 0 0; font-size: 13.5px; letter-spacing: 0.04em; color: var(--muted); font-variant-numeric: tabular-nums; }
+  ul.hl { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+  ul.hl li { position: relative; padding-left: 20px; font-size: 15.5px; }
+  ul.hl li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+  .foot { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 10px 18px; margin-top: 16px; }
+  .courtesy { font-size: 12.5px; color: var(--muted); }
+  a.view { font-family: var(--body); font-size: 12.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--gold); padding: 9px 16px; white-space: nowrap; }
+  a.view:hover, a.view:focus-visible { background: var(--gold); color: var(--on-gold); outline: none; }
+  a.view:focus-visible { box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--gold); }
+  .remark { margin: 8px 0 0; font-size: 14.5px; font-style: italic; font-family: var(--display); font-size: 17px; color: var(--ink); }
+
+  .tagwrap { display: inline-flex; align-items: center; gap: 8px; }
+  button.q { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 15px; height: 15px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); background: none; color: var(--gold-ink); font: 500 9.5px/1 var(--body); cursor: pointer; vertical-align: middle; }
+  h2 button.q { margin-left: 8px; position: relative; top: -4px; }
+  button.q:hover, button.q:focus-visible { background: var(--gold); color: var(--on-gold); outline: none; }
+  button.qlink { background: none; border: 0; padding: 0; font: inherit; color: var(--gold-ink); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  dialog.types { box-sizing: border-box; width: calc(100% - 32px); max-width: 560px; max-height: 82vh; overflow: auto; padding: 22px 20px 16px; border: 1px solid var(--gold); background: var(--paper); color: var(--ink); }
+  dialog.types::backdrop { background: rgba(20, 18, 15, .5); }
+  dialog.types h2 { font-size: 28px; margin: 0 34px 4px 0; }
+  dialog.types p { margin: 10px 0 0; padding: 8px 10px; font-size: 15px; line-height: 1.55; border-left: 2px solid transparent; }
+  dialog.types .more { display: block; margin: 14px 0 2px 10px; padding: 0; background: none; border: 0; font: 500 12.5px/1.3 var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); cursor: pointer; }
+  dialog.types [hidden] { display: none !important; }
+  dialog.types p.hl { border-left-color: var(--gold); background: var(--tint); }
+  dialog.types .x { position: absolute; top: 10px; right: 12px; width: 34px; height: 34px; background: none; border: 0; font-size: 26px; line-height: 1; color: var(--muted); cursor: pointer; }
+  .contact { margin-top: 44px; display: flex; align-items: center; gap: 34px; text-align: left; }
+  .contact-text { flex: 1; min-width: 0; }
+  @media (max-width: 560px) { .contact { gap: 20px; align-items: flex-start; } .contact .portrait { width: 104px; } .contact .name { font-size: 28px; } }
+  .contact .name { font-family: var(--display); font-size: 34px; }
+  .contact p { margin: 4px 0 0; font-size: 14.5px; color: var(--muted); }
+  .contact .lines { color: var(--ink); font-size: 16px; user-select: all; }
+
+  .extras-head { margin: 64px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--gold); font-size: 34px; letter-spacing: 0.02em; }
+  .extras-head + .extras { margin-top: 20px; }
+  .extras { margin-top: 52px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .constellation, .cma { padding: 20px 22px; background: var(--tint); min-width: 0; }
+  .const-head { display: flex; align-items: center; gap: 14px; }
+  .badge { width: 46px; height: 46px; flex: none; }
+  .const-intro { margin: 4px 0 0; font-family: var(--display); font-style: italic; font-size: 18px; line-height: 1.35; }
+  .const-cta { margin: 14px 0 0; font-family: var(--display); font-style: italic; font-size: 17px; color: var(--ink); }
+  ul.chips { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 18px; }
+  ul.chips li { position: relative; padding-left: 14px; font-size: 13.5px; line-height: 1.35; color: var(--ink); }
+  ul.chips li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+  ul.chips li.wide { grid-column: 1 / -1; }
+  .cma h2 { font-size: 26px; margin-top: 6px; }
+  .cma p { margin: 8px 0 0; font-size: 14.5px; }
+  .portrait { margin: 0; flex: none; width: 170px; padding: 0; border: 1px solid var(--gold); }
+  .portrait { position: relative; align-self: stretch; min-height: 180px; overflow: hidden; }
+  .portrait img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .contact { align-items: stretch !important; }
+  .contact .cta { max-width: 520px; margin: 10px 0 14px; font-family: var(--display); font-style: italic; font-size: 19px; line-height: 1.45; color: var(--ink); }
+  .legal p { margin: 0 0 6px; }
+  .contact .cred { margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
+  .contact .motto { margin: 2px 0 0; font-family: var(--display); font-style: italic; font-size: 16px; line-height: 1.4; color: var(--gold-ink); }
+  .contact .lines a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold-soft); }
+  .reach { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px; margin: 14px 0 10px !important; }
+  .reach a { font-size: 12.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--gold); padding: 9px 16px; }
+  .reach a:hover, .reach a:focus-visible { background: var(--gold); color: var(--on-gold); outline: none; }
+  .reach a.primary { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
+  .copyrow { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px 22px; margin: 6px 0 10px !important; color: var(--ink) !important; font-size: 16px !important; }
+  .ci { display: inline-flex; align-items: center; gap: 8px; user-select: all; }
+  .ci button { font: 500 10.5px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); background: none; border: 1px solid var(--gold-soft); padding: 5px 8px; cursor: pointer; }
+  .ci button:focus-visible { outline: 2px solid var(--gold); }
+  .legal { margin-top: 30px; font-size: 11.5px; line-height: 1.5; color: var(--muted); text-align: center; }
+  @media (max-width: 480px) { .hood-head h2 { font-size: 30px; } .home-top h3, .price { font-size: 24px; } }
+  /* Headers: clean modern sans (Wayfair-style), her 2026-11-02 choice. Logo and italic lines keep the serif. */
+  h1, h2, h3, .price, .contact .name { font-family: var(--body); font-weight: 400; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.12; }
+  .hood-head h2, .type-head h2, .extras-head { font-size: 28px; letter-spacing: -0.01em; }
+  .group-head h2 { font-size: 32px; }
+  .home-top h3, .price { font-size: 21px; }
+  .cma h2, dialog.types h2 { font-size: 23px; }
+  .contact .name { font-size: 28px; }
+  @media (max-width: 480px) { .hood-head h2, .type-head h2, .extras-head { font-size: 24px; } .group-head h2 { font-size: 27px; } .home-top h3, .price { font-size: 19px; } }
+  button.qh { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 15px; height: 15px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); background: none; color: var(--gold-ink); font: 500 9.5px/1 var(--body); cursor: pointer; vertical-align: middle; margin-left: 8px; position: relative; top: -4px; }
+  .subhood-head button.qh { top: 0; margin-left: 2px; }
+  button.qh:hover, button.qh:focus-visible { background: var(--gold); color: var(--on-gold); outline: none; }
+  a.hoodlink { color: var(--ink); text-decoration: underline; text-decoration-color: #c8c8c8; text-underline-offset: 3px; }
+  a.hoodlink:hover { color: var(--gold-ink); }
+  section.hood, .subhood { scroll-margin-top: 190px; }
+  @media (max-width: 520px) { section.hood, .subhood { scroll-margin-top: 140px; } }
+  .hood-about h2 { margin-right: 34px; }
+  .hood-about p { border-left: 0 !important; background: none !important; padding: 8px 0 0 !important; }
+  h1 { line-height: 1.15; }
+  /* Titles and headers: very dark grey, not black (her 2026-11-02 call). */
+  h1, h2, h3, .price, .contact .name, .brand-name { color: var(--head); }
+  /* Phone: bigger photo, tighter text, photo and text the same height. */
+  @media (max-width: 560px) {
+    .contact { gap: 16px; }
+    .contact .portrait { width: 42%; }
+    .contact .name { font-size: 21px; line-height: 1.2; }
+    .contact .motto { font-size: 14px; line-height: 1.35; }
+    .contact .cred { margin-top: 6px; font-size: 12.5px; line-height: 1.5; }
+    .contact .reach { margin: 10px 0 0 !important; }
+    .contact .reach a { padding: 8px 12px; font-size: 11px; letter-spacing: 0.12em; }
+  }
+  .brand { justify-content: space-between; gap: 12px; }
+  .brand-cta { flex: none; font: 500 11px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-gold); background: var(--gold); text-decoration: none; padding: 9px 14px; }
+  .brand-cta:hover, .brand-cta:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+  /* Each neighborhood is its own card (her 2026-11-02 request). */
+  section.hood, .subhood { background: var(--tint); border: 1px solid var(--gold-soft); padding: 22px 24px 8px; margin-top: 28px; }
+  section.hood .hood-head, .subhood .subhood-head { border-bottom-color: var(--gold-soft); }
+  section.hood article.home:last-child, .subhood article.home:last-child { border-bottom: 0; }
+  .group section.hood:first-of-type, .type .subhood:first-of-type { margin-top: 22px; }
+  @media (max-width: 560px) { section.hood, .subhood { padding: 16px 14px 4px; margin-top: 22px; } }
+  /* Landing preview cards; listings open per neighborhood (her 2026-11-02 request). */
+  .browse { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 30px; }
+  .pcard-top { flex-wrap: wrap; }
+  .pcard-top h3 { font-size: 22px; }
+  a.pcard { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); transition: border-color .15s, transform .15s; }
+  a.pcard:hover, a.pcard:focus-visible { border-color: var(--gold); transform: translateY(-2px); outline: none; }
+  .pcard-img { aspect-ratio: 16 / 10; overflow: hidden; background: var(--gold-soft); }
+  .pcard-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .pcard-img.mosaic { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; }
+  .pcard-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; }
+  .pcard-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .pcard-top h3 { font-size: 24px; }
+  .pcard-count { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .pcard-body .tag { align-self: flex-start; font-size: 10.5px; }
+  .pcard-body p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
+  .pcard-go { margin-top: auto; padding-top: 4px; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); }
+  .pcard-all { border-color: var(--gold); }
+  .lbar { margin-top: 30px; scroll-margin-top: 64px; }
+  a.lback { display: inline-block; font-size: 12.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--gold); padding: 9px 14px; }
+  a.lback:hover, a.lback:focus-visible { background: var(--gold); color: var(--on-gold); outline: none; }
+  .lbar { margin-bottom: 4px; }
+  #listings .filter { margin-top: 16px; }
+  /* Card pop-up (her 2026-11-02 request): full screen on phones, a large centered panel on bigger screens. */
+  dialog.lview { box-sizing: border-box; width: calc(100% - 24px); max-width: 100%; height: calc(100% - 64px); max-height: 100%; margin: auto; padding: 0 14px 24px; border: 1px solid var(--gold); box-shadow: 0 12px 40px rgba(0,0,0,.25); background: var(--paper); color: var(--ink); overflow-y: auto; }
+  @media (min-width: 820px) { dialog.lview { width: min(820px, 94vw); height: 92vh; margin: auto; padding: 0 28px 32px; border: 1px solid var(--gold); } }
+  dialog.lview::backdrop { background: rgba(20, 18, 15, .55); }
+  .lbar { position: sticky; top: 0; z-index: 7; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 -14px; padding: 10px 14px; background: var(--paper); border-bottom: 1px solid var(--gold-soft); }
+  @media (min-width: 820px) { .lbar { margin: 0 -28px; padding: 14px 28px; } }
+  .lview-title { display: none; }  /* the pop-up's own headings name what's shown; no repeat in the bar */
+  .lbar { justify-content: flex-end; }
+  .lclose { flex: none; width: 36px; height: 36px; border: 1px solid var(--gold); background: none; color: var(--ink); font: 300 24px/1 var(--body); cursor: pointer; }
+  .lclose:hover, .lclose:focus-visible { background: var(--gold); color: var(--on-gold); outline: none; }
+  dialog.lview section.hood:first-of-type, dialog.lview .group:first-of-type section.hood:first-of-type { margin-top: 18px; }
+  dialog.lview .filter { top: 61px; margin-top: 0; }
+  dialog.lview section.hood, dialog.lview .subhood { scroll-margin-top: 140px; }
+  /* "More ways I can help": preview cards that open a pop-up (her 2026-11-02 request). */
+  button.pcard { display: flex; flex-direction: column; font: inherit; text-align: left; cursor: pointer; padding: 0; width: 100%; color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); border-radius: 0; -webkit-appearance: none; appearance: none; transition: border-color .15s, transform .15s; }
+  button.pcard:hover, button.pcard:focus-visible { border-color: var(--gold); transform: translateY(-2px); outline: none; }
+  .offers { margin-top: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 560px) { .offers { grid-template-columns: 1fr; } }
+  .ocard h3 { line-height: 1.25; }
+  .ocard-head { display: flex; align-items: center; gap: 12px; }
+  .ocard-head .badge { width: 38px; height: 38px; }
+  .ocard h3 { font-size: 21px; }
+  .ocard .label { font-size: 11px; }
+  dialog.offer { max-width: 620px; }
+  dialog.offer section { background: none; padding: 0; margin: 0; }
+  dialog.offer ul.chips { margin-top: 26px; }
+  dialog.offer .cma p:first-child { margin: 26px 34px 0 0; }
+  dialog.offer .cma h2 { margin-right: 34px; }
+  dialog.offer .reach { margin: 18px 0 2px !important; justify-content: flex-start; }
+  /* Spacious, minimalist spacing (her 2026-11-02 request). */
+  .browse { gap: 44px; margin-top: 48px; }
+  .offers { gap: 44px; margin-top: 32px; }
+  .pcard-body { gap: 10px; padding: 24px 26px 26px; }
+  .pcard-top h3, .ocard h3 { font-size: 20px; }
+  .pcard-body p { line-height: 1.6; }
+  .extras-head { margin-top: 88px; }
+  .contact { margin-top: 72px; }
+  .legal { margin-top: 48px; }
+  @media (max-width: 560px) {
+    .browse, .offers { gap: 32px; }
+    .pcard-body { padding: 20px 20px 22px; }
+    .pcard-top h3, .ocard h3 { font-size: 18px; }
+    .extras-head { margin-top: 64px; font-size: 24px; }
+  }
+  /* Request forms (GitHub page only; the Claude version keeps the Blinq buttons). */
+  .site-only { display: none !important; }
+  .rform { margin-top: 20px; }
+  .rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+  .rf-grid label { display: flex; flex-direction: column; gap: 5px; font-size: 12px; letter-spacing: 0.06em; color: var(--muted); }
+  .rf-grid .rf-full { grid-column: 1 / -1; }
+  .rf-grid input, .rf-grid select, .rf-grid textarea { font: 400 15px/1.4 var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); border-radius: 0; padding: 9px 10px; width: 100%; box-sizing: border-box; -webkit-appearance: none; appearance: none; }
+  .rf-grid input:focus, .rf-grid select:focus, .rf-grid textarea:focus { outline: none; border-color: var(--gold); }
+  .rf-send { margin-top: 16px; font: 500 12.5px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-gold); background: var(--gold); border: 0; padding: 12px 18px; cursor: pointer; }
+  .rf-send[disabled] { opacity: .6; cursor: default; }
+  .rf-status { margin: 10px 0 0; font-size: 14px; }
+  .rf-status.err { color: #a23b2a; }
+  @media (max-width: 560px) { .rf-grid { grid-template-columns: 1fr; } }
+  .rf-pros { display: flex; flex-direction: column; gap: 14px; }
+  dialog.offer .rform[data-kind="constellation"] { margin-top: 4px; }
+  .rf-q { margin: 4px 0 0; font-size: 14px; color: var(--ink); }
+  .rf-q span { color: var(--muted); font-size: 12.5px; }
+  .rf-group { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .rf-group legend { padding: 0 0 6px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); }
+  .rf-check { display: inline-flex !important; flex-direction: row !important; align-items: center; gap: 0 !important; cursor: pointer; }
+  .rf-check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .rf-check span { font-size: 13px; letter-spacing: 0; color: var(--ink); border: 1px solid var(--gold-soft); padding: 7px 11px; line-height: 1.2; }
+  .rf-check input:checked + span { background: var(--gold); border-color: var(--gold); color: var(--on-gold); }
+  .rf-check input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .pcard-icon { display: block; width: 84px; height: 52px; color: var(--gold-ink); margin: 0 0 6px -4px; }
+  .pcard-body .tag { white-space: normal; max-width: 100%; box-sizing: border-box; }
+  .pro-list { display: flex; flex-direction: column; gap: 14px; margin-top: 26px; }
+  .pro-cat { width: 100%; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); padding-bottom: 2px; }
+  .pro-item { font-size: 13px; color: var(--ink); border: 1px solid var(--gold-soft); padding: 6px 10px; line-height: 1.2; }
+  .rf-title { margin: 0 34px 4px 0; }
+  .rf-title h3 { font-size: 24px; }
+  .rf-title p { margin: 2px 0 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  .rf-sec { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--gold-soft); }
+  .rf-sec h4 { margin: 0; font-family: var(--body); font-size: 16px; font-weight: 500; color: var(--head); }
+  .rf-hint { margin: 2px 0 12px; font-size: 13px; color: var(--muted); }
+  .rf-sec .rf-grid { margin-top: 12px; }
+  .rf-req { color: var(--gold-ink); }
+  .rf-prefer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; font-size: 13px; color: var(--muted); }
+  .rf-sec .rf-full { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; font-size: 13px; color: var(--muted); }
+  .rf-sec textarea { font: 400 15px/1.4 var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); border-radius: 0; padding: 9px 10px; width: 100%; box-sizing: border-box; }
+  /* Constellation wizard (her 2026-11-02 spec): numbered steps one at a time, progress bar, no divider lines. */
+  .rf-wizard .rf-title { margin: 0 40px 0 0; }
+  .rf-wizard .rf-title h3 { font-size: 24px; }
+  .rf-progress { margin: 18px 0 30px; }
+  .rf-bar { height: 4px; background: var(--gold-soft); }
+  .rf-bar span { display: block; height: 100%; width: 33%; background: var(--gold); transition: width .25s; }
+  .rf-steps { display: flex; justify-content: space-between; margin: 8px 0 0; padding: 0; list-style: none; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .rf-steps li.on { color: var(--gold-ink); font-weight: 500; }
+  .rf-steps li.done { color: var(--ink); }
+  .rf-step h4 { display: flex; align-items: center; gap: 10px; margin: 0; font-family: var(--body); font-size: 18px; font-weight: 400; color: var(--head); }
+  .rf-num { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold-ink); font-size: 13px; }
+  .rf-step .rf-hint { margin: 6px 0 18px 36px; }
+  .rf-step .rf-pros { gap: 20px; }
+  .rf-step .rf-grid { margin-top: 20px; gap: 16px 14px; }
+  .rf-lab { display: inline; }
+  .rf-lab .rf-req { margin-left: 2px; }
+  .rf-step .rf-prefer { margin-top: 20px; }
+  .rf-step .rf-full { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .rf-step textarea { font: 400 15px/1.45 var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); border-radius: 0; padding: 10px 12px; width: 100%; box-sizing: border-box; resize: vertical; }
+  .rf-step textarea:focus { outline: none; border-color: var(--gold); }
+  dialog .x:focus { outline: none; }
+  dialog .x:focus-visible { outline: 1px solid var(--gold); }
+  .rf-nav .rf-back { flex: none; }
+  .rf-nav .rf-send, .rf-nav .rf-next { flex: 0 1 auto; }
+  .rf-nav { display: flex; justify-content: flex-end; gap: 10px; margin-top: 32px; }
+  .rf-nav button { font: 500 12.5px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; padding: 13px 20px; cursor: pointer; border: 1px solid var(--gold); }
+  .rf-next, .rf-wizard .rf-send { color: var(--on-gold); background: var(--gold); margin-top: 0; }
+  .rf-back { color: var(--ink); background: none; margin-right: auto; }
+  @media (max-width: 560px) {
+    .rf-step h4 { font-size: 17px; }
+    .rf-step .rf-hint { margin-left: 0; }
+    .rf-nav button { padding: 12px 14px; letter-spacing: 0.1em; }
+    .rf-steps { font-size: 10.5px; }
+  }
+  .rf-done { text-align: center; padding: 28px 8px 12px; }
+  .rf-check-icon { width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold-ink); display: flex; align-items: center; justify-content: center; }
+  .rf-check-icon svg { width: 28px; height: 28px; }
+  .rf-done h4 { margin: 0; font-family: var(--body); font-size: 20px; font-weight: 400; color: var(--head); }
+  .rf-done p { margin: 10px auto 0; max-width: 340px; font-size: 15px; line-height: 1.55; color: var(--muted); }
+  .rf-close { margin-top: 24px; font: 500 12.5px/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-gold); background: var(--gold); border: 0; padding: 13px 26px; cursor: pointer; }
+  .rf-sign { display: block; margin-top: 8px; font-family: var(--display); font-style: italic; font-size: 19px; color: var(--ink); }
+  /* The thank-you message sits in a small centered box, not a full-width panel. */
+  dialog.types.is-done { width: calc(100% - 72px); max-width: 340px; padding: 18px 18px 22px; }
+  dialog.types.is-done .rf-done { padding: 14px 4px 4px; }
+  dialog.types.is-done section > p { display: none; }
+  /* Private tour button + pop-up (GitHub page; on Claude pages the button opens her Blinq card). */
+  .tour { font: 500 12.5px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-gold); background: var(--gold); border: 1px solid var(--gold); padding: 10px 16px; cursor: pointer; text-decoration: none; display: inline-block; }
+  .tour[disabled] { opacity: .7; cursor: default; }
+  #dlg-tour .rf-title p { margin: 4px 0 0; font-size: 14px; letter-spacing: 0; text-transform: none; color: var(--muted); }
+  #dlg-tour .rf-grid { margin-top: 20px; }
+  #dlg-tour .rf-full { display: flex; flex-direction: column; gap: 5px; }
+  .tour-remember { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .tour-remember input { width: 16px; height: 16px; accent-color: var(--gold); }
+  #dlg-tour .rf-nav { justify-content: flex-start; margin-top: 22px; }
+  .tour-notyou { margin: 16px 0 0 !important; font-size: 12.5px !important; }
+  .tour-change { background: none; border: 0; padding: 0; font: inherit; color: var(--gold-ink); text-decoration: underline; cursor: pointer; }
+  .rf-err { display: block; margin-top: 4px; font-size: 12.5px; line-height: 1.35; letter-spacing: 0; text-transform: none; color: #a23b2a; }
+  .rf-err:empty { display: none; }
+  input.rf-bad, textarea.rf-bad { border-color: #a23b2a !important; }
+  /* Home-type chooser (her 2026-11-05 request): "All homes" first asks which types to show (multi-select). */
+  /* "Choose home types" on the All homes card is a solid gold button so it's noticed (her 2026-11-05 request). */
+  a.pcard-all { border: 2px solid var(--gold); }
+  a.pcard-all .pcard-go { align-self: flex-start; margin-top: 10px; padding: 13px 20px; background: var(--gold); color: var(--on-gold); font-size: 12.5px; letter-spacing: 0.16em; transition: background-color .15s; }
+  a.pcard-all:hover .pcard-go, a.pcard-all:focus-visible .pcard-go { background: #c4b088; }
+  @media (max-width: 560px) { a.pcard-all .pcard-go { align-self: stretch; text-align: center; padding: 15px 16px; } }
+  .chooser { padding: 26px 0 8px; }
+  .chooser h2 { font-size: 26px; line-height: 1.25; margin: 0; }
+  .chooser-sub { margin: 10px 0 0; font-size: 14px; color: var(--muted); }
+  .chooser-sub button, .chosen button { background: none; border: 0; padding: 0; font: inherit; color: var(--gold-ink); text-decoration: underline; cursor: pointer; }
+  .chooser-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+  @media (max-width: 560px) { .chooser-opts { grid-template-columns: 1fr; gap: 12px; } .chooser h2 { font-size: 22px; } }
+  button.copt { position: relative; display: flex; flex-direction: column; gap: 6px; text-align: left; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); border-radius: 0; padding: 18px 20px 20px; cursor: pointer; -webkit-appearance: none; appearance: none; transition: border-color .15s, background-color .15s; }
+  button.copt:hover, button.copt:focus-visible { border-color: var(--gold); outline: none; }
+  button.copt[aria-pressed="true"] { border: 2px solid var(--gold); padding: 17px 19px 19px; background: #fbf7ee; }
+  .copt .pcard-icon { margin-bottom: 2px; }
+  .copt-name { font: 500 18px/1.25 var(--body); color: var(--head, var(--ink)); }
+  .copt-alt { align-self: flex-start; margin-top: -2px; font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); background: var(--gold-soft); padding: 4px 8px; }
+  .copt-desc { font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+  .copt-count { font-size: 12px; letter-spacing: 0.06em; color: var(--gold-ink); }
+  .copt-check { position: absolute; top: 14px; right: 14px; width: 22px; height: 22px; border: 1px solid var(--gold); border-radius: 50%; box-sizing: border-box; }
+  button.copt[aria-pressed="true"] .copt-check { background: var(--gold); }
+  button.copt[aria-pressed="true"] .copt-check::after { content: ""; position: absolute; left: 7px; top: 3px; width: 5px; height: 10px; border: solid var(--on-gold); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .chooser-go { display: block; width: 100%; margin-top: 26px; padding: 15px; font: 500 13px/1 var(--body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-gold); background: var(--gold); border: 1px solid var(--gold); cursor: pointer; }
+  .chooser-go { position: sticky; bottom: 12px; box-shadow: 0 0 0 12px var(--paper); }
+  @media (max-width: 560px) { .copt .pcard-icon { width: 64px; height: 40px; } button.copt { padding: 14px 16px 16px; } button.copt[aria-pressed="true"] { padding: 13px 15px 15px; } }
+  .chooser-go:disabled { background: none; color: var(--muted); border-color: var(--gold-soft); cursor: default; }
+  .chosen { margin: 8px 0 0; font-size: 14px; color: var(--muted); }
+  /* Booking pop-up + contact links (her 2026-11-05 request: Connect buttons open her HubSpot calendar, no Blinq card). */
+  dialog.book { max-width: 720px; }
+  dialog.book h2 { margin: 4px 40px 0 0; font-size: 26px; }
+  .book-sub { margin: 8px 0 0; font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+  .book-frame { width: 100%; min-height: 560px; margin-top: 16px; }
+  .book-frame iframe { width: 100% !important; min-height: 560px; border: 0; }
+  dialog.book p.book-sub, dialog.book p.book-alt { padding: 0; margin-left: 0; }
+  .book-alt { margin: 14px 0 2px; font-size: 13px; color: var(--muted); }
+  .book-alt a { color: var(--gold-ink); }
+  .contact-links { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 7px; }
+  .contact-links a { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-size: 14.5px; line-height: 1.3; }
+  .contact-links a span { overflow-wrap: anywhere; border-bottom: 1px solid transparent; }
+  .contact-links a:hover span, .contact-links a:focus-visible span { border-bottom-color: var(--gold); }
+  .contact-links svg { flex: none; width: 17px; height: 17px; color: var(--gold-ink); }
+  @media (max-width: 560px) { .contact-links a { font-size: 13.5px; gap: 8px; } .contact-links svg { width: 15px; height: 15px; } }
+  /* "This week in 3 Roots" highlights under the title (her 2026-11-05 request). */
+  .weekly { margin: 22px 0 4px; padding: 18px 20px 16px; background: var(--tint); border: 1px solid var(--gold-soft); border-left: 3px solid var(--gold); text-align: left; }
+  .weekly-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; }
+  .weekly-head h2 { margin: 0; font-size: 19px; }
+  .weekly-when { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-ink); }
+  .weekly ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 9px; }
+  .weekly li { display: flex; align-items: baseline; gap: 10px; font-size: 14.5px; line-height: 1.45; color: var(--ink); }
+  .wtag { flex: none; min-width: 96px; font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  @media (max-width: 560px) { .weekly { padding: 16px 16px 14px; } .weekly li { flex-direction: column; gap: 1px; font-size: 14px; } .wtag { min-width: 0; } }
+  .weekly-sum { margin: 10px 0 0; font-size: 15px; color: var(--ink); }
+  .weekly-sum b { font-weight: 500; }
+  .weekly-break { margin: 4px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+  .weekly ul { border-top: 1px solid var(--gold-soft); padding-top: 12px !important; margin-top: 14px; }
+  .oh { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--gold-soft); }
+  .oh-title { font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  .oh-table { width: 100%; margin-top: 8px; border-collapse: collapse; font-size: 14px; line-height: 1.4; }
+  .oh-table th { text-align: left; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 0 10px 6px 0; border-bottom: 1px solid var(--gold-soft); }
+  .oh-table td { vertical-align: top; padding: 9px 10px 9px 0; border-bottom: 1px solid var(--gold-soft); color: var(--ink); }
+  .oh-table tr:last-child td, .oh-table td[rowspan] { border-bottom: 0; }
+  .oh-table tr.oh-first td { border-top: 1px solid var(--gold-soft); }
+  .oh-table tbody tr:first-child td { border-top: 0; }
+  .oh-table td { border-bottom: 0; }
+  a.ohlink { white-space: nowrap; }
+  .oh-table td { padding-top: 6px; padding-bottom: 6px; }
+  .oh-table tr.oh-first td, .oh-table tr.oh-hood td { padding-top: 10px; }
+  .oh-table tr.oh-hood td { border-top: 1px dashed var(--gold-soft); }
+  .oh-table td:last-child { font-size: 12.5px; color: var(--muted); }
+  @media (max-width: 560px) { .oh-table { font-size: 12.5px; } .oh-table th, .oh-table td { padding-right: 7px; } .oh-table td:last-child { font-size: 11.5px; } }
+  .oh-table td span { display: block; font-size: 12.5px; color: var(--muted); }
+  .oh-table td:last-child { padding-right: 0; }
+  a.ohlink { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  a.ohlink:hover, a.ohlink:focus-visible { color: var(--gold-ink); }
+  @media (max-width: 560px) { .oh-table { font-size: 13px; } .oh-table td span { font-size: 11.5px; } }
+  .weekly-tour { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--gold-soft); font-size: 14.5px; line-height: 1.5; color: var(--ink); }
+  .weekly-tour a { color: var(--ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; white-space: nowrap; }
+  /* "Under contract & pending" (her 2026-11-06 request). */
+  .pending-sec { margin-top: 56px; scroll-margin-top: 64px; }
+  .pending-sec h2 { margin: 0; padding-bottom: 10px; border-bottom: 1px solid var(--gold); font-size: 28px; }
+  .pending-intro { margin: 12px 0 0; font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+  .pend-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+  @media (max-width: 640px) { .pend-grid { grid-template-columns: 1fr; gap: 12px; } .pending-sec h2 { font-size: 24px; } }
+  a.pend { display: flex; gap: 14px; align-items: stretch; text-decoration: none; color: var(--ink); background: var(--paper); border: 1px solid var(--gold-soft); transition: border-color .15s; }
+  a.pend:hover, a.pend:focus-visible { border-color: var(--gold); outline: none; }
+  a.pend img { flex: none; width: 128px; object-fit: cover; display: block; min-height: 100%; }
+  .pend-body { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px 12px 0; min-width: 0; }
+  .pend-st { font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  .pend-addr { font-size: 16px; color: var(--head, var(--ink)); margin-top: 2px; }
+  .pend-where { font-size: 13px; color: var(--muted); }
+  .pend-price { font-size: 13.5px; margin-top: 4px; }
+  .pend-facts { font-size: 12.5px; color: var(--muted); }
+  @media (max-width: 400px) { a.pend img { width: 104px; } .pend-addr { font-size: 15px; } }
+  .weekly-sum a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  /* "For sale now" (her 2026-11-07 request; preview only until she approves). */
+  .active-sec { margin-top: 56px; scroll-margin-top: 64px; }
+  .active-sec h2 { margin: 0; padding-bottom: 10px; border-bottom: 1px solid var(--gold); font-size: 28px; }
+  .act-hood { margin-top: 26px; }
+  .act-hood-head { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; padding-bottom: 8px; border-bottom: 1px solid var(--gold-soft); }
+  .act-hood-head h3 { margin: 0; font-size: 20px; }
+  .act-count { margin-left: auto; font-size: 13px; color: var(--muted); }
+  .act-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 14px; }
+  @media (max-width: 640px) { .act-grid { grid-template-columns: 1fr; gap: 12px; } .active-sec h2 { font-size: 24px; } }
+  a.act { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); background: var(--paper); border: 1px solid var(--gold); transition: box-shadow .15s; }
+  a.act:hover, a.act:focus-visible { box-shadow: 0 4px 18px rgba(0,0,0,.08); outline: none; }
+  a.act img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .act-body { display: flex; flex-direction: column; gap: 3px; padding: 14px 16px 16px; }
+  .act-st { font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  .act-price { font-size: 22px; color: var(--head, var(--ink)); margin-top: 2px; }
+  .act-addr { font-size: 15px; }
+  .act-facts { font-size: 12.5px; color: var(--muted); }
+  ul.act-news { margin: 6px 0 0; padding-left: 16px; font-size: 13px; line-height: 1.45; color: var(--ink); }
+  .act-go { margin-top: 8px; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); }
+  /* Under-contract cards read as "not available": muted, so the for-sale cards stand out. */
+  .preview-actives a.pend { background: var(--tint); }
+  .preview-actives a.pend img { filter: grayscale(35%); opacity: .9; }
+  .type-filter { position: sticky; top: 48px; z-index: 5; display: flex; flex-wrap: wrap; gap: 8px; margin: 18px -16px 0; padding: 10px 16px; background: var(--paper); border-bottom: 1px solid var(--gold-soft); }
+  .tf { font: 500 12px/1 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: var(--paper); border: 1px solid var(--gold); padding: 9px 12px; cursor: pointer; }
+  .tf small { font-size: 11px; color: var(--muted); letter-spacing: 0; margin-left: 2px; }
+  .tf[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); }
+  .tf[aria-pressed="true"] small { color: var(--on-gold); }
+  .act-hood[hidden], a.pend[hidden], .pending-sec[hidden] { display: none !important; }
+  /* Compact for-sale cards, same shape as the under-contract ones (her 2026-11-09 request). */
+  a.act { flex-direction: row; gap: 14px; align-items: stretch; }
+  a.act img { flex: none; width: 128px; aspect-ratio: auto; min-height: 100%; object-fit: cover; }
+  .act-body { padding: 12px 14px 12px 0; min-width: 0; gap: 2px; }
+  .act-price { font-size: 18px; }
+  ul.act-news { font-size: 12.5px; margin-top: 4px; }
+  .act-go { margin-top: 6px; }
+  @media (max-width: 400px) { a.act img { width: 104px; } }
+  .act-hood { scroll-margin-top: 120px; }
+  .act-hood-head .tag { font-size: 11px; }
+  .weekly-break a { color: inherit; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  /* Expandable open houses (her 2026-11-09 request, preview). */
+  details.oh-x summary { list-style: none; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; cursor: pointer; }
+  details.oh-x summary::-webkit-details-marker { display: none; }
+  details.oh-x summary::after { content: "+"; font: 300 22px/1 var(--body); color: var(--gold-ink); margin-left: 8px; }
+  details.oh-x[open] summary::after { content: "\2212"; }
+  .oh-n { margin-left: auto; font-size: 12.5px; color: var(--muted); }
+  tr[data-row-link] { cursor: pointer; }
+  tr[data-row-link]:hover td { background: rgba(209,191,153,.18); }
+  .oh-hint, .oh-empty { margin: 10px 0 0; font-size: 12.5px; color: var(--muted); }
+  a.act { scroll-margin-top: 130px; }
+  @keyframes cardflash { 0%, 60% { box-shadow: 0 0 0 3px var(--gold); } 100% { box-shadow: 0 0 0 0 transparent; } }
+  a.act.flash { animation: cardflash 2.2s ease-out; }
+  /* no question marks anywhere (her 2026-11-09 call) */
+  button.q, button.qh, button.qlink { display: none !important; }
+  /* Summary count tiles (her 2026-11-09 request). */
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  a.stat { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; background: var(--paper); border: 1px solid var(--gold); text-decoration: none; color: var(--ink); }
+  a.stat:hover, a.stat:focus-visible { box-shadow: 0 3px 14px rgba(0,0,0,.07); outline: none; }
+  .stat-n { font-size: 36px; line-height: 1; color: var(--head, var(--ink)); }
+  .stat-l { margin-top: 6px; font-size: 11.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  .stat-s { font-size: 12.5px; color: var(--muted); }
+  a.stat-pend { border-color: var(--gold-soft); background: var(--tint); }
+  .stat-row + .weekly-break { margin-top: 12px; }
+  @media (max-width: 400px) { .stat-n { font-size: 30px; } a.stat { padding: 12px 12px; } .stat-l { font-size: 10.5px; letter-spacing: 0.08em; } }
+  /* Executive summary right under the heading (her 2026-11-09 request). */
+  .weekly ul.exec { margin: 12px 0 2px; padding: 14px 16px !important; border: 0; border-left: 3px solid var(--gold); background: var(--paper); display: grid; gap: 10px; }
+  .weekly ul.exec li { font-size: 16px; line-height: 1.45; }
+  .weekly ul.exec .wtag { font-size: 11px; }
+  @media (max-width: 560px) { .weekly ul.exec li { font-size: 15px; } }
+  /* By home type / By neighborhood as their own labeled sections (her 2026-11-09 request). */
+  .breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  @media (max-width: 560px) { .breakdown { grid-template-columns: 1fr; } }
+  .bd { padding: 12px 14px; background: var(--paper); border: 1px solid var(--gold-soft); }
+  .bd-l { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); }
+  .bd-items { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .bd-items a, .bd-items span.bd-x { display: inline-block; font-size: 13.5px; line-height: 1.2; color: var(--ink); text-decoration: none; border: 1px solid var(--gold); padding: 6px 9px; }
+  .bd-items a:hover, .bd-items a:focus-visible { background: var(--gold); color: var(--on-gold); outline: none; }
+  /* Equal tiles with the breakdown inside (her 2026-11-09 request); no filter buttons. */
+  .stat-row { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  @media (max-width: 640px) { .stat-row { grid-template-columns: 1fr; } }
+  div.stat { display: flex; flex-direction: column; gap: 12px; padding: 16px; background: var(--paper); border: 1px solid var(--gold); }
+  div.stat-pend { border-color: var(--gold-soft); background: var(--paper); }
+  a.stat-head { display: flex; flex-direction: column; gap: 2px; text-decoration: none; color: var(--ink); }
+  div.stat .bd { padding: 10px 0 0; border: 0; border-top: 1px solid var(--gold-soft); background: none; }
+  .bd-items span.bd-x { border-color: var(--gold-soft); color: var(--muted); }
+  .filter-note { margin: 14px 0 0; padding: 10px 14px; background: var(--tint); border-left: 3px solid var(--gold); font-size: 14px; }
+  .filter-note button { background: none; border: 0; padding: 0; font: inherit; color: var(--gold-ink); text-decoration: underline; cursor: pointer; }
+  .filter-note[hidden] { display: none !important; }
+  .bd-items a.bd-all { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
+  .asof { margin: 6px 0 0; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  /* Weekly changes list with linked addresses (her 2026-11-10 request). */
+  .wchanges { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--gold-soft); }
+  .weekly .wchanges ul { border-top: 0; padding-top: 0 !important; margin-top: 8px; }
+  a.pend { scroll-margin-top: 130px; }
+  a.pend.flash { animation: cardflash 2.2s ease-out; }
+  /* Report-wide filter + three tiles + Recently sold (her 2026-11-10 request). */
+  .rfilter { margin-top: 14px; }
+  .rfilter .bd { margin-top: 10px; padding: 0 !important; border: 0 !important; background: none !important; }
+  .rfilter .bd + .bd { margin-top: 12px; }
+  .rfilter .bd-items { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  button.fchip { font: 400 13.5px/1.2 var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--gold); padding: 7px 10px; cursor: pointer; border-radius: 0; -webkit-appearance: none; appearance: none; }
+  button.fchip:hover, button.fchip:focus-visible { background: var(--gold-soft); outline: none; }
+  button.fchip.on { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
+  .stat-row.stat-row3 { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
+  .stat-row3 a.stat { justify-content: flex-start; }
+  a.stat-sold { border-color: var(--gold-soft); background: var(--tint); }
+  @media (max-width: 560px) { .stat-row.stat-row3 { grid-template-columns: 1fr; } }
+  .f-empty { margin: 14px 0 0; font-size: 14px; color: var(--muted); font-style: italic; }
+  .sold-sec { margin-top: 56px; scroll-margin-top: 64px; }
+  .sold-sec h2 { margin: 0; padding-bottom: 10px; border-bottom: 1px solid var(--gold); font-size: 28px; }
+  @media (max-width: 640px) { .sold-sec h2 { font-size: 24px; } }
+  a.act.sold { background: var(--tint); border-color: var(--gold-soft); }
+  a.act.sold img { filter: grayscale(25%); }
+  #under-contract .filter-note, #recently-sold .filter-note, #for-sale .filter-note { margin-top: 12px; }
+  /* Phone: open-house table drops the Sale column so dates don't wrap line by line; calendar shows a loading note (2026-11-10 test fixes). */
+  @media (max-width: 560px) { .oh-table th:nth-child(4), .oh-table td:last-child { display: none; } .oh-table td:first-child { min-width: 92px; } .oh-table a.ohlink { white-space: normal; } .oh-table { table-layout: fixed; } }
+  .book-frame { position: relative; }
+  .book-frame::before { content: "Loading my calendar\2026"; position: absolute; top: 24px; left: 0; right: 0; text-align: center; font-size: 14px; color: var(--muted); }
+  .book-frame iframe { position: relative; z-index: 1; background: transparent; }
+  body .tour { display: none !important; }
+  .site-only { display: revert !important; }
+  .claude-only { display: none !important; }
+</style>
+
+</head>
+<body>
+<div class="wrap preview-actives">
+  <div class="brand">
+    <div class="brand-mark" role="img" aria-label="Valenne Real Estate">
+      <div class="brand-name"><span class="big">V</span>ALENNE</div>
+      <div class="brand-sub">REAL ESTATE</div>
+    </div>
+    <a class="brand-cta" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener" data-book>Connect</a>
+  </div>
+  <header>
+    <div class="eyebrow">Sorrento Mesa &middot; San Diego</div>
+    <h1>3 Roots Market <span class="when">Update<span class="sep" role="presentation"></span></span> <span class="when">November 12</span></h1>
+    <p class="asof">Last updated November 12, 2026</p>
+    <section class="weekly" aria-label="This week in 3 Roots">
+      <div class="weekly-head"><h2>This week in 3 Roots</h2></div>
+      <div class="rfilter" data-stats="{&quot;all&quot;: {&quot;fs&quot;: {&quot;n&quot;: 12, &quot;s&quot;: &quot;$834K–$1.90M · median $1.12M&quot;}, &quot;uc&quot;: {&quot;n&quot;: 8, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 3, &quot;s&quot;: &quot;$823K–$864K · median $851K&quot;}, &quot;name&quot;: &quot;&quot;}, &quot;sfr&quot;: {&quot;fs&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;$1.90M&quot;}, &quot;uc&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None right now&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;single-family homes&quot;}, &quot;condo&quot;: {&quot;fs&quot;: {&quot;n&quot;: 5, &quot;s&quot;: &quot;$1.20M–$1.55M · median $1.35M&quot;}, &quot;uc&quot;: {&quot;n&quot;: 4, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;detached condos&quot;}, &quot;flat&quot;: {&quot;fs&quot;: {&quot;n&quot;: 4, &quot;s&quot;: &quot;$834K–$1.03M · median $927K&quot;}, &quot;uc&quot;: {&quot;n&quot;: 2, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 3, &quot;s&quot;: &quot;$823K–$864K · median $851K&quot;}, &quot;name&quot;: &quot;condos&quot;}, &quot;townhome&quot;: {&quot;fs&quot;: {&quot;n&quot;: 2, &quot;s&quot;: &quot;$900K–$1.05M · median $975K&quot;}, &quot;uc&quot;: {&quot;n&quot;: 2, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;townhomes&quot;}, &quot;hood:brio&quot;: {&quot;fs&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;$1.90M&quot;}, &quot;uc&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None right now&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;Brio&quot;}, &quot;hood:aero&quot;: {&quot;fs&quot;: {&quot;n&quot;: 5, &quot;s&quot;: &quot;$1.20M–$1.55M · median $1.35M&quot;}, &quot;uc&quot;: {&quot;n&quot;: 3, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;Aero&quot;}, &quot;hood:palmer&quot;: {&quot;fs&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None right now&quot;}, &quot;uc&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;Palmer&quot;}, &quot;hood:atwood&quot;: {&quot;fs&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;$1.05M&quot;}, &quot;uc&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;Atwood&quot;}, &quot;hood:dorsey&quot;: {&quot;fs&quot;: {&quot;n&quot;: 3, &quot;s&quot;: &quot;$834K–$1.03M · median $924K&quot;}, &quot;uc&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 3, &quot;s&quot;: &quot;$823K–$864K · median $851K&quot;}, &quot;name&quot;: &quot;Dorsey&quot;}, &quot;hood:hudson&quot;: {&quot;fs&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;$930K&quot;}, &quot;uc&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;Found a buyer, waiting to close&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;Hudson&quot;}, &quot;hood:ardha&quot;: {&quot;fs&quot;: {&quot;n&quot;: 1, &quot;s&quot;: &quot;$900K&quot;}, &quot;uc&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None right now&quot;}, &quot;so&quot;: {&quot;n&quot;: 0, &quot;s&quot;: &quot;None in the last 30 days&quot;}, &quot;name&quot;: &quot;Ardha Way&quot;}}">
+        <div class="bd"><span class="bd-l">Home type</span><div class="bd-items"><button type="button" class="fchip on" data-f="all">All homes</button><button type="button" class="fchip" data-f="sfr">Single-family</button><button type="button" class="fchip" data-f="condo">Detached condos</button><button type="button" class="fchip" data-f="flat">Condos</button><button type="button" class="fchip" data-f="townhome">Townhomes</button></div></div>
+        <div class="bd"><span class="bd-l">Neighborhood</span><div class="bd-items"><button type="button" class="fchip" data-f="hood:brio">Brio</button><button type="button" class="fchip" data-f="hood:aero">Aero</button><button type="button" class="fchip" data-f="hood:palmer">Palmer</button><button type="button" class="fchip" data-f="hood:atwood">Atwood</button><button type="button" class="fchip" data-f="hood:dorsey">Dorsey</button><button type="button" class="fchip" data-f="hood:hudson">Hudson</button><button type="button" class="fchip" data-f="hood:ardha">Ardha Way</button></div></div>
+      </div>
+      <div class="stat-row stat-row3">
+        <a class="stat" data-tile="fs" href="#for-sale"><span class="stat-n">12</span><span class="stat-l">For sale</span><span class="stat-s">$834K–$1.90M · median $1.12M</span></a>
+        <a class="stat stat-pend" data-tile="uc" href="#under-contract"><span class="stat-n">8</span><span class="stat-l">Under contract or pending</span><span class="stat-s">Found a buyer, waiting to close</span></a>
+        <a class="stat stat-sold" data-tile="so" href="#recently-sold"><span class="stat-n">3</span><span class="stat-l">Sold, last 30 days</span><span class="stat-s">$823K–$864K · median $851K</span></a>
+      </div>
+      <div class="wchanges">
+        <div class="oh-title">What&rsquo;s new this week (Nov 5 – Nov 12)</div>
+        <ul>
+        <li><span class="wtag">Price cut</span><span class="wtext"><a class="ohlink ohjump" href="#home-14661-dunleer-way">14661 Dunleer Way</a> (Aero &middot; Detached condo): cut $50,000 on Nov 10, now $1,299,000.</span></li>
+        <li><span class="wtag">Sold</span><span class="wtext"><a class="ohlink ohjump" href="#home-14521-dunleer-way">14521 Dunleer Way</a> (Dorsey &middot; Condo): sold Nov 9 for $822,900.</span></li>
+        </ul>
+      </div>
+      <details class="oh oh-x">
+        <summary><span class="oh-title">Open houses</span><span class="oh-n">6 homes &middot; tap to see times</span></summary>
+        <table class="oh-table">
+          <thead><tr><th>When</th><th>Neighborhood</th><th>Home</th><th>Sale</th></tr></thead>
+          <tbody>
+          <tr class="oh-first" data-row-link><td rowspan="4">Sat Nov 14 &amp; Sun Nov 15<span>11am–3pm</span></td><td rowspan="2">Aero<span>Detached condos</span></td><td><a class="ohlink ohjump" href="#home-14703-sierra-way">14703 Sierra Way</a></td><td>New construction</td></tr>
+          <tr class="" data-row-link><td><a class="ohlink ohjump" href="#home-14709-sierra-way">14709 Sierra Way</a></td><td>Model home</td></tr>
+          <tr class="oh-hood" data-row-link><td rowspan="2">Dorsey<span>Condos</span></td><td><a class="ohlink ohjump" href="#home-14517-dunleer-way">14517 Dunleer Way</a></td><td>New construction</td></tr>
+          <tr class="" data-row-link><td><a class="ohlink ohjump" href="#home-14531-dunleer-way">14531 Dunleer Way</a></td><td>New construction</td></tr>
+          <tr class="oh-first" data-row-link><td rowspan="1">Sat Nov 14 &amp; Sun Nov 15<span>1–4pm</span></td><td rowspan="1">Aero<span>Detached condo</span></td><td><a class="ohlink ohjump" href="#home-14661-dunleer-way">14661 Dunleer Way</a></td><td>Resale</td></tr>
+          <tr class="oh-first" data-row-link><td rowspan="1">Sun Nov 15<span>12–4pm</span></td><td rowspan="1">Atwood<span>Townhome</span></td><td><a class="ohlink ohjump" href="#home-10403-adamson-way">10403 Adamson Way</a></td><td>Resale</td></tr>
+          </tbody>
+        </table>
+        <p class="oh-hint">Tap a home to see it in the list below.</p>
+      </details>
+      <script>
+      document.querySelectorAll('tr[data-row-link]').forEach(function (tr) {
+        tr.addEventListener('click', function (e) { if (e.target.closest('a')) return; var a = tr.querySelector('a.ohlink'); if (a) a.click(); });
+      });
+      </script>
+      <p class="weekly-tour">Want a private tour? Text me at <a href="sms:+18587234529">(858) 723-4529</a> and let me know which home.</p>
+    </section>
+      <script>
+      // Jump to a home's card (open houses + weekly changes): show every home type first, then scroll and briefly highlight it.
+      document.querySelectorAll('a.ohjump').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var card = document.getElementById(a.getAttribute('href').slice(1));
+          if (!card) return;
+          e.preventDefault();
+          if (window.showHomeType) window.showHomeType('all');
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.remove('flash'); void card.offsetWidth; card.classList.add('flash');
+          try { history.replaceState(null, '', '#' + card.id); } catch (err) {}
+        });
+      });
+      </script>
+  </header>
+
+  <section class="active-sec" id="for-sale">
+    <h2>For sale now</h2>
+    <p class="pending-intro">Every home for sale in 3 Roots right now, by neighborhood.</p>
+    <p class="filter-note" hidden>Showing <b></b> only &middot; <button type="button">Show all homes</button></p>
+    <p class="f-empty" hidden>None for sale right now for this filter.</p>
+    <div class="act-hood" id="fs-brio" data-hood="brio" data-ty="sfr">
+      <div class="act-hood-head"><h3>Brio</h3><span class="tag">Single-family home</span><span class="act-count">1 for sale</span></div>
+      <div class="act-grid">
+      <a class="act" id="home-10656-melogold-way" href="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz">
+        <img src="photos/melogold.jpg" alt="10656 Melogold Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Single-family home</span>
+          <span class="act-price">$1,895,000</span>
+          <span class="act-addr">10656 Melogold Way</span>
+          <span class="act-facts">3 bed &middot; 2.5 bath &middot; 2,574 sq ft &middot; built 2022 &middot; 3,694 sq ft lot &middot; HOA $256/mo</span>
+          <ul class="act-news"><li>Recently listed</li><li>Extra room beyond the 3 listed bedrooms</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class="act-hood" id="fs-aero" data-hood="aero" data-ty="condo">
+      <div class="act-hood-head"><h3>Aero</h3><span class="tag">Detached condos</span><span class="act-count">5 for sale</span></div>
+      <div class="act-grid">
+      <a class="act" id="home-14807-temescal-way" href="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs">
+        <img src="photos/temescal.jpg" alt="14807 Temescal Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Detached condo</span>
+          <span class="act-price">$1,349,900</span>
+          <span class="act-addr">14807 Temescal Way</span>
+          <span class="act-facts">4 bed &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2024 &middot; HOA $303/mo</span>
+          <ul class="act-news"><li>5.375% interest rate offered</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      <a class="act" id="home-14661-dunleer-way" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">
+        <img src="photos/dunleer14661.jpg" alt="14661 Dunleer Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Detached condo</span>
+          <span class="act-price">$1,299,000</span>
+          <span class="act-addr">14661 Dunleer Way</span>
+          <span class="act-facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2025 &middot; HOA $303/mo</span>
+          <ul class="act-news"><li>Price cut $50,000 on Nov 10</li><li>$136,900 below original list price</li><li>Open house Sat Nov 14 &amp; Sun Nov 15, 1–4pm</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      <a class="act" id="home-11014-solstice-way" href="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M">
+        <img src="photos/solstice11014.jpg" alt="11014 Solstice Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Detached condo</span>
+          <span class="act-price">$1,199,000</span>
+          <span class="act-addr">11014 Solstice Way</span>
+          <span class="act-facts">4 bed &middot; 3.5 bath &middot; 2,041 sq ft &middot; built 2022 &middot; HOA $303/mo</span>
+          <ul class="act-news"><li>Price cut $50,000 on Oct 29 (was $1,249,000)</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      <a class="act" id="home-14709-sierra-way" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">
+        <img src="photos/sierra14709.jpg" alt="14709 Sierra Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Detached condo</span>
+          <span class="act-price">$1,549,900</span>
+          <span class="act-addr">14709 Sierra Way</span>
+          <span class="act-facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; new construction &middot; HOA $248/mo</span>
+          <ul class="act-news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li><li>Builder&rsquo;s furnished model home</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      <a class="act" id="home-14703-sierra-way" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">
+        <img src="photos/sierra14703.jpg" alt="14703 Sierra Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Detached condo</span>
+          <span class="act-price">$1,459,900</span>
+          <span class="act-addr">14703 Sierra Way</span>
+          <span class="act-facts">4 bed &middot; 3.5 bath &middot; 2,121 sq ft &middot; new construction (2026) &middot; HOA $248/mo</span>
+          <ul class="act-news"><li>Back on the market</li><li>Price up $50,000 on Oct 31</li><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class="act-hood" id="fs-dorsey" data-hood="dorsey" data-ty="flat">
+      <div class="act-hood-head"><h3>Dorsey</h3><span class="tag">Condos</span><span class="act-count">3 for sale</span></div>
+      <div class="act-grid">
+      <a class="act" id="home-14535-dunleer-way" href="https://zsvc.paragon.ice.com/s/goto/FtBodlsomrM">
+        <img src="photos/dunleer14535.jpg" alt="14535 Dunleer Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Condo</span>
+          <span class="act-price">$1,025,900</span>
+          <span class="act-addr">14535 Dunleer Way</span>
+          <span class="act-facts">3 bed &middot; 2.5 bath &middot; 1,625 sq ft &middot; new construction (2026) &middot; HOA $452/mo</span>
+          <ul class="act-news"><li>New construction: buyer can still pick flooring</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      <a class="act" id="home-14517-dunleer-way" href="https://zsvc.paragon.ice.com/s/goto/Lnuzm37xB7B">
+        <img src="photos/dunleer14517.jpg" alt="14517 Dunleer Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Condo</span>
+          <span class="act-price">$923,900</span>
+          <span class="act-addr">14517 Dunleer Way</span>
+          <span class="act-facts">3 bed &middot; 2 bath &middot; 1,609 sq ft &middot; new construction (2026) &middot; HOA $500/mo</span>
+          <ul class="act-news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      <a class="act" id="home-14531-dunleer-way" href="https://zsvc.paragon.ice.com/s/goto/GLx-tLqd0a">
+        <img src="photos/dunleer14531.jpg" alt="14531 Dunleer Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Condo</span>
+          <span class="act-price">$833,900</span>
+          <span class="act-addr">14531 Dunleer Way</span>
+          <span class="act-facts">2 bed &middot; 2 bath &middot; 1,312 sq ft &middot; new construction (2026) &middot; HOA $512/mo</span>
+          <ul class="act-news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class="act-hood" id="fs-hudson" data-hood="hudson" data-ty="flat">
+      <div class="act-hood-head"><h3>Hudson</h3><span class="tag">Condo</span><span class="act-count">1 for sale</span></div>
+      <div class="act-grid">
+      <a class="act" id="home-14006-lumurine-way" href="https://zsvc.paragon.ice.com/s/goto/KNT4FIpRJro">
+        <img src="photos/lumurine14006.jpg" alt="14006 Lumurine Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Condo</span>
+          <span class="act-price">$929,999</span>
+          <span class="act-addr">14006 Lumurine Way</span>
+          <span class="act-facts">2 bed &middot; 2 bath &middot; 1,645 sq ft &middot; built 2025 &middot; HOA $250/mo</span>
+          <ul class="act-news"><li>Back on the market</li><li>Price cut $10,000 on Sep 26</li><li>$229,951 below original list price</li><li>Former model home, never lived in</li><li>Can be bought furnished</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class="act-hood" id="fs-atwood" data-hood="atwood" data-ty="townhome">
+      <div class="act-hood-head"><h3>Atwood</h3><span class="tag">Townhome</span><span class="act-count">1 for sale</span></div>
+      <div class="act-grid">
+      <a class="act" id="home-10403-adamson-way" href="https://zsvc.paragon.ice.com/s/goto/FFgr_2bzWTy">
+        <img src="photos/adamson10403.jpg" alt="10403 Adamson Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Townhome</span>
+          <span class="act-price">$1,049,999</span>
+          <span class="act-addr">10403 Adamson Way</span>
+          <span class="act-facts">2 bed &middot; 2.5 bath &middot; 1,669 sq ft &middot; built 2023 &middot; HOA $166/mo</span>
+          <ul class="act-news"><li>Open house Sun Nov 15, 12–4pm</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class="act-hood" id="fs-ardha" data-hood="ardha" data-ty="townhome">
+      <div class="act-hood-head"><h3>Ardha Way</h3><span class="tag">Townhome</span><span class="act-count">1 for sale</span></div>
+      <div class="act-grid">
+      <a class="act" id="home-11052-ardha-way" href="https://zsvc.paragon.ice.com/s/goto/Zdt0H2AOPvx">
+        <img src="photos/ardha11052.jpg" alt="11052 Ardha Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">For sale &middot; Townhome</span>
+          <span class="act-price">$900,000</span>
+          <span class="act-addr">11052 Ardha Way</span>
+          <span class="act-facts">3 bed &middot; 2.5 bath &middot; 1,301 sq ft &middot; built 2022 &middot; HOA $307/mo</span>
+          <ul class="act-news"><li>Recently listed</li></ul>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      </div>
+    </div>
+  </section>
+  <section class="pending-sec" id="under-contract">
+    <h2>Under contract &amp; pending</h2>
+    <p class="pending-intro">Homes in 3 Roots that found a buyer and are waiting to close. Prices shown are the last list prices; final sale prices aren&rsquo;t public until closing.</p>
+    <p class="filter-note" hidden>Showing <b></b> only &middot; <button type="button">Show all homes</button></p>
+    <p class="f-empty" hidden>None under contract right now for this filter.</p>
+    <div class="pend-grid">
+    <a class="pend" id="home-14705-sierra-way" data-hood="aero" data-ty="condo" href="https://zsvc.paragon.ice.com/s/goto/Gyjxu_ZPrJc">
+      <img src="photos/pending-14705sierra.jpg" alt="14705 Sierra Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 31</span>
+        <span class="pend-addr">14705 Sierra Way</span>
+        <span class="pend-where">Aero &middot; Detached condo</span>
+        <span class="pend-price">Listed at $1,599,900 &middot; 41 days on market</span>
+        <span class="pend-facts">4 bed &middot; 4 bath &middot; 2,121 sq ft &middot; built 2024</span>
+        <span class="act-go">View listing &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pend" id="home-10601-senua-court" data-hood="palmer" data-ty="condo" href="https://zsvc.paragon.ice.com/s/goto/IyGiWq7mZ0X">
+      <img src="photos/pending-10601senua.jpg" alt="10601 Senua Court" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 26</span>
+        <span class="pend-addr">10601 Senua Court</span>
+        <span class="pend-where">Palmer &middot; Detached condo</span>
+        <span class="pend-price">Listed at $1,399,000 &middot; 36 days on market</span>
+        <span class="pend-facts">3 bed &middot; 4 bath &middot; 2,187 sq ft &middot; built 2022</span>
+        <span class="act-go">View listing &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pend" id="home-14706-sierra-way" data-hood="aero" data-ty="condo" href="https://zsvc.paragon.ice.com/s/goto/Ftt1RP8_isL">
+      <img src="photos/pending-14706sierra.jpg" alt="14706 Sierra Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Sep 17</span>
+        <span class="pend-addr">14706 Sierra Way</span>
+        <span class="pend-where">Aero &middot; Detached condo</span>
+        <span class="pend-price">Listed at $1,385,900 &middot; 16 days on market</span>
+        <span class="pend-facts">4 bed &middot; 4 bath &middot; 2,121 sq ft &middot; new construction (2026)</span>
+        <span class="act-go">View listing &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pend" id="home-14704-sierra-way" data-hood="aero" data-ty="condo" href="https://zsvc.paragon.ice.com/s/goto/Fn0tkR_dtOk">
+      <img src="photos/pending-14704sierra.jpg" alt="14704 Sierra Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 10</span>
+        <span class="pend-addr">14704 Sierra Way</span>
+        <span class="pend-where">Aero &middot; Detached condo</span>
+        <span class="pend-price">Listed at $1,348,900 &middot; 133 days on market</span>
+        <span class="pend-facts">3 bed &middot; 4 bath &middot; 2,029 sq ft &middot; new construction (2026)</span>
+        <span class="act-go">View listing &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pend" id="home-13912-boyden-way" data-hood="hudson" data-ty="flat" href="https://zsvc.paragon.ice.com/s/goto/ZaWYCHO3m90">
+      <img src="photos/pending-13912boyden.jpg" alt="13912 Boyden Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since May 10</span>
+        <span class="pend-addr">13912 Boyden Way</span>
+        <span class="pend-where">Hudson &middot; Condo</span>
+        <span class="pend-price">Listed at $1,038,567 &middot; 103 days on market</span>
+        <span class="pend-facts">2 bed &middot; 3 bath &middot; 1,686 sq ft &middot; built 2025</span>
+        <span class="act-go">View listing &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pend" id="home-10507-coupland-way" data-hood="atwood" data-ty="townhome" href="https://zsvc.paragon.ice.com/s/goto/LiTR_jIxtWo">
+      <img src="photos/pending-10507coupland.jpg" alt="10507 Coupland Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Aug 27</span>
+        <span class="pend-addr">10507 Coupland Way</span>
+        <span class="pend-where">Atwood &middot; Townhome</span>
+        <span class="pend-price">Listed at $979,000 &middot; 146 days on market</span>
+        <span class="pend-facts">2 bed &middot; 3 bath &middot; 1,669 sq ft &middot; built 2021</span>
+        <span class="act-go">View listing &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pend" id="home-10951-lotta-court" data-hood="other" data-ty="townhome" href="https://zsvc.paragon.ice.com/s/goto/TyPApfD_UaN">
+      <img src="photos/pending-10951lotta.jpg" alt="10951 Lotta Court" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Under contract since Nov 1</span>
+        <span class="pend-addr">10951 Lotta Court</span>
+        <span class="pend-where">3 Roots &middot; Townhome</span>
+        <span class="pend-price">Listed at $939,000 &middot; 44 days on market</span>
+        <span class="pend-facts">3 bed &middot; 3 bath &middot; 1,455 sq ft &middot; built 2021</span>
+        <span class="act-go">View listing &rsaquo;</span>
+      </div>
+    </a>
+    <a class="pend" id="home-14509-dunleer-way" data-hood="dorsey" data-ty="flat" href="https://zsvc.paragon.ice.com/s/goto/G-dqxxSK6EE">
+      <img src="photos/pending-14509dunleer.jpg" alt="14509 Dunleer Way" loading="lazy">
+      <div class="pend-body">
+        <span class="pend-st">Pending since Oct 4</span>
+        <span class="pend-addr">14509 Dunleer Way</span>
+        <span class="pend-where">Dorsey &middot; Condo</span>
+        <span class="pend-price">Listed at $922,900 &middot; 117 days on market</span>
+        <span class="pend-facts">3 bed &middot; 2 bath &middot; 1,609 sq ft &middot; new construction (2026)</span>
+        <span class="act-go">View listing &rsaquo;</span>
+      </div>
+    </a>
+    </div>
+  </section>
+  <section class="sold-sec" id="recently-sold">
+    <h2>Recently sold</h2>
+    <p class="pending-intro">Homes in 3 Roots that closed in the last 30 days (Oct 13 &ndash; Nov 12), sold through the MLS. Builders also sell some new homes directly, which aren&rsquo;t shown here.</p>
+    <p class="filter-note" hidden>Showing <b></b> only &middot; <button type="button">Show all homes</button></p>
+    <p class="f-empty" hidden>No sales in the last 30 days for this filter.</p>
+    <div class="act-hood" id="so-dorsey" data-hood="dorsey" data-ty="flat">
+      <div class="act-hood-head"><h3>Dorsey</h3><span class="tag">Condos</span><span class="act-count">3 sold</span></div>
+      <div class="act-grid">
+      <a class="act sold" id="home-14521-dunleer-way" href="https://zsvc.paragon.ice.com/s/goto/1Wf77pjEaO" target="_blank" rel="noopener">
+        <img src="photos/sold-14521dunleer.jpg" alt="14521 Dunleer Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">Sold Nov 9 &middot; Condo</span>
+          <span class="act-price">$822,900</span>
+          <span class="act-addr">14521 Dunleer Way</span>
+          <span class="act-facts">2 bed &middot; 2 bath &middot; 1,312 sq ft &middot; new construction (2026)</span>
+          <span class="act-facts">Listed at $854,900 &middot; sold at 96% of list</span>
+          <span class="act-facts">60 days on market &middot; $627/sq ft</span>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      <a class="act sold" id="home-14525-dunleer-way" href="https://zsvc.paragon.ice.com/s/goto/GiVf-voUwlH" target="_blank" rel="noopener">
+        <img src="photos/sold-14525dunleer.jpg" alt="14525 Dunleer Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">Sold Oct 27 &middot; Condo</span>
+          <span class="act-price">$864,376</span>
+          <span class="act-addr">14525 Dunleer Way</span>
+          <span class="act-facts">2 bed &middot; 2 bath &middot; 1,312 sq ft &middot; new construction (2026)</span>
+          <span class="act-facts">Listed at $848,900 &middot; sold at 102% of list</span>
+          <span class="act-facts">46 days on market &middot; $659/sq ft</span>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      <a class="act sold" id="home-14515-dunleer-way" href="https://zsvc.paragon.ice.com/s/goto/ThhU-bygW99" target="_blank" rel="noopener">
+        <img src="photos/sold-14515dunleer.jpg" alt="14515 Dunleer Way" loading="lazy">
+        <div class="act-body">
+          <span class="act-st">Sold Oct 23 &middot; Condo</span>
+          <span class="act-price">$851,068</span>
+          <span class="act-addr">14515 Dunleer Way</span>
+          <span class="act-facts">2 bed &middot; 2 bath &middot; 1,312 sq ft &middot; new construction (2026)</span>
+          <span class="act-facts">Listed at $840,900 &middot; sold at 101% of list</span>
+          <span class="act-facts">51 days on market &middot; $649/sq ft</span>
+          <span class="act-go">View listing &rsaquo;</span>
+        </div>
+      </a>
+      </div>
+    </div>
+  </section>
+  <script>
+  // One report-wide filter (her 2026-11-10 request): the Home type / Neighborhood buttons above the tiles filter
+  // For sale, Under contract and Recently sold, and the three tiles switch to that filter's numbers.
+  (function () {
+    var box = document.querySelector('.rfilter');
+    if (!box) return;
+    var st = {}; try { st = JSON.parse(box.dataset.stats); } catch (e) {}
+    function show(f) {
+      var all = !f || f === 'all';
+      var hd = !all && f.indexOf('hood:') === 0 ? f.slice(5) : null;
+      document.querySelectorAll('.act-hood, a.pend').forEach(function (el) {
+        el.hidden = !all && (hd ? el.dataset.hood !== hd : el.dataset.ty !== f);
+      });
+      var x = st[all ? 'all' : f] || st.all;
+      ['fs', 'uc', 'so'].forEach(function (k) {
+        var t = document.querySelector('[data-tile="' + k + '"]');
+        if (t && x[k]) { t.querySelector('.stat-n').textContent = x[k].n; t.querySelector('.stat-s').textContent = x[k].s; }
+      });
+      document.querySelectorAll('#for-sale, #under-contract, #recently-sold').forEach(function (sec) {
+        var any = sec.querySelector('.act-hood:not([hidden]), a.pend:not([hidden])');
+        var em = sec.querySelector('.f-empty'); if (em) em.hidden = !!any;
+        var note = sec.querySelector('.filter-note');
+        if (note) { note.hidden = all; if (!all) note.querySelector('b').textContent = x.name || f; }
+      });
+      box.querySelectorAll('.fchip').forEach(function (b) { b.classList.toggle('on', b.dataset.f === (all ? 'all' : f)); });
+    }
+    window.showHomeType = show;
+    box.querySelectorAll('.fchip').forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.f); }); });
+    document.querySelectorAll('.filter-note button').forEach(function (b) { b.addEventListener('click', function () { show('all'); }); });
+  })();
+  </script>
+  <dialog id="listings" class="lview" aria-label="Homes">
+    <div class="lbar"><span class="lview-title"></span><button type="button" class="lclose" aria-label="Close">&times;</button></div>
+  <nav class="filter" aria-label="Show homes">
+    <button type="button" data-show="all" aria-pressed="true">All homes<small>12 homes</small></button>
+    <button type="button" data-show="detached" aria-pressed="false">Single-family<small>6 homes<span class="rng"> &middot; $1.20M&ndash;$1.90M</span></small></button>
+    <button type="button" data-show="attached" aria-pressed="false">Townhomes &amp; condos<small>6 homes<span class="rng"> &middot; $834K&ndash;$1.05M</span></small></button>
+  </nav>
+
+  <div class="chooser" hidden>
+    <h2>What kind of home are you looking for?</h2>
+    <p class="chooser-sub">Select all that apply. <button type="button" class="chooser-all">Select all</button> &middot; <button type="button" class="qlink">what the home types mean</button></p>
+    <div class="chooser-opts">
+      <button type="button" class="copt" data-ty="sfr" aria-pressed="false">
+        <svg class="pcard-icon" viewBox="0 0 64 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M4 36h56"/><path d="M14 36V21l11-9 11 9v15"/><path d="M22 36v-8h6v8"/><path d="M40 36v-5M40 31h16M56 31v5M44 31v5M48 31v5M52 31v5"/><circle cx="48" cy="20" r="5"/><path d="M48 25v6"/></svg>
+        <span class="copt-name">Single-family home</span>
+        <span class="copt-desc">Traditional single-family: a detached home on its own lot.</span>
+        <span class="copt-count">1 for sale &middot; $1.90M</span>
+        <span class="copt-check" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="copt" data-ty="condo" aria-pressed="false">
+        <svg class="pcard-icon" viewBox="0 0 64 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M4 36h56" stroke-dasharray="2 3"/><path d="M8 36V22l8-7 8 7v14"/><path d="M14 36v-6h4v6"/><path d="M28 36V20l8-7 8 7v16"/><path d="M34 36v-6h4v6"/><path d="M48 36V23l6-5 6 5v13"/></svg>
+        <span class="copt-name">Detached condo</span>
+        <span class="copt-alt">Single-family style</span>
+        <span class="copt-desc">Stand-alone homes with no shared walls; the land is owned in common through the HOA.</span>
+        <span class="copt-count">5 for sale &middot; $1.20M&ndash;$1.55M</span>
+        <span class="copt-check" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="copt" data-ty="flat" aria-pressed="false">
+        <svg class="pcard-icon" viewBox="0 0 64 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M4 36h56"/><path d="M20 36V8h24v28"/><path d="M25 13h4M35 13h4M25 19h4M35 19h4M25 25h4M35 25h4"/><path d="M29 36v-6h6v6"/></svg>
+        <span class="copt-name">Condo</span>
+        <span class="copt-desc">Homes in a shared building; the HOA owns and maintains the building and grounds.</span>
+        <span class="copt-count">4 for sale &middot; $834K&ndash;$1.03M</span>
+        <span class="copt-check" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="copt" data-ty="townhome" aria-pressed="false">
+        <svg class="pcard-icon" viewBox="0 0 64 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"><path d="M4 36h56"/><path d="M10 36V18l7-6 7 6 7-6 7 6 7-6 7 6v18"/><path d="M24 18v18M38 18v18"/><path d="M15 36v-6h4v6M29 36v-6h4v6M43 36v-6h4v6"/></svg>
+        <span class="copt-name">Townhome</span>
+        <span class="copt-desc">Multi-level homes that share walls with their neighbors, each with its own entrance and garage.</span>
+        <span class="copt-count">2 for sale &middot; $900K&ndash;$1.05M</span>
+        <span class="copt-check" aria-hidden="true"></span>
+      </button>
+    </div>
+    <button type="button" class="chooser-go" disabled>Select at least one</button>
+  </div>
+  <div class="group" data-group="all">
+  <div class="group-head"><h2>All homes</h2><p>12 for sale &middot; $834K&ndash;$1.90M &middot; by home type, then neighborhood &middot; <button type="button" class="qlink">what the home types mean</button></p></div>
+  <section class="type" data-ty="sfr">
+    <div class="type-head"><h2>Single-family homes</h2><span class="tag">1 for sale &middot; $1.90M</span></div>
+    <div class="subhood" id="all-brio">
+      <div class="subhood-head"><h3>Brio</h3></div>
+    <article class="home">
+      <img class="shot" src="photos/melogold.jpg" alt="10656 Melogold Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>10656 Melogold Way</h3><div class="price">$1,895,000</div></div>
+      <ul class="news"><li>Recently listed</li><li>Extra room beyond the 3 listed bedrooms</li></ul>
+      <p class="facts">3 bed &middot; 2.5 bath &middot; 2,574 sq ft &middot; built 2022 &middot; 3,694 sq ft lot &middot; HOA $256/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="10656 Melogold Way" data-price="$1,895,000" data-link="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="type" data-ty="condo">
+    <div class="type-head"><h2>Detached condos</h2><span class="tag">5 for sale &middot; $1.20M&ndash;$1.55M</span></div>
+    <div class="subhood" id="all-aero">
+      <div class="subhood-head"><h3>Aero</h3></div>
+    <article class="home">
+      <img class="shot" src="photos/temescal.jpg" alt="14807 Temescal Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14807 Temescal Way</h3><div class="price">$1,349,900</div></div>
+      <ul class="news"><li>5.375% interest rate offered</li></ul>
+      <p class="facts">4 bed &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2024 &middot; HOA $303/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14807 Temescal Way" data-price="$1,349,900" data-link="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/dunleer14661.jpg" alt="14661 Dunleer Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14661 Dunleer Way</h3><div class="price">$1,299,000</div></div>
+      <ul class="news"><li>Price cut $50,000 on Nov 10</li><li>$136,900 below original list price</li><li>Open house Sat Nov 14 &amp; Sun Nov 15, 1–4pm</li></ul>
+      <p class="facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2025 &middot; HOA $303/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14661 Dunleer Way" data-price="$1,299,000" data-link="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/solstice11014.jpg" alt="11014 Solstice Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>11014 Solstice Way</h3><div class="price">$1,199,000</div></div>
+      <ul class="news"><li>Price cut $50,000 on Oct 29 (was $1,249,000)</li></ul>
+      <p class="facts">4 bed &middot; 3.5 bath &middot; 2,041 sq ft &middot; built 2022 &middot; HOA $303/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="11014 Solstice Way" data-price="$1,199,000" data-link="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/sierra14709.jpg" alt="14709 Sierra Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14709 Sierra Way</h3><div class="price">$1,549,900</div></div>
+      <ul class="news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li><li>Builder&rsquo;s furnished model home</li></ul>
+      <p class="facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; new construction &middot; HOA $248/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14709 Sierra Way" data-price="$1,549,900" data-link="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/sierra14703.jpg" alt="14703 Sierra Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14703 Sierra Way</h3><div class="price">$1,459,900</div></div>
+      <ul class="news"><li>Back on the market</li><li>Price up $50,000 on Oct 31</li><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+      <p class="facts">4 bed &middot; 3.5 bath &middot; 2,121 sq ft &middot; new construction (2026) &middot; HOA $248/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14703 Sierra Way" data-price="$1,459,900" data-link="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="type" data-ty="flat">
+    <div class="type-head"><h2>Condos</h2><span class="tag">4 for sale &middot; $834K&ndash;$1.03M</span></div>
+    <div class="subhood" id="all-hudson">
+      <div class="subhood-head"><h3>Hudson</h3></div>
+    <article class="home">
+      <img class="shot" src="photos/lumurine14006.jpg" alt="14006 Lumurine Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14006 Lumurine Way</h3><div class="price">$929,999</div></div>
+      <ul class="news"><li>Back on the market</li><li>Price cut $10,000 on Sep 26</li><li>$229,951 below original list price</li><li>Former model home, never lived in</li><li>Can be bought furnished</li></ul>
+      <p class="facts">2 bed &middot; 2 bath &middot; 1,645 sq ft &middot; built 2025 &middot; HOA $250/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/KNT4FIpRJro">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14006 Lumurine Way" data-price="$929,999" data-link="https://zsvc.paragon.ice.com/s/goto/KNT4FIpRJro">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+    </div>
+    <div class="subhood" id="all-dorsey">
+      <div class="subhood-head"><h3>Dorsey</h3></div>
+    <article class="home">
+      <img class="shot" src="photos/dunleer14535.jpg" alt="14535 Dunleer Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14535 Dunleer Way</h3><div class="price">$1,025,900</div></div>
+      <ul class="news"><li>New construction: buyer can still pick flooring</li></ul>
+      <p class="facts">3 bed &middot; 2.5 bath &middot; 1,625 sq ft &middot; new construction (2026) &middot; HOA $452/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/FtBodlsomrM">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14535 Dunleer Way" data-price="$1,025,900" data-link="https://zsvc.paragon.ice.com/s/goto/FtBodlsomrM">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/dunleer14517.jpg" alt="14517 Dunleer Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14517 Dunleer Way</h3><div class="price">$923,900</div></div>
+      <ul class="news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+      <p class="facts">3 bed &middot; 2 bath &middot; 1,609 sq ft &middot; new construction (2026) &middot; HOA $500/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Lnuzm37xB7B">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14517 Dunleer Way" data-price="$923,900" data-link="https://zsvc.paragon.ice.com/s/goto/Lnuzm37xB7B">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/dunleer14531.jpg" alt="14531 Dunleer Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14531 Dunleer Way</h3><div class="price">$833,900</div></div>
+      <ul class="news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+      <p class="facts">2 bed &middot; 2 bath &middot; 1,312 sq ft &middot; new construction (2026) &middot; HOA $512/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/GLx-tLqd0a">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14531 Dunleer Way" data-price="$833,900" data-link="https://zsvc.paragon.ice.com/s/goto/GLx-tLqd0a">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="type" data-ty="townhome">
+    <div class="type-head"><h2>Townhomes</h2><span class="tag">2 for sale &middot; $900K&ndash;$1.05M</span></div>
+    <div class="subhood" id="all-atwood">
+      <div class="subhood-head"><h3>Atwood</h3></div>
+    <article class="home">
+      <img class="shot" src="photos/adamson10403.jpg" alt="10403 Adamson Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>10403 Adamson Way</h3><div class="price">$1,049,999</div></div>
+      <ul class="news"><li>Open house Sun Nov 15, 12–4pm</li></ul>
+      <p class="facts">2 bed &middot; 2.5 bath &middot; 1,669 sq ft &middot; built 2023 &middot; HOA $166/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/FFgr_2bzWTy">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="10403 Adamson Way" data-price="$1,049,999" data-link="https://zsvc.paragon.ice.com/s/goto/FFgr_2bzWTy">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+    </div>
+    <div class="subhood" id="all-ardha">
+      <div class="subhood-head"><h3>Ardha Way</h3></div>
+    <article class="home">
+      <img class="shot" src="photos/ardha11052.jpg" alt="11052 Ardha Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>11052 Ardha Way</h3><div class="price">$900,000</div></div>
+      <ul class="news"><li>Recently listed</li></ul>
+      <p class="facts">3 bed &middot; 2.5 bath &middot; 1,301 sq ft &middot; built 2022 &middot; HOA $307/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Zdt0H2AOPvx">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="11052 Ardha Way" data-price="$900,000" data-link="https://zsvc.paragon.ice.com/s/goto/Zdt0H2AOPvx">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  </div>
+  <div class="group" data-group="detached">
+  <div class="group-head"><h2>Single-family homes</h2><p>6 for sale &middot; $1.20M&ndash;$1.90M &middot; Detached homes: no shared walls.</p></div>
+  <section class="hood" id="brio">
+    <div class="hood-head">
+      <h2>Brio</h2>
+      <span class="tagwrap"><span class="tag">Traditional single-family</span></span>
+    </div>
+    <p class="hood-note">Detached homes by California West, each on its own lot.</p>
+
+    <article class="home">
+      <img class="shot" src="photos/melogold.jpg" alt="10656 Melogold Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>10656 Melogold Way</h3><div class="price">$1,895,000</div></div>
+      <ul class="news"><li>Recently listed</li><li>Extra room beyond the 3 listed bedrooms</li></ul>
+      <p class="facts">3 bed &middot; 2.5 bath &middot; 2,574 sq ft &middot; built 2022 &middot; 3,694 sq ft lot &middot; HOA $256/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="10656 Melogold Way" data-price="$1,895,000" data-link="https://zsvc.paragon.ice.com/s/goto/Fo5VGCO9acz">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="hood" id="aero">
+    <div class="hood-head">
+      <h2>Aero</h2>
+      <span class="tagwrap"><span class="tag">Detached condo</span></span>
+    </div>
+    <p class="hood-note">Three-story detached homes by California West, on Solstice Way and in the Meadows District along Carroll Canyon Creek.</p>
+
+    <article class="home">
+      <img class="shot" src="photos/temescal.jpg" alt="14807 Temescal Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14807 Temescal Way</h3><div class="price">$1,349,900</div></div>
+      <ul class="news"><li>5.375% interest rate offered</li></ul>
+      <p class="facts">4 bed &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2024 &middot; HOA $303/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14807 Temescal Way" data-price="$1,349,900" data-link="https://zsvc.paragon.ice.com/s/goto/MZXkq7xdBs">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/dunleer14661.jpg" alt="14661 Dunleer Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14661 Dunleer Way</h3><div class="price">$1,299,000</div></div>
+      <ul class="news"><li>Price cut $50,000 on Nov 10</li><li>$136,900 below original list price</li><li>Open house Sat Nov 14 &amp; Sun Nov 15, 1–4pm</li></ul>
+      <p class="facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; built 2025 &middot; HOA $303/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14661 Dunleer Way" data-price="$1,299,000" data-link="https://zsvc.paragon.ice.com/s/goto/TPR8ZsevzSU">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/solstice11014.jpg" alt="11014 Solstice Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>11014 Solstice Way</h3><div class="price">$1,199,000</div></div>
+      <ul class="news"><li>Price cut $50,000 on Oct 29 (was $1,249,000)</li></ul>
+      <p class="facts">4 bed &middot; 3.5 bath &middot; 2,041 sq ft &middot; built 2022 &middot; HOA $303/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="11014 Solstice Way" data-price="$1,199,000" data-link="https://zsvc.paragon.ice.com/s/goto/Ih7BgFslX2M">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/sierra14709.jpg" alt="14709 Sierra Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14709 Sierra Way</h3><div class="price">$1,549,900</div></div>
+      <ul class="news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li><li>Builder&rsquo;s furnished model home</li></ul>
+      <p class="facts">3 bed + office &middot; 3.5 bath &middot; 2,029 sq ft &middot; new construction &middot; HOA $248/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14709 Sierra Way" data-price="$1,549,900" data-link="https://zsvc.paragon.ice.com/s/goto/L_3YKvn3QG6">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/sierra14703.jpg" alt="14703 Sierra Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14703 Sierra Way</h3><div class="price">$1,459,900</div></div>
+      <ul class="news"><li>Back on the market</li><li>Price up $50,000 on Oct 31</li><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+      <p class="facts">4 bed &middot; 3.5 bath &middot; 2,121 sq ft &middot; new construction (2026) &middot; HOA $248/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14703 Sierra Way" data-price="$1,459,900" data-link="https://zsvc.paragon.ice.com/s/goto/T8JMP3d1e3">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+  </section>
+  </div>
+  <dialog class="types" id="hood-info" aria-label="About this neighborhood">
+    <button type="button" class="x" aria-label="Close">&times;</button>
+    <div class="hood-about" id="h-brio" hidden><h2>Brio</h2><p>Traditional single-family homes by California West, each on its own lot. If owning the land under your home matters to you, this is the 3 Roots neighborhood to watch.</p></div>
+    <div class="hood-about" id="h-aero" hidden><h2>Aero</h2><p>Three-story detached homes by California West: no shared walls, while the land is owned in common through the HOA. Single-family living without a private lot.</p></div>
+    <div class="hood-about" id="h-atwood" hidden><h2>Atwood</h2><p>Three-level townhomes by Shea Homes, each with its own entry and attached two-car garage.</p></div>
+    <div class="hood-about" id="h-dorsey" hidden><h2>Dorsey</h2><p>3 Roots' newest neighborhood, still being built by California West: condos in three-story buildings, each with an attached garage.</p></div>
+    <div class="hood-about" id="h-hudson" hidden><h2>Hudson</h2><p>Single-level condos by Lennar near Carroll Canyon Creek and Wonder Park: everything on one floor.</p></div>
+    <div class="hood-about" id="h-ardha" hidden><h2>Ardha Way</h2><p>Townhomes on Ardha Way, built in 2022.</p></div>
+  </dialog>
+  <dialog class="types" id="home-types" aria-labelledby="types-title">
+    <button type="button" class="x" aria-label="Close">&times;</button>
+    <h2 id="types-title">Home types explained</h2>
+    <p id="t-sfr"><b>Traditional single-family:</b> you own the house and the land it sits on (your own lot). This is how most people picture a single-family home.</p>
+    <p id="t-condo"><b>Detached condo:</b> the house stands on its own, with no shared walls, but the land around it is owned in common through the homeowners association. You own your home plus a share of the common area, and the HOA usually maintains more of the grounds. Day to day it lives like a single-family home; the difference shows up in the title, HOA rules, insurance and financing. The City of San Diego&rsquo;s master plan for 3 Roots designates Aero&rsquo;s area for detached condos, while Brio, Alta and Lotus are traditional single-family neighborhoods.</p>
+    <p id="t-label"><b>Why you may see &ldquo;single-family&rdquo; on a detached condo:</b> builders often market detached condos as single-family homes, and many are listed in the MLS and on sites like Zillow and Redfin as &ldquo;Single Family Residence.&rdquo; Four of the five Aero homes in this report, for example, are listed that way; 11014 Solstice Way is listed as a condominium. The label describes the house itself, a stand-alone home with no shared walls. It does not tell you how the land is owned, which is why I label each neighborhood&rsquo;s ownership type.</p>
+    <p id="t-flat"><b>Condo:</b> a home within a shared building. You own your unit&rsquo;s interior, and the HOA owns and maintains the building, roof, exterior and grounds, which the HOA dues help cover.</p>
+    <p id="t-townhome"><b>Townhome:</b> an attached home, usually two or three levels, sharing one or two walls with neighbors, with its own entrance and often its own garage. &ldquo;Townhome&rdquo; describes the style of the building, not the ownership: some include the land underneath, but in newer communities like 3 Roots many are legally condos, where you own the home and the HOA owns the land. The title report and the HOA&rsquo;s CC&amp;Rs confirm which it is.</p>
+    <button type="button" class="more">See other home types &rsaquo;</button>
+  </dialog>
+  <div class="group" data-group="attached">
+  <div class="group-head"><h2>Townhomes &amp; condos</h2><p>6 for sale &middot; $834K&ndash;$1.05M &middot; Attached homes that share walls with neighbors.</p></div>
+  <section class="hood" id="hudson">
+    <div class="hood-head">
+      <h2>Hudson</h2>
+      <span class="tagwrap"><span class="tag">Condo</span></span>
+    </div>
+    <p class="hood-note">Single-level condos by Lennar.</p>
+
+    <article class="home">
+      <img class="shot" src="photos/lumurine14006.jpg" alt="14006 Lumurine Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14006 Lumurine Way</h3><div class="price">$929,999</div></div>
+      <ul class="news"><li>Back on the market</li><li>Price cut $10,000 on Sep 26</li><li>$229,951 below original list price</li><li>Former model home, never lived in</li><li>Can be bought furnished</li></ul>
+      <p class="facts">2 bed &middot; 2 bath &middot; 1,645 sq ft &middot; built 2025 &middot; HOA $250/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/KNT4FIpRJro">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14006 Lumurine Way" data-price="$929,999" data-link="https://zsvc.paragon.ice.com/s/goto/KNT4FIpRJro">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="hood" id="atwood">
+    <div class="hood-head">
+      <h2>Atwood</h2>
+      <span class="tagwrap"><span class="tag">Townhome</span></span>
+    </div>
+    <p class="hood-note">Three-level townhomes with attached two-car garages.</p>
+
+    <article class="home">
+      <img class="shot" src="photos/adamson10403.jpg" alt="10403 Adamson Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>10403 Adamson Way</h3><div class="price">$1,049,999</div></div>
+      <ul class="news"><li>Open house Sun Nov 15, 12–4pm</li></ul>
+      <p class="facts">2 bed &middot; 2.5 bath &middot; 1,669 sq ft &middot; built 2023 &middot; HOA $166/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/FFgr_2bzWTy">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="10403 Adamson Way" data-price="$1,049,999" data-link="https://zsvc.paragon.ice.com/s/goto/FFgr_2bzWTy">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="hood" id="dorsey">
+    <div class="hood-head">
+      <h2>Dorsey</h2>
+      <span class="tagwrap"><span class="tag">Condo</span></span>
+    </div>
+    <p class="hood-note">New-construction condos with attached garages.</p>
+
+    <article class="home">
+      <img class="shot" src="photos/dunleer14535.jpg" alt="14535 Dunleer Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14535 Dunleer Way</h3><div class="price">$1,025,900</div></div>
+      <ul class="news"><li>New construction: buyer can still pick flooring</li></ul>
+      <p class="facts">3 bed &middot; 2.5 bath &middot; 1,625 sq ft &middot; new construction (2026) &middot; HOA $452/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/FtBodlsomrM">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14535 Dunleer Way" data-price="$1,025,900" data-link="https://zsvc.paragon.ice.com/s/goto/FtBodlsomrM">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/dunleer14517.jpg" alt="14517 Dunleer Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14517 Dunleer Way</h3><div class="price">$923,900</div></div>
+      <ul class="news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+      <p class="facts">3 bed &middot; 2 bath &middot; 1,609 sq ft &middot; new construction (2026) &middot; HOA $500/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Lnuzm37xB7B">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14517 Dunleer Way" data-price="$923,900" data-link="https://zsvc.paragon.ice.com/s/goto/Lnuzm37xB7B">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+
+    <article class="home">
+      <img class="shot" src="photos/dunleer14531.jpg" alt="14531 Dunleer Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>14531 Dunleer Way</h3><div class="price">$833,900</div></div>
+      <ul class="news"><li>Open house Sat Nov 14 &amp; Sun Nov 15, 11am–3pm</li></ul>
+      <p class="facts">2 bed &middot; 2 bath &middot; 1,312 sq ft &middot; new construction (2026) &middot; HOA $512/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/GLx-tLqd0a">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="14531 Dunleer Way" data-price="$833,900" data-link="https://zsvc.paragon.ice.com/s/goto/GLx-tLqd0a">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="hood" id="ardha">
+    <div class="hood-head">
+      <h2>Ardha Way</h2>
+      <span class="tagwrap"><span class="tag">Townhome</span></span>
+    </div>
+    <p class="hood-note">Townhomes built in 2022.</p>
+
+    <article class="home">
+      <img class="shot" src="photos/ardha11052.jpg" alt="11052 Ardha Way, listing photo" loading="lazy">
+      <div class="info">
+      <div class="home-top"><h3>11052 Ardha Way</h3><div class="price">$900,000</div></div>
+      <ul class="news"><li>Recently listed</li></ul>
+      <p class="facts">3 bed &middot; 2.5 bath &middot; 1,301 sq ft &middot; built 2022 &middot; HOA $307/mo</p>
+      <div class="foot">
+        <a class="view" href="https://zsvc.paragon.ice.com/s/goto/Zdt0H2AOPvx">View listing details</a>
+        <button type="button" class="tour site-only" data-addr="11052 Ardha Way" data-price="$900,000" data-link="https://zsvc.paragon.ice.com/s/goto/Zdt0H2AOPvx">Request a private tour</button>
+        <a class="tour claude-only" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Request a private tour</a>
+      </div>
+      </div>
+    </article>
+  </section>
+  </div>
+  </dialog>
+  <h2 class="extras-head">More ways I can help</h2>
+  <div class="browse offers">
+    <button type="button" class="pcard ocard" data-open="dlg-constellation" aria-haspopup="dialog">
+      <div class="pcard-body">
+        <div class="ocard-head"><h3>The Constellation</h3></div>
+        <p>My personal network of trusted partners, here for you whenever you need the connection.</p>
+        <span class="pcard-go">See the network &rsaquo;</span>
+      </div>
+    </button>
+    <button type="button" class="pcard ocard" data-open="dlg-valuation" aria-haspopup="dialog">
+      <div class="pcard-body">
+        <h3>Curious what your home is worth?</h3>
+        <p>A free, detailed valuation based on recent sales near you.</p>
+        <span class="pcard-go">Learn more &rsaquo;</span>
+      </div>
+    </button>
+  </div>
+  <dialog class="types offer" id="dlg-tour" aria-label="Request a private tour">
+    <button type="button" class="x" aria-label="Close">&times;</button>
+    <form class="rform tour-form" novalidate>
+      <div class="rf-title"><h3>Request a Private Tour</h3><p class="tour-addr"></p></div>
+      <div class="rf-grid">
+        <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
+        <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
+        <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(858) 555-0123" required></label>
+        <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" inputmode="email" autocapitalize="off" autocomplete="email" placeholder="name@example.com" required></label>
+        <label class="rf-full"><span class="rf-lab">Days or times that work for you (optional)</span><input name="when" placeholder="e.g. Saturday morning, weekday evenings"></label>
+      </div>
+      <label class="tour-remember"><input type="checkbox" name="remember" checked> Remember me on this device for future tour requests</label>
+      <div class="rf-nav"><button type="submit" class="rf-send">Request Tour</button></div>
+      <p class="rf-status" role="status"></p>
+    </form>
+    <div class="tour-box" hidden></div>
+  </dialog>
+  <dialog class="types offer" id="dlg-constellation" aria-label="The Constellation">
+    <button type="button" class="x" aria-label="Close">&times;</button>
+    <section class="constellation" id="constellation">
+      <div class="pro-list claude-only">
+        <div class="rf-group"><div class="pro-cat">Lending &amp; Home Equity</div><span class="pro-item">Mortgage Broker / Lender</span><span class="pro-item">Reverse Mortgage Specialist</span><span class="pro-item">Home Equity Specialist</span></div>
+        <div class="rf-group"><div class="pro-cat">Financial Planning &amp; Tax</div><span class="pro-item">Certified Financial Planner (CFP)</span><span class="pro-item">Wealth Management Advisor</span><span class="pro-item">CPA</span><span class="pro-item">Tax Strategist</span></div>
+        <div class="rf-group"><div class="pro-cat">Legal</div><span class="pro-item">Estate Planning Attorney</span><span class="pro-item">Real Estate Attorney</span><span class="pro-item">Probate Attorney</span></div>
+        <div class="rf-group"><div class="pro-cat">Investing</div><span class="pro-item">Investment Partners &amp; Syndications</span><span class="pro-item">Property Manager</span></div>
+        <div class="rf-group"><div class="pro-cat">Buying, Selling &amp; Insurance</div><span class="pro-item">Home Inspector</span><span class="pro-item">Appraiser</span><span class="pro-item">Homeowners Insurance Agent</span></div>
+        <div class="rf-group"><div class="pro-cat">Building &amp; Renovation</div><span class="pro-item">General Contractor</span><span class="pro-item">Architect</span><span class="pro-item">Interior Designer</span><span class="pro-item">Roofer</span><span class="pro-item">Solar Installer</span></div>
+        <div class="rf-group"><div class="pro-cat">Moving &amp; Relocation</div><span class="pro-item">Movers &amp; Shippers</span><span class="pro-item">Real Estate Agent Outside San Diego</span></div>
+        <div class="rf-group"><div class="pro-cat">Home Care</div><span class="pro-item">Gardener</span><span class="pro-item">Landscaper</span><span class="pro-item">Pet Sitter</span></div>
+      </div>
+      <p class="const-cta claude-only">Need someone? Reach out, and I&rsquo;ll connect you.</p>
+      <p class="reach claude-only"><a class="primary" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Connect with me</a></p>
+      <form class="rform rf-wizard site-only" data-kind="constellation" novalidate>
+        <div class="rf-title"><h3>The Constellation</h3></div>
+        <div class="rf-progress" aria-hidden="true">
+          <div class="rf-bar"><span></span></div>
+          <ol class="rf-steps"><li>Who</li><li>Contact info</li><li>Your need</li></ol>
+        </div>
+        <section class="rf-step" data-step="1">
+          <h4><span class="rf-num">1</span>Who Can I Connect You With?</h4>
+          <p class="rf-hint">Select all that apply.</p>
+          <div class="rf-pros">
+            <fieldset class="rf-group"><legend>Lending &amp; Home Equity</legend><label class="rf-check"><input type="checkbox" name="pro" value="Mortgage Broker / Lender"><span>Mortgage Broker / Lender</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Reverse Mortgage Specialist"><span>Reverse Mortgage Specialist</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Home Equity Specialist"><span>Home Equity Specialist</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Financial Planning &amp; Tax</legend><label class="rf-check"><input type="checkbox" name="pro" value="Certified Financial Planner (CFP)"><span>Certified Financial Planner (CFP)</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Wealth Management Advisor"><span>Wealth Management Advisor</span></label><label class="rf-check"><input type="checkbox" name="pro" value="CPA"><span>CPA</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Tax Strategist"><span>Tax Strategist</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Legal</legend><label class="rf-check"><input type="checkbox" name="pro" value="Estate Planning Attorney"><span>Estate Planning Attorney</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real Estate Attorney"><span>Real Estate Attorney</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Probate Attorney"><span>Probate Attorney</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Investing</legend><label class="rf-check"><input type="checkbox" name="pro" value="Investment Partners &amp; Syndications"><span>Investment Partners &amp; Syndications</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Property Manager"><span>Property Manager</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Buying, Selling &amp; Insurance</legend><label class="rf-check"><input type="checkbox" name="pro" value="Home Inspector"><span>Home Inspector</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Appraiser"><span>Appraiser</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Homeowners Insurance Agent"><span>Homeowners Insurance Agent</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Building &amp; Renovation</legend><label class="rf-check"><input type="checkbox" name="pro" value="General Contractor"><span>General Contractor</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Architect"><span>Architect</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Interior Designer"><span>Interior Designer</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Roofer"><span>Roofer</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Solar Installer"><span>Solar Installer</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Moving &amp; Relocation</legend><label class="rf-check"><input type="checkbox" name="pro" value="Movers &amp; Shippers"><span>Movers &amp; Shippers</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Real Estate Agent Outside San Diego"><span>Real Estate Agent Outside San Diego</span></label></fieldset>
+            <fieldset class="rf-group"><legend>Home Care</legend><label class="rf-check"><input type="checkbox" name="pro" value="Gardener"><span>Gardener</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Landscaper"><span>Landscaper</span></label><label class="rf-check"><input type="checkbox" name="pro" value="Pet Sitter"><span>Pet Sitter</span></label></fieldset>
+          </div>
+          <div class="rf-nav"><button type="button" class="rf-next">Next</button></div>
+        </section>
+        <section class="rf-step" data-step="2" hidden>
+          <h4><span class="rf-num">2</span>Your Contact Info</h4>
+          <div class="rf-grid">
+            <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
+            <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
+            <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(858) 555-0123" required></label>
+            <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" inputmode="email" autocapitalize="off" autocomplete="email" placeholder="name@example.com" required></label>
+          </div>
+          <div class="rf-prefer"><span>I prefer:</span>
+            <label class="rf-check"><input type="checkbox" name="prefer" value="Text"><span>Text</span></label>
+            <label class="rf-check"><input type="checkbox" name="prefer" value="Email"><span>Email</span></label>
+          </div>
+          <div class="rf-nav"><button type="button" class="rf-back">Back</button><button type="button" class="rf-next">Next</button></div>
+        </section>
+        <section class="rf-step" data-step="3" hidden>
+          <h4><span class="rf-num">3</span>Tell Me About Your Need</h4>
+          <label class="rf-full"><span class="rf-lab">A few details help me introduce you to the right person.</span><textarea name="message" rows="5"></textarea></label>
+          <div class="rf-nav"><button type="button" class="rf-back">Back</button><button type="submit" class="rf-send">Request an Introduction</button></div>
+        </section>
+        <p class="rf-status" role="status"></p>
+      </form>
+    </section>
+  </dialog>
+  <dialog class="types offer" id="dlg-valuation" aria-label="Curious what your home is worth?">
+    <button type="button" class="x" aria-label="Close">&times;</button>
+    <section class="cma" id="valuation">
+      <p>I prepare a free CMA, a detailed valuation based on recent sales near you. I take on just three a month, so reach out to see if I have a spot for you this month.</p>
+      <p class="reach claude-only"><a class="primary" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Ask about a spot this month</a></p>
+      <form class="rform site-only" data-kind="cma" novalidate>
+        <div class="rf-grid">
+          <label><span class="rf-lab">First name<span class="rf-req" aria-hidden="true">*</span></span><input name="firstname" autocomplete="given-name" required></label>
+          <label><span class="rf-lab">Last name<span class="rf-req" aria-hidden="true">*</span></span><input name="lastname" autocomplete="family-name" required></label>
+          <label><span class="rf-lab">Email<span class="rf-req" aria-hidden="true">*</span></span><input name="email" type="email" inputmode="email" autocapitalize="off" autocomplete="email" placeholder="name@example.com" required></label>
+          <label><span class="rf-lab">Phone<span class="rf-req" aria-hidden="true">*</span></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(858) 555-0123" required></label>
+          <label class="rf-full"><span class="rf-lab">Home address<span class="rf-req" aria-hidden="true">*</span></span><input name="address" autocomplete="street-address" required></label>
+          <label class="rf-full">Any upgrades you&rsquo;ve made? Please describe them.<textarea name="upgrades" rows="3" placeholder="e.g. remodeled kitchen (2023), owned solar, new flooring"></textarea></label>
+          <label class="rf-full">Anything else I should know? (optional)<textarea name="message" rows="3"></textarea></label>
+        </div>
+        <button type="submit" class="rf-send">Request my free CMA</button>
+        <p class="rf-status" role="status"></p>
+      </form>
+    </section>
+  </dialog>
+
+  <dialog class="types offer book" id="dlg-book" aria-label="Book a time with Ani">
+    <button type="button" class="x" aria-label="Close">&times;</button>
+    <h2>Let&rsquo;s grab some time</h2>
+    <p class="book-sub">Pick a time that works for you, by phone, Google Meet or in person. I look forward to connecting!</p>
+    <div class="book-frame site-only"><div class="meetings-iframe-container" data-src="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne?embed=true"></div></div>
+    <p class="book-alt site-only">Calendar not loading? <a href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Open it here</a>.</p>
+    <p class="reach claude-only"><a class="primary" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">Open my calendar</a></p>
+    <p class="book-alt">Prefer to reach out directly? <a href="tel:+18587234529">(858) 723-4529</a> &middot; <a href="mailto:ani@valennerealestate.com">ani@valennerealestate.com</a></p>
+  </dialog>
+
+  <div class="contact">
+    <figure class="portrait"><img src="photos/ani.jpg" alt="Ani Sophia Valenne"></figure>
+    <div class="contact-text">
+    <div class="name">Ani Sophia Valenne</div>
+    <p class="motto">&ldquo;The best math one can learn is the future cost of their current decisions.&rdquo;</p>
+    <p class="cred">Real Estate Advisor<br>DRE #02443409<br>Keller Williams La Jolla</p>
+    <ul class="contact-links">
+      <li><a href="tel:+18587234529"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>(858) 723-4529</span></a></li>
+      <li><a href="mailto:ani@valennerealestate.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg><span>ani@valennerealestate.com</span></a></li>
+      <li><a href="https://anivalennerealestate.substack.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M22.54 8.25H1.46V5.42h21.08v2.83zM1.46 10.83V24L12 18.11 22.54 24V10.83H1.46zM22.54 0H1.46v2.83h21.08V0z"/></svg><span>Substack</span></a></li>
+      <li><a href="https://www.linkedin.com/in/anivalenne" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a></li>
+    </ul>
+    <p class="reach"><a class="primary" href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener" data-book>Connect with me</a></p>
+    </div>
+  </div>
+
+  <div class="legal">
+    <p>Information is from the CRMLS and public listing remarks as of November 12, 2026, and is deemed reliable but not guaranteed. Homes shown are listed by other brokerages.</p>
+    <p>If you are currently represented by another real estate agent, this is not intended as a solicitation.</p>
+    <p>Keller Williams La Jolla. Each office is independently owned and operated.</p>
+  </div>
+</div>
+<script>
+// The "?" pop-ups (home types, neighborhood info) live inside the old listings pop-up in the
+// template. With the list layout that pop-up stays closed, so move them to the page itself;
+// otherwise they open invisibly and block every click (bug found 2026-11-09).
+(function () {
+  var wrap = document.querySelector('.wrap') || document.body;
+  ['home-types', 'hood-info'].forEach(function (id) {
+    var d = document.getElementById(id);
+    if (d && d.parentElement && d.parentElement.tagName === 'DIALOG') wrap.appendChild(d);
+  });
+})();
+</script>
+<script>
+// Landing cards: each card opens a pop-up with an ×. "All homes" (#all) first shows the home-type chooser
+// (multi-select, her 2026-11-05 request); "Show homes" goes to #homes=sfr,condo,... with just those types.
+// #<neighborhood id> shows just that neighborhood. Old links #single-family / #townhomes-condos still work.
+(function () {
+  var list = document.getElementById('listings');
+  if (!list) return;
+  var filter = list.querySelector('.filter');
+  if (filter) filter.hidden = true;
+  var chooser = list.querySelector('.chooser'), opts = list.querySelectorAll('button.copt'), go = list.querySelector('.chooser-go');
+  var viewAll = list.querySelector('[data-group="all"]'), allHead = viewAll.querySelector('.group-head');
+  var allHeadHTML = allHead.innerHTML;
+  var legacy = { 'single-family': 'sfr,condo', 'townhomes-condos': 'flat,townhome' };
+  var names = {}; opts.forEach(function (o) { names[o.dataset.ty] = o.querySelector('.copt-name').textContent; });
+  function picked() { return Array.prototype.filter.call(opts, function (o) { return o.getAttribute('aria-pressed') === 'true'; }).map(function (o) { return o.dataset.ty; }); }
+  function refreshGo() {
+    var sel = picked(), n = 0;
+    sel.forEach(function (ty) { n += viewAll.querySelectorAll('section.type[data-ty="' + ty + '"] article').length; });
+    go.disabled = !sel.length;
+    go.textContent = sel.length ? 'Show ' + n + ' home' + (n === 1 ? '' : 's') : 'Select at least one';
+  }
+  opts.forEach(function (o) { o.addEventListener('click', function () { o.setAttribute('aria-pressed', o.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); refreshGo(); }); });
+  list.querySelector('.chooser-all').addEventListener('click', function () { opts.forEach(function (o) { o.setAttribute('aria-pressed', 'true'); }); refreshGo(); });
+  go.addEventListener('click', function () { if (!go.disabled) location.hash = 'homes=' + picked().join(','); });
+  function only(el) { list.querySelectorAll('.chooser, [data-group]').forEach(function (x) { x.hidden = x !== el; }); }
+  function route() {
+    var h = decodeURIComponent(location.hash.slice(1));
+    if (legacy[h]) h = 'homes=' + legacy[h];
+    var sec = h && h !== 'all' && h.indexOf('homes=') !== 0 ? list.querySelector('section.hood#' + CSS.escape(h)) : null;
+    list.querySelectorAll('section.hood, .group-head').forEach(function (el) { el.hidden = false; });
+    if (h === 'all') {
+      only(chooser); refreshGo(); openView();
+    } else if (h.indexOf('homes=') === 0) {
+      var sel = h.slice(6).split(',').filter(function (ty) { return names[ty]; });
+      if (!sel.length) { location.hash = 'all'; return; }
+      opts.forEach(function (o) { o.setAttribute('aria-pressed', sel.indexOf(o.dataset.ty) >= 0 ? 'true' : 'false'); });
+      only(viewAll);
+      var n = 0;
+      viewAll.querySelectorAll('section.type').forEach(function (s) { s.hidden = sel.indexOf(s.dataset.ty) < 0; if (!s.hidden) n += s.querySelectorAll('article').length; });
+      var all = sel.length === opts.length;
+      allHead.innerHTML = all ? allHeadHTML : '<h2>Your selection</h2><p>' + n + ' for sale &middot; by home type, then neighborhood</p>';
+      var p = document.createElement('p'); p.className = 'chosen';
+      p.innerHTML = 'Showing: ' + sel.map(function (ty) { return names[ty]; }).join(', ') + ' &middot; <button type="button" class="chooser-change">Change home types</button>';
+      allHead.appendChild(p);
+      p.querySelector('.chooser-change').addEventListener('click', function () { if (fromChooser) history.back(); else location.hash = 'all'; });
+      allHead.querySelectorAll('button.qlink').forEach(function (b) { b.addEventListener('click', function () { document.querySelector('button.qlink').click(); }); });
+      openView();
+    } else if (sec) {
+      var g = sec.closest('.group');
+      only(g);
+      g.querySelector('.group-head').hidden = true;
+      g.querySelectorAll('section.hood').forEach(function (s) { s.hidden = s !== sec; });
+      openView();
+    } else { closeView(); }
+  }
+  // Opening: the URL hash names what to show (so the phone's Back button closes the pop-up or returns to the chooser).
+  var opened = false, fromChooser = false;
+  function openView() {
+    if (!list.open) { list.showModal ? list.showModal() : list.setAttribute('open', ''); document.body.style.overflow = 'hidden'; }
+    list.scrollTop = 0;
+  }
+  function closeView() {
+    if (list.open) { list.close ? list.close() : list.removeAttribute('open'); }
+    document.body.style.overflow = '';
+  }
+  function leave() {
+    if (opened) { history.go(fromChooser && location.hash.indexOf('#homes=') === 0 ? -2 : -1); }
+    else { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} route(); }
+  }
+  list.querySelector('.lclose').addEventListener('click', leave);
+  list.addEventListener('cancel', function (e) { e.preventDefault(); leave(); });
+  list.addEventListener('click', function (e) { if (e.target === list) leave(); });
+  document.querySelectorAll('a.pcard, a.hoodlink').forEach(function (a) { a.addEventListener('click', function () { opened = true; }); });
+  window.addEventListener('hashchange', function (e) {
+    var was = (e.oldURL || '').split('#')[1] || '';
+    if (location.hash.indexOf('#homes=') === 0) fromChooser = fromChooser || was === 'all';
+    if (location.hash === '#all' || !location.hash) fromChooser = false;
+    route();
+  });
+  route();
+})();
+</script>
+<script>
+(function () {
+  var d = document.getElementById('home-types');
+  if (!d) return;
+  var paras = [].slice.call(d.querySelectorAll('p[id^="t-"]'));
+  var more = d.querySelector('.more');
+  // Show only the tapped type (detached condo also gets the "why it says single-family" note); the rest sit behind "See other home types".
+  function open(type) {
+    var keep = type ? ['t-' + type].concat(type === 'condo' ? ['t-label'] : []) : null;
+    paras.forEach(function (p) { p.hidden = !!keep && keep.indexOf(p.id) < 0; p.classList.remove('hl'); });
+    var t = type && document.getElementById('t-' + type);
+    if (t) t.classList.add('hl');
+    more.hidden = !keep;
+    if (d.showModal) { if (!d.open) d.showModal(); } else d.setAttribute('open', '');
+    d.scrollTop = 0;
+  }
+  more.addEventListener('click', function () { paras.forEach(function (p) { p.hidden = false; }); more.hidden = true; });
+  document.querySelectorAll('button.q, button.qlink').forEach(function (b) { b.addEventListener('click', function () { open(b.dataset.type); }); });
+  d.querySelector('.x').addEventListener('click', function () { d.close ? d.close() : d.removeAttribute('open'); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+})();
+</script>
+<script>
+(function () {
+  var d = document.getElementById('hood-info');
+  if (!d) return;
+  document.querySelectorAll('button.qh').forEach(function (b) {
+    b.addEventListener('click', function () {
+      d.querySelectorAll('.hood-about').forEach(function (x) { x.hidden = x.id !== 'h-' + b.dataset.hood; });
+      if (d.showModal) { if (!d.open) d.showModal(); } else d.setAttribute('open', '');
+    });
+  });
+  d.querySelector('.x').addEventListener('click', function () { d.close ? d.close() : d.removeAttribute('open'); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+})();
+</script>
+<script>
+// Report title: grow/shrink to fill its line (up to 44px); wrap to a second line only if it would drop below 20px.
+(function () {
+  var h = document.querySelector('h1');
+  if (!h) return;
+  var MAX = 44, MIN = 27;  // never smaller than 27px, so it always outranks the card titles
+  function fit() {
+    h.style.whiteSpace = 'nowrap';
+    h.style.fontSize = MAX + 'px';
+    var w = h.clientWidth, sw = h.scrollWidth;
+    var size = sw > w ? Math.floor(MAX * w / sw * 10) / 10 : MAX;
+    if (size < MIN) { h.style.fontSize = MIN + 'px'; h.style.whiteSpace = 'normal'; }
+    else h.style.fontSize = size + 'px';
+  }
+  fit();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('resize', fit);
+})();
+</script>
+<script>
+// "More ways I can help" cards open their pop-ups.
+(function () {
+  document.querySelectorAll('button[data-open]').forEach(function (b) {
+    var d = document.getElementById(b.getAttribute('data-open'));
+    if (!d) return;
+    b.addEventListener('click', function () { d.showModal ? d.showModal() : d.setAttribute('open', ''); });
+    d.querySelector('.x').addEventListener('click', function () { d.close ? d.close() : d.removeAttribute('open'); });
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  });
+})();
+</script>
+<script>
+// Shared checks for every form: specific message under each field, and standard formats
+// (phone "(858) 555-0123", email lowercase, names capitalized, trimmed).
+window.rfValidate = (function () {
+  var LABEL = { firstname: 'first name', lastname: 'last name', phone: 'phone number', email: 'email', address: 'home address' };
+  function digits(s) { var d = s.replace(/\D/g, ''); return d.length === 11 && d[0] === '1' ? d.slice(1) : d; }
+  function fmtPhone(s) { var d = digits(s); return d.length === 10 ? '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6) : s.trim(); }
+  function fmtName(s) { s = s.trim().replace(/\s+/g, ' '); return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+  function check(name, raw) {
+    var s = (raw || '').trim();
+    if (!s) return 'Please enter your ' + LABEL[name] + '.';
+    if ((name === 'firstname' || name === 'lastname') && (!/[A-Za-zÀ-ÿ]/.test(s) || /[0-9@]/.test(s))) return 'Please enter a valid ' + LABEL[name] + '.';
+    if (name === 'phone' && (/[A-Za-z]/.test(s) || digits(s).length !== 10)) return 'Please enter a valid phone number.';
+    if (name === 'email' && !/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(s)) return 'Please enter a valid email address.';
+    if (name === 'address' && (!/\d/.test(s) || !/[A-Za-z]{2,}/.test(s))) return 'Please enter a valid home address.';
+    return '';
+  }
+  function setErr(el, msg) {
+    var lab = el.closest('label'), e = lab && lab.querySelector('.rf-err');
+    if (!e && lab) { e = document.createElement('span'); e.className = 'rf-err'; lab.appendChild(e); }
+    if (e) e.textContent = msg;
+    el.classList.toggle('rf-bad', !!msg);
+    el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+  }
+  document.addEventListener('input', function (e) { if (e.target.classList && e.target.classList.contains('rf-bad')) setErr(e.target, ''); });
+  document.addEventListener('blur', function (e) {
+    var el = e.target; if (!el.closest || !el.closest('form') || !el.name) return;
+    if (el.name === 'phone') el.value = fmtPhone(el.value);
+    if (el.name === 'email') el.value = el.value.trim().toLowerCase();
+    if (el.name === 'firstname' || el.name === 'lastname') el.value = fmtName(el.value);
+  }, true);
+  return function (form, names) {
+    var first = null, n = 0;
+    names.forEach(function (name) {
+      var el = form.elements[name]; if (!el) return;
+      if (name === 'phone') el.value = fmtPhone(el.value);
+      if (name === 'email') el.value = el.value.trim().toLowerCase();
+      if (name === 'firstname' || name === 'lastname') el.value = fmtName(el.value);
+      var msg = check(name, el.value);
+      setErr(el, msg);
+      if (msg) { n++; if (!first) first = el; }
+    });
+    var st = form.querySelector('.rf-status');
+    if (st) { st.className = n ? 'rf-status err' : 'rf-status'; st.textContent = n ? (n === 1 ? 'Please fix the highlighted field.' : 'Please fix the ' + n + ' highlighted fields.') : ''; }
+    if (first) first.focus();
+    return !n;
+  };
+})();
+</script>
+<script>
+// Constellation form as 3 steps with a progress bar; Next/Back move between steps, Enter advances until the last step.
+(function () {
+  document.querySelectorAll('form.rf-wizard').forEach(function (f) {
+    var steps = [].slice.call(f.querySelectorAll('.rf-step')), bar = f.querySelector('.rf-bar span'), labels = f.querySelectorAll('.rf-steps li');
+    var st = f.querySelector('.rf-status'), cur = 0;
+    function go(i) {
+      cur = i;
+      steps.forEach(function (s, k) { s.hidden = k !== i; });
+      bar.style.width = ((i + 1) / steps.length * 100) + '%';
+      labels.forEach(function (l, k) { l.className = k < i ? 'done' : (k === i ? 'on' : ''); });
+      st.textContent = ''; st.className = 'rf-status';
+      var d = f.closest('dialog'); if (d) d.scrollTop = 0;
+    }
+    function ok(i) {
+      if (i !== 1) return true;
+      return window.rfValidate(f, ['firstname', 'lastname', 'phone', 'email']);
+    }
+    f.querySelectorAll('.rf-next').forEach(function (b) { b.addEventListener('click', function () { if (ok(cur)) go(cur + 1); }); });
+    f.querySelectorAll('.rf-back').forEach(function (b) { b.addEventListener('click', function () { go(cur - 1); }); });
+    f.addEventListener('submit', function (e) {
+      if (cur < steps.length - 1) { e.preventDefault(); e.stopImmediatePropagation(); if (ok(cur)) go(cur + 1); }
+    }, true);
+    go(0);
+  });
+})();
+</script>
+<script>
+// Request forms post to Ani's HubSpot form "3 Roots Report Requests" (portal 246846723); HubSpot emails her each one.
+(function () {
+  var URL = 'https://api.hsforms.com/submissions/v3/integration/submit/246846723/d37abf08-524f-4ec0-8346-db3583aa3645';
+  document.querySelectorAll('form.rform[data-kind]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var st = f.querySelector('.rf-status'), btn = f.querySelector('.rf-send');
+      var v = function (n) { var el = f.elements[n]; return el && el.value !== undefined ? el.value.trim() : ''; };
+      if (!window.rfValidate(f, f.dataset.kind === 'cma' ? ['firstname', 'lastname', 'email', 'phone', 'address'] : ['firstname', 'lastname', 'phone', 'email'])) return;
+      var lines;
+      if (f.dataset.kind === 'constellation') {
+        var pros = [].slice.call(f.querySelectorAll('input[name="pro"]:checked')).map(function (c) { return c.value; });
+        lines = ['[3 Roots report] Constellation request: ' + (pros.length ? pros.join(', ') : 'no specific pro chosen')];
+        if (v('message')) lines.push('What they need: ' + v('message'));
+        var pref = [].slice.call(f.querySelectorAll('input[name="prefer"]:checked')).map(function (c) { return c.value; });
+        if (pref.length) lines.push('Prefers: ' + pref.join(' or '));
+      } else {
+        lines = ['[3 Roots report] CMA request for ' + v('address')];
+        if (v('upgrades')) lines.push('Upgrades: ' + v('upgrades'));
+        if (v('message')) lines.push('Notes: ' + v('message'));
+      }
+      var fields = [['firstname', v('firstname')], ['lastname', v('lastname')], ['email', v('email')], ['phone', v('phone')], ['message', lines.join('\n')]]
+        .map(function (p) { return { objectTypeId: '0-1', name: p[0], value: p[1] }; });
+      btn.disabled = true; st.className = 'rf-status'; st.textContent = 'Sending…';
+      fetch(URL, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields: fields, context: Object.assign({ pageUri: location.href.split('#')[0], pageName: document.title }, (document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/) || [])[1] ? { hutk: document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/)[1] } : {}) }) })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function () {
+          var body = 'I got your request and will be in touch with you shortly.<span class="rf-sign">&ndash; Ani</span>';
+          f.innerHTML = '<div class="rf-done"><div class="rf-check-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'
+            + '<h4>Thank you!</h4><p>' + body + '</p>'
+            + '<button type="button" class="rf-close">Close</button></div>';
+          var d = f.closest('dialog'); if (d) { d.scrollTop = 0; d.classList.add('is-done'); }
+          f.querySelector('.rf-close').addEventListener('click', function () { if (d) d.close(); });
+        })
+        .catch(function () { btn.disabled = false; st.className = 'rf-status err'; st.innerHTML = 'Sorry, that didn&rsquo;t go through. Please <a href="https://meetings-na2.hubspot.com/ani-valenne/ani-valenne" target="_blank" rel="noopener">reach me here</a>.'; });
+    });
+  });
+})();
+</script>
+<script>
+// "Request a private tour": first time asks for contact info (remembered on this device only); after that one tap sends it.
+// Posts to Ani's HubSpot form; her 15-minute check emails her and adds a HubSpot task.
+(function () {
+  var URL = 'https://api.hsforms.com/submissions/v3/integration/submit/246846723/d37abf08-524f-4ec0-8346-db3583aa3645';
+  var KEY = 'valenne_contact', d = document.getElementById('dlg-tour');
+  if (!d) return;
+  var form = d.querySelector('form'), box = d.querySelector('.tour-box'), home = null;
+  function load() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
+  function save(c) { try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {} }
+  function forget() { try { localStorage.removeItem(KEY); } catch (e) {} }
+  function open() { if (d.showModal) { if (!d.open) d.showModal(); } else d.setAttribute('open', ''); d.scrollTop = 0; }
+  function showForm(c) {
+    box.hidden = true; form.hidden = false; d.classList.remove('is-done');
+    d.querySelector('.tour-addr').textContent = home.addr;
+    ['firstname', 'lastname', 'phone', 'email'].forEach(function (n) { form.elements[n].value = c ? c[n] || '' : ''; });
+    form.querySelector('.rf-status').textContent = '';
+    open();
+  }
+  function done(c) {
+    form.hidden = true; box.hidden = false; d.classList.add('is-done');
+    box.innerHTML = '<div class="rf-done"><div class="rf-check-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'
+      + '<h4>Thank you!</h4><p>I got your tour request for ' + home.addr.replace(/</g, '&lt;') + ' and will be in touch with you shortly to set a time.<span class="rf-sign">&ndash; Ani</span></p>'
+      + '<button type="button" class="rf-close">Close</button>'
+      + '<p class="tour-notyou">Not ' + (c.firstname || 'you').replace(/</g, '&lt;') + '? <button type="button" class="tour-change">Change my info</button></p></div>';
+    box.querySelector('.rf-close').addEventListener('click', function () { d.close(); });
+    box.querySelector('.tour-change').addEventListener('click', function () { forget(); showForm(null); d.classList.remove('is-done'); });
+    open();
+  }
+  function send(c, when, onFail) {
+    var lines = ['[3 Roots report] Tour request: ' + home.addr + ' (' + home.price + ')', 'Listing: ' + home.link];
+    if (when) lines.push('Preferred times: ' + when);
+    var fields = [['firstname', c.firstname], ['lastname', c.lastname], ['email', c.email], ['phone', c.phone], ['message', lines.join('\n')]]
+      .map(function (p) { return { objectTypeId: '0-1', name: p[0], value: p[1] }; });
+    return fetch(URL, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields: fields, context: Object.assign({ pageUri: location.href.split('#')[0], pageName: document.title }, (document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/) || [])[1] ? { hutk: document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/)[1] } : {}) }) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); done(c); })
+      .catch(onFail);
+  }
+  document.querySelectorAll('button.tour').forEach(function (b) {
+    b.addEventListener('click', function () {
+      home = { addr: b.dataset.addr, price: b.dataset.price, link: b.dataset.link };
+      var c = load();
+      if (!c) { showForm(null); return; }
+      var label = b.textContent; b.disabled = true; b.textContent = 'Sending…';
+      send(c, '', function () { showForm(c); form.querySelector('.rf-status').className = 'rf-status err'; form.querySelector('.rf-status').textContent = 'That didn’t go through. Please try again.'; })
+        .then(function () { b.disabled = false; b.textContent = label; });
+    });
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (n) { return form.elements[n].value.trim(); }, st = form.querySelector('.rf-status');
+    if (!window.rfValidate(form, ['firstname', 'lastname', 'phone', 'email'])) return;
+    var c = { firstname: v('firstname'), lastname: v('lastname'), phone: v('phone'), email: v('email') };
+    if (form.elements.remember.checked) save(c); else forget();
+    var btn = form.querySelector('.rf-send'); btn.disabled = true; st.className = 'rf-status'; st.textContent = 'Sending…';
+    send(c, v('when'), function () { st.className = 'rf-status err'; st.textContent = 'That didn’t go through. Please try again.'; })
+      .then(function () { btn.disabled = false; });
+  });
+  d.querySelector('.x').addEventListener('click', function () { d.close(); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+})();
+</script>
+<script>
+// Connect buttons open the booking pop-up with her HubSpot calendar (GitHub page). On the Claude
+// version, frames from other sites are blocked, so the link just opens her calendar in a new tab.
+(function () {
+  var d = document.getElementById('dlg-book'); if (!d) return;
+  var f = d.querySelector('.book-frame');
+  var inline = getComputedStyle(f).display !== 'none', loaded = false;
+  document.querySelectorAll('a[data-book]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (!inline) return;
+      e.preventDefault();
+      if (!loaded) { loaded = true; var sc = document.createElement('script'); sc.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'; document.body.appendChild(sc); }
+      d.showModal ? d.showModal() : d.setAttribute('open', '');
+    });
+  });
+  d.querySelector('.x').addEventListener('click', function () { d.close ? d.close() : d.removeAttribute('open'); });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+})();
+</script>
+
+</body>
+</html>
