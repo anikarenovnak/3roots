@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Price Cut vs Rate Buydown: Walkthrough</title>
+<meta name="description" content="$20K from the seller on a $1M home at 7.375%: lower price or lower rate? A step-by-step walkthrough of the math, how long you stay, and what refinancing does.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Price Cut vs Rate Buydown: Walkthrough">
+<meta property="og:description" content="$20K from the seller on a $1M home: lower price or lower rate? Step by step, in plain English.">
+<meta property="og:image" content="https://anikarenovnak.github.io/3roots/buydown/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Valenne Real Estate">
+<meta property="og:url" content="https://anikarenovnak.github.io/3roots/buydown/walkthrough/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root { --bg:#ffffff; --panel:#faf7f1; --line:#e6dccb; --fg:#1c1a17; --head:#555555; --muted:#5d5850; --gold:#d1bf99; --gold-ink:#8f7850; --on-gold:#2f2a22;
+  --cut:#e0702b; --cut-soft:rgba(224,112,43,.14); --buy:#1f6fd1; --buy-soft:rgba(31,111,209,.12);
+  --display:"Cormorant Garamond",Georgia,serif; --body:"Jost","Avenir Next",Helvetica,Arial,sans-serif; }
+@media (prefers-color-scheme: dark) { :root { --bg:#141311; --panel:#1d1b18; --line:#3a352c; --fg:#f3efe7; --head:#d9d4ca; --muted:#b3ab9d; --gold:#cfb98f; --gold-ink:#d6c39c;
+  --cut:#ff9a52; --cut-soft:rgba(255,154,82,.16); --buy:#5ea2ff; --buy-soft:rgba(94,162,255,.16); color-scheme:dark; } }
+* { box-sizing:border-box; }
+html { scroll-snap-type:y mandatory; scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--fg); font:300 18px/1.5 var(--body); }
+.brand { position:fixed; top:0; left:0; right:0; z-index:10; display:flex; justify-content:space-between; align-items:center; padding:max(12px,env(safe-area-inset-top)) 18px 10px; background:var(--bg); border-bottom:1px solid var(--line); }
+.brand .w { color:var(--head); line-height:1; } .brand b { font-weight:400; font-size:15px; letter-spacing:.22em; display:block; } .brand small { font-size:7px; letter-spacing:.42em; }
+.brand .n { font-size:12px; letter-spacing:.16em; color:var(--gold-ink); font-variant-numeric:tabular-nums; }
+.prog { position:fixed; top:0; left:0; height:3px; background:var(--gold-ink); z-index:11; width:0; transition:width .2s; }
+section { min-height:100vh; min-height:100svh; scroll-snap-align:start; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:84px 22px 40px; }
+.in { width:100%; max-width:520px; display:flex; flex-direction:column; gap:18px; }
+.ey { font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-ink); }
+h2 { font-weight:400; color:var(--head); font-size:clamp(30px,8vw,44px); line-height:1.1; margin:0; letter-spacing:-.01em; }
+.say { font-family:var(--display); font-style:italic; font-size:22px; line-height:1.4; color:var(--muted); margin:0; }
+.big { font-weight:400; font-size:clamp(44px,13vw,72px); line-height:1; color:var(--head); font-variant-numeric:tabular-nums; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:18px; }
+.cut { border-top:4px solid var(--cut); } .buy { border-top:4px solid var(--buy); }
+.k { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-ink); }
+.v { font-size:30px; font-weight:400; color:var(--head); font-variant-numeric:tabular-nums; }
+.grid2 { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; }
+.grid2 .v { font-size:clamp(20px,6vw,30px); overflow-wrap:anywhere; }
+body { overflow-x:hidden; }
+.c-cut { color:var(--cut); } .c-buy { color:var(--buy); }
+.strike { text-decoration:line-through; text-decoration-thickness:2px; color:var(--muted); }
+.arrow { font-size:26px; color:var(--gold-ink); text-align:center; }
+.eq { display:flex; flex-direction:column; gap:10px; }
+.eq div { display:flex; justify-content:space-between; gap:10px; align-items:baseline; border-bottom:1px solid var(--line); padding:8px 0; font-size:19px; }
+.eq b { font-weight:500; font-size:24px; font-variant-numeric:tabular-nums; }
+.bar { height:44px; border-radius:3px; background:var(--line); overflow:hidden; }
+.bar i { display:block; height:100%; width:0; transition:width 1.1s cubic-bezier(.2,.7,.2,1); }
+.row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; font-size:17px; }
+.row b { font-weight:500; font-size:24px; font-variant-numeric:tabular-nums; }
+.chart { display:flex; align-items:center; gap:4px; height:220px; position:relative; border-bottom:1px solid var(--line); }
+.chart .zero { position:absolute; left:0; right:0; border-top:1px dashed var(--gold-ink); }
+.chart .b { flex:1; height:100%; position:relative; }
+.chart .b i { position:absolute; left:0; right:0; border-radius:2px; transform:scaleY(0); transition:transform .5s ease; }
+.ax { display:flex; gap:4px; font-size:13px; color:var(--muted); } .ax span { flex:1; text-align:center; }
+.list { display:flex; flex-direction:column; gap:10px; }
+.list div { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px 16px; border-radius:6px; font-size:18px; opacity:0; transform:translateY(14px); transition:all .5s ease; }
+.list div b { font-weight:500; font-size:22px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.list .lc { background:var(--cut-soft); } .list .lb { background:var(--buy-soft); }
+.fade { opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+.on .fade, .on .list div { opacity:1; transform:none; }
+.d1 { transition-delay:.25s !important; } .d2 { transition-delay:.5s !important; } .d3 { transition-delay:.75s !important; } .d4 { transition-delay:1s !important; } .d5 { transition-delay:1.25s !important; }
+.pill { display:inline-block; padding:6px 12px; border-radius:999px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; font-weight:500; }
+.pill.cutp { background:var(--cut-soft); color:var(--cut); } .pill.buyp { background:var(--buy-soft); color:var(--buy); }
+.cta a { display:block; text-align:center; text-decoration:none; background:var(--gold); color:var(--on-gold); font-weight:500; letter-spacing:.16em; text-transform:uppercase; font-size:14px; padding:16px; border-radius:3px; }
+.fine { font-size:13px; color:var(--muted); }
+.hint { text-align:center; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-ink); margin-top:24px; animation:bob 1.6s ease-in-out infinite; }
+@keyframes bob { 50% { transform:translateY(6px); } }
+@media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } .fade, .list div { opacity:1; transform:none; } .chart .b i { transform:none; } }
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<div class="brand"><div class="w"><b>VALENNE</b><small>REAL ESTATE</small></div><div class="n" id="stepN">1 / 11</div></div>
+
+<!-- 1 HOOK -->
+<section data-step>
+  <div class="in" style="text-align:center">
+    <div class="ey fade">The seller just offered you</div>
+    <div class="big fade d1">$20,000</div>
+    <div class="grid2 fade d2" style="margin-top:10px">
+      <div class="card cut"><div class="v c-cut">Lower price?</div></div>
+      <div class="card buy"><div class="v c-buy">Lower rate?</div></div>
+    </div>
+    <p class="say fade d3">Most people pick wrong. Here's how to know.</p>
+    <div class="hint">Scroll ↓</div>
+  </div>
+</section>
+
+<!-- 2 SETUP -->
+<section data-step>
+  <div class="in">
+    <div class="ey fade">The example</div>
+    <h2 class="fade d1">Here's the deal</h2>
+    <div class="grid2">
+      <div class="card fade d1"><div class="k">Home price</div><div class="v">$1,000,000</div></div>
+      <div class="card fade d2"><div class="k">Down payment</div><div class="v">20%</div><div class="fine">$200,000 · loan $800,000</div></div>
+      <div class="card fade d3"><div class="k">30-year fixed</div><div class="v">7.375%</div></div>
+      <div class="card fade d4"><div class="k">From the seller</div><div class="v">$20,000</div></div>
+    </div>
+    <div class="card fade d5"><div class="k">Payment with no seller money</div><div class="v">$5,525 / mo</div></div>
+  </div>
+</section>
+
+<!-- 3 OPTION 1 -->
+<section data-step>
+  <div class="in">
+    <div class="ey fade c-cut">Option 1</div>
+    <h2 class="fade d1">Take it off the price</h2>
+    <div class="card cut fade d2">
+      <div class="k">Price</div>
+      <div class="v"><span class="strike">$1,000,000</span> → $980,000</div>
+    </div>
+    <div class="card cut fade d3">
+      <div class="k">Monthly payment</div>
+      <div class="v"><span class="strike">$5,525</span> → $5,415</div>
+      <div class="v c-cut" style="font-size:24px">saves $111 / mo</div>
+    </div>
+    <div class="card cut fade d4"><div class="k">Bonus</div><div class="v" style="font-size:24px">$4,000 less down payment</div><div class="fine">20% of a lower price</div></div>
+  </div>
+</section>
+
+<!-- 4 OPTION 2 -->
+<section data-step>
+  <div class="in">
+    <div class="ey fade c-buy">Option 2</div>
+    <h2 class="fade d1">Buy down the rate</h2>
+    <p class="say fade d1">Lenders sell "points." One point costs 1% of your loan.</p>
+    <div class="card buy eq">
+      <div class="fade d2"><span>1 point = 1% of $800,000</span><b>$8,000</b></div>
+      <div class="fade d3"><span>$20,000 ÷ $8,000</span><b>2.5 points</b></div>
+      <div class="fade d4"><span>2.5 points × 0.25%</span><b>−0.625%</b></div>
+      <div class="fade d5" style="border:0"><span>New rate</span><b class="c-buy"><span class="strike" style="font-weight:400">7.375%</span> → 6.75%</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 MONTHLY -->
+<section data-step data-bars>
+  <div class="in">
+    <div class="ey fade">Every month</div>
+    <h2 class="fade d1">How much each one saves</h2>
+    <div class="fade d1"><div class="row"><span>Lower price</span><b class="c-cut">−$111 / mo</b></div><div class="bar"><i data-w="33" style="background:var(--cut)"></i></div><div class="fine" style="margin-top:4px">$5,415 a month</div></div>
+    <div class="fade d2"><div class="row"><span>Lower rate</span><b class="c-buy">−$337 / mo</b></div><div class="bar"><i data-w="100" style="background:var(--buy)"></i></div><div class="fine" style="margin-top:4px">$5,189 a month</div></div>
+    <div class="card fade d3" style="text-align:center"><div class="big" style="font-size:56px">3×</div><div class="say">the monthly savings with the lower rate</div></div>
+  </div>
+</section>
+
+<!-- 6 BREAK-EVEN -->
+<section data-step data-chart>
+  <div class="in">
+    <div class="ey fade">The catch</div>
+    <h2 class="fade d1">How long will you keep the loan?</h2>
+    <p class="say fade d1">The price cut wins on day one. The buydown pays you back slowly.</p>
+    <div class="fade d2">
+      <div class="chart" id="chart"><div class="zero" id="zero"></div></div>
+      <div class="ax" id="ax"></div>
+      <div style="display:flex;gap:16px;font-size:14px;color:var(--muted);margin-top:8px"><span><span class="pill cutp">Price cut ahead</span></span><span><span class="pill buyp">Buydown ahead</span></span></div>
+    </div>
+    <div class="card fade d3" style="text-align:center"><div class="k">Break-even</div><div class="v">62 months · 5.2 years</div></div>
+  </div>
+</section>
+
+<!-- 7 TIME HELD -->
+<section data-step>
+  <div class="in">
+    <div class="ey fade">Who wins, by how long you stay</div>
+    <h2 class="fade d1">It all depends on time</h2>
+    <div class="list">
+      <div class="lc d1"><span>Sell in 3 years</span><b class="c-cut">Price cut +$8,415</b></div>
+      <div class="lb d2"><span>Keep 7 years</span><b class="c-buy">Buydown +$7,359</b></div>
+      <div class="lb d3"><span>Keep 10 years</span><b class="c-buy">Buydown +$19,311</b></div>
+      <div class="lb d4"><span>Keep all 30 years</span><b class="c-buy">$97,399 less interest</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 REFI TRAP -->
+<section data-step>
+  <div class="in">
+    <div class="ey fade">The big one</div>
+    <h2 class="fade d1">The refinance trap</h2>
+    <p class="say fade d1">"Rates will drop. I'll just refinance." When you refinance, the rate you paid for is gone. That $20,000? Spent.</p>
+    <div class="card fade d2"><div class="k">Rates drop to 6.375% in year 3</div><div class="v" style="font-size:24px">Both buyers refinance to the same rate</div></div>
+    <div class="grid2 fade d3">
+      <div class="card cut"><div class="k">Price-cut loan owes</div><div class="v" style="font-size:24px">$760,045</div></div>
+      <div class="card buy"><div class="k">Buydown loan owes</div><div class="v" style="font-size:24px">$772,600</div></div>
+    </div>
+    <div class="card cut fade d4" style="text-align:center"><div class="k">After 7 years</div><div class="v c-cut">Price cut wins by $11,541</div><div class="fine">You owe about $12,500 less, so your new payment is $78/mo lower</div></div>
+  </div>
+</section>
+
+<!-- 9 SMALL DROP -->
+<section data-step>
+  <div class="in">
+    <div class="ey fade">But</div>
+    <h2 class="fade d1">If rates only dip a little</h2>
+    <div class="card fade d2"><div class="k">Rates drop to 6.875%</div><div class="v" style="font-size:24px">You already have 6.75%</div></div>
+    <p class="say fade d3">No reason to refinance. Your buydown keeps paying you.</p>
+    <div class="card buy fade d4" style="text-align:center"><div class="k">After 7 years</div><div class="v c-buy">Buydown still wins by $3,322</div></div>
+  </div>
+</section>
+
+<!-- 10 RULE -->
+<section data-step>
+  <div class="in">
+    <div class="ey fade">The simple rule</div>
+    <h2 class="fade d1">Which one should you take?</h2>
+    <div class="card buy fade d2"><span class="pill buyp">Rate buydown</span><div class="v" style="font-size:24px;margin-top:10px">You'll stay 5+ years, and you don't expect rates to drop below your new rate</div></div>
+    <div class="card cut fade d3"><span class="pill cutp">Price cut</span><div class="v" style="font-size:24px;margin-top:10px">You might move or refinance in the next few years</div></div>
+  </div>
+</section>
+
+<!-- 11 CTA -->
+<section data-step>
+  <div class="in cta" style="text-align:center">
+    <div class="ey fade">Run your own numbers</div>
+    <h2 class="fade d1">Every lender prices points differently</h2>
+    <p class="say fade d1">Ask for their rate sheet, then plug it into my free calculator.</p>
+    <a class="fade d2" href="https://anikarenovnak.github.io/3roots/buydown/?p=1000000&c=20000&d=20&r=7.375&y=10">Open the calculator</a>
+    <div class="card fade d3"><div class="v" style="font-size:26px">DM me "BUYDOWN"</div><div class="fine">and I'll run it with you</div></div>
+    <div class="fade d4" style="color:var(--head)"><div style="font-size:22px">Ani Sophia Valenne</div><div class="fine">Real Estate Advisor · DRE #02443409 · Keller Williams La Jolla</div></div>
+    <p class="fine fade d5">Example only, not a loan quote. Assumes 0.25% off the rate per point; refinance examples assume year 3 and $10,000 in closing costs. Principal and interest only. Rates and points vary by lender. If you are currently represented by another real estate agent, this is not intended as a solicitation. Each office is independently owned and operated.</p>
+  </div>
+</section>
+
+<script>
+(() => {
+  // same formulas as the calculator: $1M, 20% down, 7.375%, $20K, 0.25% per point
+  const pmt = (L, r) => { const i = r / 1200; return L * i / (1 - Math.pow(1 + i, -360)); };
+  const bal = (L, r, m) => { const i = r / 1200; return L * (Math.pow(1 + i, 360) - Math.pow(1 + i, m)) / (Math.pow(1 + i, 360) - 1); };
+  const LA = 784000, DA = 196000, rA = 7.375, LB = 800000, DB = 200000, rB = 6.75, PA = pmt(LA, rA), PB = pmt(LB, rB);
+  const adv = (m) => (DA + PA * m + bal(LA, rA, m)) - (DB + PB * m + bal(LB, rB, m));
+  const vals = []; for (let y = 1; y <= 10; y++) vals.push(adv(y * 12));
+  const top = Math.max(...vals), bot = Math.min(...vals), span = top - bot, z = top / span * 100;
+  const ch = document.getElementById('chart'); document.getElementById('zero').style.top = z + '%';
+  vals.forEach((v, i) => {
+    const b = document.createElement('div'); b.className = 'b';
+    const h = Math.abs(v) / span * 100, t = v >= 0 ? z - h : z;
+    b.innerHTML = '<i style="top:' + t + '%;height:' + Math.max(h, 0.8) + '%;background:var(' + (v >= 0 ? '--buy' : '--cut') + ');transform-origin:' + (v >= 0 ? 'bottom' : 'top') + ';transition-delay:' + (0.3 + i * 0.12) + 's"></i>';
+    ch.appendChild(b);
+  });
+  document.getElementById('ax').innerHTML = vals.map((_, i) => '<span>' + (i + 1) + '</span>').join('') ;
+  document.getElementById('ax').insertAdjacentHTML('afterend', '<div class="fine" style="text-align:center;margin-top:2px">years you keep the loan</div>');
+  const secs = [...document.querySelectorAll('[data-step]')], N = secs.length;
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const s = e.target; s.classList.add('on');
+    const i = secs.indexOf(s); document.getElementById('stepN').textContent = (i + 1) + ' / ' + N;
+    document.getElementById('prog').style.width = ((i + 1) / N * 100) + '%';
+    if (s.hasAttribute('data-bars')) s.querySelectorAll('.bar i').forEach((b, k) => setTimeout(() => { b.style.width = b.dataset.w + '%'; }, 300 + k * 400));
+    if (s.hasAttribute('data-chart')) s.querySelectorAll('.chart .b i').forEach((b) => { b.style.transform = 'scaleY(1)'; });
+  }), { threshold: 0.55 });
+  secs.forEach((s) => io.observe(s));
+
+})();
+</script>
+</body>
+</html>
