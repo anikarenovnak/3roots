@@ -208,6 +208,13 @@ button:hover { background: #c4b088; }
     <div class="sl"><div class="top"><label for="r">Rate before buydown</label><output id="rv" for="r"></output></div><input id="r" type="range" min="4" max="9" step="0.125" value="6.25"></div>
     <div class="sl"><div class="top"><label for="pt">Rate drop per point</label><output id="ptv" for="pt"></output></div><input id="pt" type="range" min="0.125" max="0.375" step="0.025" value="0.25"><span class="hint">1 point = 1% of the loan. Lenders price this differently; 0.25% is a common rule of thumb.</span></div>
     <div class="sl"><div class="top"><label for="y">Years you keep the loan</label><output id="yv" for="y"></output></div><input id="y" type="range" min="1" max="30" step="1" value="7"><span class="hint">Until you sell or refinance.</span></div>
+    <div class="sl"><span class="lab" style="font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)">Refinance later if rates drop?</span>
+      <div class="seg2" role="radiogroup" aria-label="Refinance later"><button type="button" role="radio" id="rkNo" aria-checked="true">No</button><button type="button" role="radio" id="rkYes" aria-checked="false">Yes</button></div>
+      <span class="hint">Either buyer can refinance later. Then both get the same new rate, so the buydown's lower rate stops mattering.</span></div>
+    <div class="sl rfo" hidden><div class="top"><label for="rk">Refinance in year</label><output id="rkv" for="rk"></output></div><input id="rk" type="range" min="1" max="15" step="1" value="3"></div>
+    <div class="sl rfo" hidden><div class="top"><label for="rn">Rate when you refinance</label><output id="rnv" for="rn"></output></div><input id="rn" type="range" min="3" max="8" step="0.125" value="5.25"></div>
+    <div class="sl rfo" hidden><div class="top"><label for="rc">Refinance closing costs</label><output id="rcv" for="rc"></output></div><input id="rc" type="range" min="0" max="30000" step="500" value="10000"><span class="hint">Paid by whichever buyer refinances.</span></div>
+    <p class="hint rfo" id="rfNote" hidden style="grid-column:1/-1"></p>
   </section>
 
   <section class="panel" aria-labelledby="ptH">
@@ -347,15 +354,23 @@ button:hover { background: #c4b088; }
   const short = (v) => (v < 0 ? '-' : '') + (Math.abs(v) >= 1e6 ? '$' + (Math.abs(v) / 1e6).toFixed(2).replace(/\.?0+$/, '') + 'M' : '$' + Math.round(Math.abs(v) / 1000) + 'K');
   const pmt = (L, r) => { const i = r / 1200; return i ? L * i / (1 - Math.pow(1 + i, -360)) : L / 360; };
   const bal = (L, r, m) => { const i = r / 1200; return i ? L * (Math.pow(1 + i, 360) - Math.pow(1 + i, m)) / (Math.pow(1 + i, 360) - 1) : L - L / 360 * m; };
-  let sel = null;
-  try { const q = new URLSearchParams(location.search); ['p', 'c', 'd', 'r', 'pt', 'y'].forEach((k) => { if (q.get(k)) $(k).value = q.get(k); }); } catch (e) {}
+  let sel = null, rOn = false;
+  try { const q = new URLSearchParams(location.search); ['p', 'c', 'd', 'r', 'pt', 'y', 'rk', 'rn', 'rc'].forEach((k) => { if (q.get(k)) $(k).value = q.get(k); }); if (q.get('refi') === '1') rOn = true; } catch (e) {}
   function calc() {
     const P = +$('p').value, c = +$('c').value, d = +$('d').value / 100, r = +$('r').value, pt = +$('pt').value, y = +$('y').value;
     $('pv').textContent = short(P); $('cv').textContent = f(c); $('dv').textContent = Math.round(d * 100) + '%';
     $('rv').textContent = r.toFixed(3) + '%'; $('ptv').textContent = pt.toFixed(3) + '%'; $('yv').textContent = y + (y === 1 ? ' year' : ' years');
     const LA = (P - c) * (1 - d), DA = (P - c) * d, PA = pmt(LA, r);
     const LB = P * (1 - d), DB = P * d, pts = c / LB * 100, rB = Math.max(0, r - pts * pt), PB = pmt(LB, rB);
-    const cost = (D, L, rr, M, m) => D + M * m + bal(L, rr, m);
+    const rk = +$('rk').value * 12, rn = +$('rn').value, rc = +$('rc').value;
+    $('rkv').textContent = 'Year ' + rk / 12; $('rnv').textContent = rn.toFixed(3) + '%'; $('rcv').textContent = f(rc);
+    document.querySelectorAll('.rfo').forEach((e) => { e.hidden = !rOn; });
+    $('rkNo').setAttribute('aria-checked', !rOn); $('rkYes').setAttribute('aria-checked', rOn);
+    const refis = (r0) => rOn && rn < r0;
+    const cost = (D, L, rr, M, m) => {
+      if (!refis(rr) || m <= rk) return D + M * m + bal(L, rr, m);
+      const B = bal(L, rr, rk); return D + M * rk + rc + pmt(B, rn) * (m - rk) + bal(B, rn, m - rk);
+    };
     const adv = (m) => cost(DA, LA, r, PA, m) - cost(DB, LB, rB, PB, m);
     $('pa').textContent = f(PA) + ' / mo'; $('pb').textContent = f(PB) + ' / mo';
     $('xa1').textContent = f(P - c); $('xa2').textContent = f(LA); $('xa3').textContent = r.toFixed(3) + '%'; $('xa4').textContent = f(DA); $('xa5').textContent = f(cost(DA, LA, r, PA, y * 12));
@@ -378,10 +393,16 @@ button:hover { background: #c4b088; }
     $('q3').textContent = '−' + (r - rB).toFixed(3) + '%'; $('q3h').textContent = pts.toFixed(2) + ' points × ' + pt.toFixed(3) + '% per point';
     $('q4').textContent = rB.toFixed(3) + '%'; $('q4h').textContent = 'down from ' + r.toFixed(3) + '%';
     let be = 0; for (let m = 1; m <= 360; m++) { if (adv(m) >= 0) { be = m; break; } }
+    if (rOn) {
+      const BA = bal(LA, r, rk), BB = bal(LB, rB, rk), yr = rk / 12;
+      $('rfNote').innerHTML = refis(rB)
+        ? 'In year ' + yr + ' both buyers refinance to ' + rn.toFixed(3) + '%. The lower-price loan owes <b style="font-weight:500">' + f(BA) + '</b> vs <b style="font-weight:500">' + f(BB) + '</b> for the lower-rate loan, so its new payment is ' + f(pmt(BA, rn)) + ' vs ' + f(pmt(BB, rn)) + ' a month (' + f(pmt(BB, rn) - pmt(BA, rn)) + ' less, for as long as they keep it).'
+        : (refis(r) ? 'In year ' + yr + ' only the lower-price buyer refinances: the buydown rate of ' + rB.toFixed(3) + '% is already at or below ' + rn.toFixed(3) + '%.' : 'Neither buyer would refinance: ' + rn.toFixed(3) + '% is not below either rate.');
+    }
     const a = adv(y * 12), bWins = a >= 0;
     $('kA').classList.toggle('win', !bWins); $('kB').classList.toggle('win', bWins); $('wA').hidden = bWins; $('wB').hidden = !bWins;
     $('verdict').innerHTML = 'The lower rate saves <b>' + f(PA - PB) + '/mo</b>, while the lower price needs <b>' + f(DB - DA) + '</b> less at closing. ' +
-      (be ? 'The lower rate pulls ahead after about <b>' + (be / 12).toFixed(1) + ' years</b>. ' : 'The lower price stays ahead the whole 30 years. ') +
+      (be ? 'The lower rate pulls ahead after about <b>' + (be / 12).toFixed(1) + ' years (' + be + ' months)</b>' + (rOn ? ', counting the refinance' : '') + '. ' : 'The lower price stays ahead the whole 30 years' + (rOn ? ' once you count the refinance' : '') + '. ') +
       'If you keep the loan ' + y + (y === 1 ? ' year' : ' years') + ', the <b>' + (bWins ? 'lower rate' : 'lower price') + '</b> comes out ahead by <b>' + f(Math.abs(a)) + '</b>.';
     const vals = []; for (let t = 1; t <= 30; t++) vals.push(adv(t * 12));
     const mx = Math.max(...vals.map(Math.abs), 1), hasNeg = vals.some((v) => v < 0), hasPos = vals.some((v) => v > 0);
@@ -399,7 +420,8 @@ button:hover { background: #c4b088; }
     const s = sel || y, v = vals[s - 1];
     $('tip').innerHTML = 'After <b style="font-weight:500">' + s + (s === 1 ? ' year' : ' years') + '</b>: the ' + (v >= 0 ? 'lower rate' : 'lower price') + ' is ahead by <b style="font-weight:500">' + f(Math.abs(v)) + '</b>.';
   }
-  ['p', 'c', 'd', 'r', 'pt', 'y'].forEach((k) => $(k).addEventListener('input', () => { if (k === 'y') sel = null; calc(); }));
+  ['p', 'c', 'd', 'r', 'pt', 'y', 'rk', 'rn', 'rc'].forEach((k) => $(k).addEventListener('input', () => { if (k === 'y') sel = null; calc(); }));
+  $('rkNo').addEventListener('click', () => { rOn = false; calc(); }); $('rkYes').addEventListener('click', () => { rOn = true; calc(); });
   calc();
 
   // ---- tabs ----
@@ -433,7 +455,7 @@ button:hover { background: #c4b088; }
     const ms = P1 - P2; let be = 0; for (let m = 1; m <= 360; m++) { if (net(m) >= 0) { be = m; break; } }
     const a = net(y * 12), win = a >= 0, iS = (P1 * n1 - B) - (P2 * n2 - L2);
     $('fs1').textContent = (ms >= 0 ? '' : '−') + f(Math.abs(ms)) + ' / mo'; $('fs1h').textContent = f(Math.abs(ms) * 12) + ' a year ' + (ms >= 0 ? 'lower' : 'higher');
-    $('fs2').textContent = be ? (be < 24 ? be + ' months' : (be / 12).toFixed(1) + ' years') : 'Never'; $('fs2h').textContent = be ? 'to earn back the closing costs' : 'the new loan never pays off';
+    $('fs2').textContent = be ? (be < 24 ? be + ' months' : (be / 12).toFixed(1) + ' yrs (' + be + ' mo)') : 'Never'; $('fs2h').textContent = be ? 'to earn back the closing costs' : 'the new loan never pays off';
     $('fs3').textContent = (a < 0 ? '−' : '') + f(Math.abs(a)); $('fs3h').textContent = 'if you keep the new loan ' + y + (y === 1 ? ' year' : ' years');
     $('fs4').textContent = (iS < 0 ? '−' : '') + f(Math.abs(iS)); $('fs4h').textContent = iS >= 0 ? 'less interest if both loans run to the end' : 'more interest, mostly from the longer term';
     $('fkA').classList.toggle('win', !win); $('fkB').classList.toggle('win', win); $('fwA').hidden = win; $('fwB').hidden = !win;
