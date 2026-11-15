@@ -194,6 +194,16 @@ button:hover { background: #c4b088; }
     <div class="sl"><div class="top"><label for="y">Years you keep the loan</label><output id="yv" for="y"></output></div><input id="y" type="range" min="1" max="30" step="1" value="7"><span class="hint">Until you sell or refinance.</span></div>
   </section>
 
+  <section class="panel" aria-labelledby="ptH">
+    <h2 id="ptH">What the seller money buys</h2>
+    <div class="stats" style="margin-top:12px">
+      <div class="stat"><div class="k">Cost of 1 point</div><div class="v" id="q1"></div><div class="hint" id="q1h"></div></div>
+      <div class="stat"><div class="k">Points it buys</div><div class="v" id="q2"></div><div class="hint" id="q2h"></div></div>
+      <div class="stat"><div class="k">Rate drop</div><div class="v" id="q3"></div><div class="hint" id="q3h"></div></div>
+      <div class="stat"><div class="k">New rate</div><div class="v" id="q4"></div><div class="hint" id="q4h"></div></div>
+    </div>
+  </section>
+
   <section class="cards" aria-label="The two options">
     <div class="panel opt" id="kA" style="--c: var(--high)">
       <h2>Lower price<span class="badge" id="wA" hidden>Better</span></h2>
@@ -293,6 +303,11 @@ button:hover { background: #c4b088; }
     $('msAt').textContent = f(sA * 12) + ' a year · plus ' + f(DB - DA) + ' less down payment at closing';
     $('msBt').textContent = f(sB * 12) + ' a year · same down payment';
     $('msV').innerHTML = 'Every month, the lower rate saves <b>' + f(Math.abs(sB - sA)) + '</b> ' + (sB >= sA ? 'more' : 'less') + ' than the lower price (' + (sA > 0 ? (sB / sA).toFixed(1) + '×' : '') + ' the monthly savings).';
+    const pc = LB / 100;
+    $('q1').textContent = f(pc); $('q1h').textContent = '1% of the ' + f(LB) + ' loan';
+    $('q2').textContent = pts.toFixed(2); $('q2h').textContent = f(c) + ' ÷ ' + f(pc) + ' per point';
+    $('q3').textContent = '−' + (r - rB).toFixed(3) + '%'; $('q3h').textContent = pts.toFixed(2) + ' points × ' + pt.toFixed(3) + '% per point';
+    $('q4').textContent = rB.toFixed(3) + '%'; $('q4h').textContent = 'down from ' + r.toFixed(3) + '%';
     let be = 0; for (let m = 1; m <= 360; m++) { if (adv(m) >= 0) { be = m; break; } }
     const a = adv(y * 12), bWins = a >= 0;
     $('kA').classList.toggle('win', !bWins); $('kB').classList.toggle('win', bWins); $('wA').hidden = bWins; $('wB').hidden = !bWins;
