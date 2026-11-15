@@ -199,19 +199,25 @@ button:hover { background: #c4b088; }
       <h2>Lower price<span class="badge" id="wA" hidden>Better</span></h2>
       <div class="big" id="pa"></div>
       <dl class="card-dl" style="display:grid;grid-template-columns:1fr auto;gap:8px 12px;margin:0">
-        <dt>Price</dt><dd id="xa1"></dd><dt>Loan</dt><dd id="xa2"></dd><dt>Rate</dt><dd id="xa3"></dd><dt>Down payment</dt><dd id="xa4"></dd><dt>Cost over your hold</dt><dd id="xa5"></dd>
+        <dt>Price</dt><dd id="xa1"></dd><dt>Loan</dt><dd id="xa2"></dd><dt>Rate</dt><dd id="xa3"></dd><dt>Down payment</dt><dd id="xa4"></dd><dt>Cost over your hold</dt><dd id="xa5"></dd><dt>Total interest, full 30 years</dt><dd id="xa6"></dd><dt>Total paid, full 30 years</dt><dd id="xa7"></dd>
       </dl>
     </div>
     <div class="panel opt" id="kB" style="--c: var(--low)">
       <h2>Lower rate<span class="badge" id="wB" hidden>Better</span></h2>
       <div class="big" id="pb"></div>
       <dl class="card-dl" style="display:grid;grid-template-columns:1fr auto;gap:8px 12px;margin:0">
-        <dt>Price</dt><dd id="xb1"></dd><dt>Loan</dt><dd id="xb2"></dd><dt>Rate</dt><dd id="xb3"></dd><dt>Down payment</dt><dd id="xb4"></dd><dt>Cost over your hold</dt><dd id="xb5"></dd>
+        <dt>Price</dt><dd id="xb1"></dd><dt>Loan</dt><dd id="xb2"></dd><dt>Rate</dt><dd id="xb3"></dd><dt>Down payment</dt><dd id="xb4"></dd><dt>Cost over your hold</dt><dd id="xb5"></dd><dt>Total interest, full 30 years</dt><dd id="xb6"></dd><dt>Total paid, full 30 years</dt><dd id="xb7"></dd>
       </dl>
     </div>
   </section>
 
   <section class="panel" aria-label="Verdict"><p class="verdict" id="verdict"></p></section>
+
+  <section class="panel stats" aria-label="Over the full loan">
+    <div class="stat"><div class="k">Interest saved over 30 years</div><div class="v" id="s1"></div><div class="hint">Lower rate vs lower price, if the loan runs its full term</div></div>
+    <div class="stat"><div class="k">Total savings over 30 years</div><div class="v" id="s2"></div><div class="hint" id="s2h"></div></div>
+    <div class="stat"><div class="k">Monthly savings</div><div class="v" id="s3"></div><div class="hint">360 payments</div></div>
+  </section>
 
   <section class="panel" aria-labelledby="chH">
     <h2 id="chH">Which option is ahead, year by year</h2>
@@ -265,6 +271,11 @@ button:hover { background: #c4b088; }
     $('pa').textContent = f(PA) + ' / mo'; $('pb').textContent = f(PB) + ' / mo';
     $('xa1').textContent = f(P - c); $('xa2').textContent = f(LA); $('xa3').textContent = r.toFixed(3) + '%'; $('xa4').textContent = f(DA); $('xa5').textContent = f(cost(DA, LA, r, PA, y * 12));
     $('xb1').textContent = f(P); $('xb2').textContent = f(LB); $('xb3').textContent = rB.toFixed(3) + '% (' + pts.toFixed(2) + ' pts)'; $('xb4').textContent = f(DB); $('xb5').textContent = f(cost(DB, LB, rB, PB, y * 12));
+    $('xa6').textContent = f(PA * 360 - LA); $('xb6').textContent = f(PB * 360 - LB);
+    $('xa7').textContent = f(DA + PA * 360); $('xb7').textContent = f(DB + PB * 360);
+    const iS = (PA * 360 - LA) - (PB * 360 - LB), tS = (DA + PA * 360) - (DB + PB * 360);
+    $('s1').textContent = f(iS); $('s2').textContent = f(Math.abs(tS)); $('s2h').textContent = (tS >= 0 ? 'The lower rate costs less in total' : 'The lower price costs less in total') + ', counting the down payment and every payment';
+    $('s3').textContent = f(Math.abs(PA - PB)) + ' / mo';
     let be = 0; for (let m = 1; m <= 360; m++) { if (adv(m) >= 0) { be = m; break; } }
     const a = adv(y * 12), bWins = a >= 0;
     $('kA').classList.toggle('win', !bWins); $('kB').classList.toggle('win', bWins); $('wA').hidden = bWins; $('wB').hidden = !bWins;
