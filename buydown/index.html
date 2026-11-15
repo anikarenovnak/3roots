@@ -211,6 +211,16 @@ button:hover { background: #c4b088; }
     </div>
   </section>
 
+  <section class="panel" aria-labelledby="msH">
+    <h2 id="msH">Monthly savings vs. no seller money</h2>
+    <p class="hint" style="margin-top:4px" id="msBase"></p>
+    <div class="bars" style="margin-top:14px">
+      <div class="bar-row"><div class="bar-head"><span>Lower price</span><b id="msA"></b></div><div class="track"><div class="seg" id="msAb" style="background:var(--high)"></div></div><div class="split" id="msAt"></div></div>
+      <div class="bar-row"><div class="bar-head"><span>Lower rate</span><b id="msB"></b></div><div class="track"><div class="seg" id="msBb" style="background:var(--low)"></div></div><div class="split" id="msBt"></div></div>
+    </div>
+    <p class="verdict" style="margin-top:14px;font-size:19px" id="msV"></p>
+  </section>
+
   <section class="panel" aria-label="Verdict"><p class="verdict" id="verdict"></p></section>
 
   <section class="panel stats" aria-label="Over the full loan">
@@ -276,6 +286,13 @@ button:hover { background: #c4b088; }
     const iS = (PA * 360 - LA) - (PB * 360 - LB), tS = (DA + PA * 360) - (DB + PB * 360);
     $('s1').textContent = f(iS); $('s2').textContent = f(Math.abs(tS)); $('s2h').textContent = (tS >= 0 ? 'The lower rate costs less in total' : 'The lower price costs less in total') + ', counting the down payment and every payment';
     $('s3').textContent = f(Math.abs(PA - PB)) + ' / mo';
+    const P0 = pmt(LB, r), sA = P0 - PA, sB = P0 - PB, mxs = Math.max(sA, sB, 1);
+    $('msBase').textContent = 'With no seller money: ' + f(P) + ' price, ' + r.toFixed(3) + '% rate, ' + f(P0) + '/mo.';
+    $('msA').textContent = f(sA) + ' / mo'; $('msB').textContent = f(sB) + ' / mo';
+    $('msAb').style.width = (sA / mxs * 100) + '%'; $('msBb').style.width = (sB / mxs * 100) + '%';
+    $('msAt').textContent = f(sA * 12) + ' a year · plus ' + f(DB - DA) + ' less down payment at closing';
+    $('msBt').textContent = f(sB * 12) + ' a year · same down payment';
+    $('msV').innerHTML = 'Every month, the lower rate saves <b>' + f(Math.abs(sB - sA)) + '</b> ' + (sB >= sA ? 'more' : 'less') + ' than the lower price (' + (sA > 0 ? (sB / sA).toFixed(1) + '×' : '') + ' the monthly savings).';
     let be = 0; for (let m = 1; m <= 360; m++) { if (adv(m) >= 0) { be = m; break; } }
     const a = adv(y * 12), bWins = a >= 0;
     $('kA').classList.toggle('win', !bWins); $('kB').classList.toggle('win', bWins); $('wA').hidden = bWins; $('wB').hidden = !bWins;
