@@ -126,12 +126,15 @@ body { overflow-x:hidden; }
   <div class="in">
     <div class="ey fade c-buy">Option 2</div>
     <h2 class="fade d1">Buy down the rate</h2>
-    <p class="say fade d1">Lenders sell "points." One point costs 1% of your loan.</p>
-    <div class="card buy eq">
-      <div class="fade d2"><span>1 point = 1% of $800,000</span><b>$8,000</b></div>
-      <div class="fade d3"><span>$20,000 ÷ $8,000</span><b>2.5 points</b></div>
-      <div class="fade d4"><span>2.5 points × 0.25%</span><b>−0.625%</b></div>
-      <div class="fade d5" style="border:0"><span>New rate</span><b class="c-buy"><span class="strike" style="font-weight:400">7.375%</span> → 6.75%</b></div>
+    <div class="card buy fade d2">
+      <div class="k">Your rate</div>
+      <div class="v"><span class="strike">7.375%</span> → <span class="c-buy">6.75%</span></div>
+      <div class="fine">$20,000 buys about 2.5 points in this example</div>
+    </div>
+    <div class="card fade d3">
+      <div class="k">Heads up</div>
+      <div class="v" style="font-size:24px">Every lender prices this differently</div>
+      <p class="say" style="margin-top:8px">Compare lenders before you commit.</p>
     </div>
   </div>
 </section>
@@ -176,51 +179,34 @@ body { overflow-x:hidden; }
   </div>
 </section>
 
-<!-- 8 REFI TRAP -->
-<section data-step>
-  <div class="in">
-    <div class="ey fade">The big one</div>
-    <h2 class="fade d1">The refinance trap</h2>
-    <p class="say fade d1">"Rates will drop. I'll just refinance." When you refinance, the rate you paid for is gone. That $20,000? Spent.</p>
-    <div class="card fade d2"><div class="k">Rates drop to 6.375% in year 3</div><div class="v" style="font-size:24px">Both buyers refinance to the same rate</div></div>
-    <div class="grid2 fade d3">
-      <div class="card cut"><div class="k">Price-cut loan owes</div><div class="v" style="font-size:24px">$760,045</div></div>
-      <div class="card buy"><div class="k">Buydown loan owes</div><div class="v" style="font-size:24px">$772,600</div></div>
-    </div>
-    <div class="card cut fade d4" style="text-align:center"><div class="k">After 7 years</div><div class="v c-cut">Price cut wins by $11,541</div><div class="fine">You owe about $12,500 less, so your new payment is $78/mo lower</div></div>
-  </div>
-</section>
-
-<!-- 9 SMALL DROP -->
-<section data-step>
-  <div class="in">
-    <div class="ey fade">But</div>
-    <h2 class="fade d1">If rates only dip a little</h2>
-    <div class="card fade d2"><div class="k">Rates drop to 6.875%</div><div class="v" style="font-size:24px">You already have 6.75%</div></div>
-    <p class="say fade d3">No reason to refinance. Your buydown keeps paying you.</p>
-    <div class="card buy fade d4" style="text-align:center"><div class="k">After 7 years</div><div class="v c-buy">Buydown still wins by $3,322</div></div>
-  </div>
-</section>
-
-<!-- 10 RULE -->
+<!-- 8 RULE -->
 <section data-step>
   <div class="in">
     <div class="ey fade">The simple rule</div>
     <h2 class="fade d1">Which one should you take?</h2>
-    <div class="card buy fade d2"><span class="pill buyp">Rate buydown</span><div class="v" style="font-size:24px;margin-top:10px">You'll stay 5+ years, and you don't expect rates to drop below your new rate</div></div>
-    <div class="card cut fade d3"><span class="pill cutp">Price cut</span><div class="v" style="font-size:24px;margin-top:10px">You might move or refinance in the next few years</div></div>
+    <div class="card buy fade d2"><span class="pill buyp">Rate buydown</span><div class="v" style="font-size:24px;margin-top:10px">You'll stay 5+ years</div></div>
+    <div class="card cut fade d3"><span class="pill cutp">Price cut</span><div class="v" style="font-size:24px;margin-top:10px">You might move in the next few years</div></div>
   </div>
 </section>
 
-<!-- 11 CTA -->
+<!-- 9 REFINANCE TEASER -->
+<section data-step>
+  <div class="in" style="text-align:center">
+    <div class="ey fade">Thinking about refinancing later?</div>
+    <h2 class="fade d1">There are tradeoffs there too</h2>
+    <p class="say fade d2">That's a whole other video. Coming soon.</p>
+  </div>
+</section>
+
+<!-- 10 CALCULATOR -->
 <section data-step>
   <div class="in cta" style="text-align:center">
-    <div class="ey fade">Your deal is different</div>
-    <h2 class="fade d1">Want the math for your home?</h2>
-    <p class="say fade d1">Every lender prices points differently, and every deal has its own numbers.</p>
-    <div class="card fade d2" style="padding:26px 18px"><div class="v" style="font-size:30px">DM me "BUYDOWN"</div><div class="say" style="font-size:20px;margin-top:6px">and I'll send you a calculator set up for your deal</div></div>
+    <div class="ey fade">For you</div>
+    <h2 class="fade d1">I built a calculator you can play with</h2>
+    <p class="say fade d1">Considering a seller buydown or a price cut on a deal? See the impact over time.</p>
+    <div class="card fade d2" style="padding:26px 18px"><div class="v" style="font-size:30px">DM me "BUYDOWN"</div><div class="say" style="font-size:20px;margin-top:6px">and I'll send it to you</div></div>
     <div class="fade d3" style="color:var(--head)"><div style="font-size:22px">Ani Sophia Valenne</div><div class="fine">Real Estate Advisor · DRE #02443409 · Keller Williams La Jolla</div></div>
-    <p class="fine fade d4">Example only, not a loan quote. Assumes 0.25% off the rate per point; refinance examples assume year 3 and $10,000 in closing costs. Principal and interest only. Rates and points vary by lender. If you are currently represented by another real estate agent, this is not intended as a solicitation. Each office is independently owned and operated.</p>
+    <p class="fine fade d4">Example only, not a loan quote. Assumes 0.25% off the rate per point. Principal and interest only. Rates and points vary by lender. If you are currently represented by another real estate agent, this is not intended as a solicitation. Each office is independently owned and operated.</p>
   </div>
 </section>
 
